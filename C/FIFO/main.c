@@ -2,7 +2,6 @@
 #include <string.h>
 #include "lig_pip.h"
 int errno;
-extern int m_lig_pip_rdwr_fd;
 int main()
 {
     int status=0;
@@ -15,13 +14,17 @@ int main()
         printf("open client error\n");
         return 0;
     }
-    n=lig_pip_write_bytes(m_lig_pip_rdwr_fd,tbuf,strlen(tbuf));
+	printf("The fd is %d\n",status);
+    n=lig_pip_write_bytes(status,tbuf,strlen(tbuf));
+	printf("The wirite buf is %d\n",n);
     if(n>0)
     {
         printf("good to write\n");
-        bzreo(rbuf,sizeof(rbuf));
-        n=lig_pip_write_bytes(m_lig_pip_rdwr_fd,rbuf,sizeof(rbuf));
-        printf("The read buf is %s\n",rbuf);
+        bzero(rbuf,sizeof(rbuf));
+		do{
+        	n=lig_pip_read_bytes(status,rbuf,sizeof(rbuf));
+		}while(n<1);
+        printf("The read buf is %s,the num is %d\n",rbuf,n);
     }
     else
     {

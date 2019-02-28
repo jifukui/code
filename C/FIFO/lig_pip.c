@@ -9,10 +9,10 @@
 #include "lig_pip.h"
 #include <stdio.h>
 
-#include "debug_config.h"
+//#include "debug_config.h"
 
 #define THIS_MODULE_NAME "pip"
-#define LIG_PIP_DEBUG_ENABLE
+//#define LIG_PIP_DEBUG_ENABLE
 #ifdef LIG_PIP_DEBUG_ENABLE
 	#define pr_pip_debug(lv,fmt,args...)                pr_log(lv,THIS_MODULE_NAME,fmt,##args)
 	#define Exerr(x)        do{pr_pip_debug(LIG_LOG_ERR,"error=%d\n",errno);exit(x);}while(0);
@@ -71,13 +71,13 @@ int lig_pip_open(int server_or_client)
         if(server_or_client==LIG_PIP_SERVER)
         {
                 m_lig_pip_rdwr_fd=open(LIG_PIP_CLN_FILE_PATH,O_RDONLY|O_NONBLOCK);
-                s_mode=O_RDONLY|O_NONBLOCK;
+                s_mode=O_RDONLY;
                 c_mode=O_WRONLY|O_NONBLOCK;
         }
         else
         {
                 m_lig_pip_rdwr_fd= open(LIG_PIP_SRV_FILE_PATH,O_RDONLY|O_NONBLOCK);
-                s_mode=O_WRONLY|O_NONBLOCK;
+                s_mode=O_WRONLY;
                 c_mode=O_RDONLY|O_NONBLOCK;
         }
 
