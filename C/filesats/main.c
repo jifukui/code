@@ -3,7 +3,7 @@
 int main()
 {
     int flag=0;
-    struct stat sats;
+    struct stat stas;
     
     flag=stat("/tmp/a.out",&stas);
     if(!flag)
