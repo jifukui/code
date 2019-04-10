@@ -14,9 +14,9 @@ uint64_t intrev64(uint64_t v);
  * 只是实现了大端格式*/
 /**根据大小端的格式设置数据*/
 #if (BYTE_ORDER == LITTLE_ENDIAN)
-#define memrev16ifbe(p) ((void)(0))
-#define memrev32ifbe(p) ((void)(0))
-#define memrev64ifbe(p) ((void)(0))
+#define memrev16ifbe(p) ((void*)(0))
+#define memrev32ifbe(p) ((void*)(0))
+#define memrev64ifbe(p) ((void*)(0))
 #define intrev16ifbe(v) (v)
 #define intrev32ifbe(v) (v)
 #define intrev64ifbe(v) (v)
@@ -30,7 +30,7 @@ uint64_t intrev64(uint64_t v);
 #endif
 int main()
 {
-    char data[4]={1,0,0,0};
+    char data[4]={0,0,1,0};
     unsigned int *value=data;
     unsigned int *value1;
     printf("The value is %u\n",*value);
