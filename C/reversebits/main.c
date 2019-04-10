@@ -13,8 +13,10 @@ static unsigned long rev(unsigned long v)
 }
 int main()
 {
-    unsigned long data=1;
+    unsigned long data=0;
     data=rev(data);
-    printf("The data is %ld\n",data);
+//    data++;
+//    data=rev(data);
+    printf("The data is %u\n",data);
     return 0;
 }
