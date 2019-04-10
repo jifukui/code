@@ -34,7 +34,7 @@ int main()
     unsigned int *value=data;
     unsigned int *value1;
     printf("The value is %u\n",*value);
-    memrev32ifbe(value);
+    memrev32ifbe(value1);
     printf("The value1 is %u\n",*value1);
     return 0;
 }
