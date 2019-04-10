@@ -1,5 +1,7 @@
 #include<stdio.h>
-
+typedef unsigned short uint16_t;
+typedef unsigned int uint32_t;
+typedef unsigned long long uint64_t; 
 void memrev16(void *p);
 void memrev32(void *p);
 void memrev64(void *p);
