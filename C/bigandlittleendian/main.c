@@ -33,8 +33,8 @@ int main()
     char data[4]={1,0,0,0};
     unsigned int *value=data;
     unsigned int *value1;
-    printf("The value is %u\n",value);
+    printf("The value is %u\n",*value);
     memrev32ifbe(value);
-    printf("The value1 is %u\n",value1);
+    printf("The value1 is %u\n",*value1);
     return 0;
 }
