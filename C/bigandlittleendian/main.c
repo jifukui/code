@@ -10,7 +10,8 @@ uint32_t intrev32(uint32_t v);
 uint64_t intrev64(uint64_t v);
 
 /* variants of the function doing the actual conversion only if the target
- * host is big endian */
+ * host is big endian 
+ * 只是实现了大端格式*/
 /**根据大小端的格式设置数据*/
 #if (BYTE_ORDER == LITTLE_ENDIAN)
 #define memrev16ifbe(p) ((void)(0))
@@ -29,10 +30,11 @@ uint64_t intrev64(uint64_t v);
 #endif
 int main()
 {
-    char data[1,2,3,4];
+    char data[4]={1,0,0,0};
     unsigned int *value=data;
+    unsigned int *value1;
     printf("The value is %u\n",value);
-    memrev16ifbe(value);
-    printf("The value is %u\n",value);
+    memrev32ifbe(value);
+    printf("The value1 is %u\n",value1);
     return 0;
 }
