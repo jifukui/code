@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Vue v-for</title>
+<script src="https://cdn.bootcss.com/vue/2.2.2/vue.min.js"></script>
+</head>
+<body>
+<ul id="demo">
+    <li v-for="(item,index) in items">
+        {{index}}   -  {{parentMessage}}   {{item.msg}}
+    </li>
+</ul>
+<script>
+// 创建根实例
+var vm = new Vue({  
+        el: '#demo', 
+        data: {  
+            parentMessage:'滴滴',
+            items:[
+                {msg:'滴滴顺风车'},
+                {msg:'滴滴专车'},
+                {msg:"滴滴王八蛋"}
+            ]
+        }  
+    });  
+</script>
+</body>
+</html>

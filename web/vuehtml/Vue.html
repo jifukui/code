@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Vue 测试实例 - 动态组件</title>
+<script src="https://cdn.bootcss.com/vue/2.2.2/vue.min.js"></script>
+</head>
+<body>
+<div id="app">
+	<button @click='toShow'>点击显示子组件</button>
+	<!----或者<component v-bind:is="which_to_show" keep-alive></component>也行----->
+	<keep-alive>
+	<component v-bind:is="which_to_show" ></component>
+	</keep-alive>
+</div>
+ 
+<script>
+ 
+// 创建根实例
+var vm = new Vue({  
+        el: '#app',  
+        data: {  
+            which_to_show: "first"  
+        },  
+        methods: {  
+            toShow: function () {   //切换组件显示  
+                var arr = ["first", "second", "third", ""];  
+                var index = arr.indexOf(this.which_to_show);  
+                if (index < 2) {  
+                    this.which_to_show = arr[index + 1];  
+                } else {  
+                    this.which_to_show = arr[0];  
+                }  
+               console.log(this.$children);  
+            }  
+        },  
+        components: {  
+            first: { //第一个子组件  
+                template: "<div>这里是子组件1</div>"  
+            },  
+            second: { //第二个子组件  
+                template: "<div>这里是子组件2，这里是延迟后的内容：{{hello}}</div>",  
+                data: function () {  
+                    return {  
+                        hello: ""  
+                    }  
+                },  
+                activated: function (done) { //执行这个参数时，才会切换组件  
+					console.log('hhh')
+                    var self = this; 
+					var startTime = new Date().getTime(); // get the current time   
+					//两秒后执行
+                    while (new Date().getTime() < startTime + 2000){
+						self.hello='我是延迟后的内容';
+					}
+					
+                }  
+            },  
+            third: { //第三个子组件  
+                template: "<div>这里是子组件3</div>"  
+            }  
+        }  
+    });  
+</script>
+</body>
+</html>

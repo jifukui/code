@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Vue v-html</title>
+<script src="https://cdn.bootcss.com/vue/2.2.2/vue.min.js"></script>
+</head>
+<body>
+<div id="test1">
+    <div v-html="text1"></div>
+</div>
+<script>
+  var vm1=new Vue({
+    el:'#test1',
+    data:{
+        text1:"<div id=\"test\"><div>Name is :{{name}}</div><div>Local Name is: {{jifukui[0].name}}</div></div>"
+    }
+});
+var vm = new Vue({  
+        el: '#test',  
+        data: {  
+            name:"hahahhaha"  ,
+            jifukui:[
+                {
+                    name:"jifukui"
+                }
+            ]
+        },  
+    }); 
+</script>
+</body>
+</html>

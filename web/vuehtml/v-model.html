@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Vue v-model Test</title>
+<script src="https://cdn.bootcss.com/vue/2.2.2/vue.min.js"></script>
+</head>
+<body>
+<div id="test">
+    <form>
+        姓名:
+        <input type="text" v-model="data.name" placeholder="The name">
+        <br/>
+        性别：
+        <input type="radio" id="man" value="One" v-model="data.sex">
+        <label for="man">男</label>
+        <input type="radio" id="male" value="Two" v-model="data.sex">
+        <label for="male">女</label>
+        <br/>
+        兴趣：
+        <input type="checkbox" id="book" value="book" v-model="data.interest">
+        <label for="book">阅读</label>
+        <input type="checkbox" id="swim" value="swim" v-model="data.interest">
+        <label for="swim">游泳</label>
+        <input type="checkbox" id="game" value="game" v-model="data.interest">
+        <label for="game">游戏</label>
+        <input type="checkbox" id="song" value="song" v-model="data.interest">
+        <label for="song">唱歌</label>
+        <br/>
+        身份：
+        <select v-model="data.indetity">
+            <option value="teacher" selected>老师</option>
+            <option value="doctor">医生</option>
+            <option value="lawyer">律师</option>
+        </select>
+    </form>
+    <h5>{{data}}</h5>
+</div>
+<script>
+// 创建根实例
+var vm = new Vue({  
+        el: '#test',  
+        data: {  
+            data:{
+                name:"",
+                sex:"",
+                interest:[],
+                indetity:""
+            }
+        },  
+    });  
+</script>
+</body>
+</html>
