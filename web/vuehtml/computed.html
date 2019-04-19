@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Vue 计算属性</title>
+<script src="https://cdn.bootcss.com/vue/2.2.2/vue.min.js"></script>
+</head>
+<body>
+<div id="test1">
+    <p>Original message: "{{ message }}"</p>
+    <p>Computed reversed message: "{{ reversedMessage }}"</p>
+</div>
+<script>
+    var data="1233"
+  var vm1=new Vue({
+    el:'#test1',
+    data:{
+        message:"just do it"
+    },
+    /**对象内部的相关联的参数发生改变将会触发此,同时会更新整个参数*/
+    computed: {
+        reversedMessage: function () 
+        {
+            return this.message+data
+        }
+  }
+});
+</script>
+</body>
+</html>

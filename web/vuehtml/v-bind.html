@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Vue v-bind</title>
+<script src="https://cdn.bootcss.com/vue/2.2.2/vue.min.js"></script>
+</head>
+<body>
+<div id="test1">
+    <div v-bind:class="[classA,{classB:isB,classC:isC}]" >hahajifukui</div>
+    <input type="button" @click="jifukui()">
+    <!--classA为类的名称，后面的classB classC 是此类是否存在修改数据的时候记得不需要使用data---->
+</div>
+<script>
+  var vm1=new Vue({
+    el:'#test1',
+    data:{
+        classA:'S',
+        isB:true,
+        isC:false
+    }
+});
+var jifukui=()=>
+{
+    console.log("hahah jifukui")
+    vm1.classA="4"
+    vm1.isC=true
+}
+</script>
+</body>
+</html>

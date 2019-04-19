@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Vue v-el</title>
+<script src="https://cdn.bootcss.com/vue/2.2.2/vue.min.js"></script>
+</head>
+<body>
+<div id="test1">
+    <button v-on:click="jifukui()" style="height: 30px;width: 60px"></button>
+    <div ref="test">jifukui tetst</div>
+</div>
+<script>
+  var vm1=new Vue({
+    el:'#test1',
+    methods:{
+        jifukui:function(){
+            console.log("have click")
+            console.log(this.$refs)
+        }
+    }
+});
+</script>
+</body>
+</html>

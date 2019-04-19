@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Vue v-cloak</title>
+<script src="https://cdn.bootcss.com/vue/2.2.2/vue.min.js"></script>
+</head>
+<body>
+<div id="test1">
+    <div v-pre>
+        <div >{{jifukui}}</div>
+        <button style="height: 30px;width: 100px;">
+    </div>
+</div>
+<script>
+  var vm1=new Vue({
+    el:'#test1',
+    data:{
+        jifukui:"just do it"
+    }
+});
+</script>
+</body>
+</html>

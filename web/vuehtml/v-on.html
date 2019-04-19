@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Vue v-on</title>
+<script src="https://cdn.bootcss.com/vue/2.2.2/vue.min.js"></script>
+<style>
+    .jifukui{
+        width: 30px;
+    }
+</style>
+</head>
+<body>
+<div id="test1" >
+    <div  @click="baba()">
+        <input type="button" @click="jifukui1()" v-text="msg2" v-bind:class="jifukui">
+        <input type="button" v-on:click.stop="jifukui2()" v-text="msg3" v-bind:class="jifukui">   
+    </div>
+</div>
+<script>
+    var vm1=new Vue({
+        el:'#test1',
+        data:{
+            msg1:'father',
+            msg2:'child1',
+            msg3:'child2',
+            jifukui:'jifukui'
+        }
+    })
+var jifukui1=()=>
+{
+    console.log("hahah jifukui")
+}
+var jifukui2=()=>
+{
+    console.log("hahah jifukui2")
+}
+var baba=function()
+{
+    console.log("This is father")
+}
+</script>
+</body>
+</html>

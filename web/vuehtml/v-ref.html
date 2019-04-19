@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Vue v-ref</title>
+<script src="https://cdn.bootcss.com/vue/2.2.2/vue.min.js"></script>
+</head>
+<body>
+<div id="test1">
+    <button v-on:click="jifukui()" style="height: 30px;width: 60px"></button>
+    <!--ji-type ref="ji1"></ji-type>
+    <fu-type ref="ji2"></fu-type>
+    <kui-type ref="ji3"></kui-type>-->
+    <ji-type ref="ji1" ></ji-type>
+    <fu-type ref="ji2"></fu-type>
+    <kui-type ref="ji3"></kui-type>
+</div>
+<script>
+    //Vue.component('ji-type',{template:"<div>just have fun</div>"})
+    //Vue.component('fu-type',{template:"<div>just do it</div>"})
+    //Vue.component('kui-type',{template:"<div>nice to meet you</div>"})
+  var vm1=new Vue({
+    el:'#test1',
+    methods:{
+        jifukui:function(){
+            console.log("have click")
+            console.log(this.$refs)
+            console.log(this.$refs.ji1)
+            console.log(this.$refs.ji2)
+            console.log(this.$refs.ji3)
+        }
+    },
+    components:{
+        'ji-type':{template:"<div>just have fun</div>"},
+        'fu-type':{template:"<div>just do it</div>"},
+        'kui-type':{template:"<div>nice to meet you</div>"}
+    }
+});
+</script>
+</body>
+</html>
