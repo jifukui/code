@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Vue class 和 style的使用</title>
+<script src="./vue.js"></script>
+<style>
+    .colorred{
+        background-color: red;
+    }
+</style>
+</head>
+<body>
+<div id="test1">
+    <div v-bind:class="[value]">添加类型</div>
+    <div v-bind:style="{display:display,fontSize:fontsize}">显示我啊</div>
+    <div v-bind:style="{display:display,fontSize:fontsize}":class="value">显示我啊</div>
+</div>
+<script>
+  var vm1=new Vue({
+    el:'#test1',
+    data:{
+        value:"colorred",
+        display:'block',
+        fontsize:"300%"
+    }
+});
+</script>
+</body>
+</html>
