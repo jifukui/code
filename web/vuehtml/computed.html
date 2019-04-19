@@ -3,25 +3,55 @@
 <head>
 <meta charset="utf-8">
 <title>Vue 计算属性</title>
-<script src="https://cdn.bootcss.com/vue/2.2.2/vue.min.js"></script>
+<script src="./vue.js"></script>
 </head>
 <body>
 <div id="test1">
     <p>Original message: "{{ message }}"</p>
     <p>Computed reversed message: "{{ reversedMessage }}"</p>
+    <p>methods reversed message: "{{ reversedMessage1() }}"</p>
+    <p>methods date message: "{{ now() }}"</p>
+    <p>watch reversed message: "{{ reversedMessage2 }}"</p>
+    <p>computed name : "{{ fullname }}"</p>
 </div>
 <script>
     var data="1233"
   var vm1=new Vue({
     el:'#test1',
     data:{
-        message:"just do it"
+        message:"just do it",
+        reversedMessage2:"",
+        firstname:"aa",
+        lastname:"bb"
     },
     /**对象内部的相关联的参数发生改变将会触发此,同时会更新整个参数*/
     computed: {
         reversedMessage: function () 
         {
             return this.message+data
+        },
+        fullname:{
+            get:function(){
+                return this.firstname+this.lastname;
+            },
+            set:function(vale1){
+                this.firstname=vale1
+            }
+        }
+  },
+  methods:{
+        reversedMessage1: function () 
+        {
+            return this.message+data
+        },
+        now:function(){
+            return Date.now()
+        }
+  },
+  watch:{
+        reversedMessage2: function () 
+        {
+            reversedMessage2=this.message
         }
   }
 });
