@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Vue v-for v-if 模板综合</title>
+<script src="./vue.js"></script>
+</head>
+<body>
+<div id="test1">
+    <li v-for="(item,index) in list" :key="index">index:{{index}} item: {{item}}</li>
+    <ji-type v-for="(item,index) in list" :key="index"></ji-type>
+    <template v-for="(item,index) in list" data1="item" :key="index">
+        <li>item: {{item}}</li>
+    </template>
+    <li 
+        is="fu-type"
+        v-for="(item,index) in list" 
+        v-bind:title="item"
+        v-bind:name='"jifukuitest"'
+        v-bind:index="index"
+        v-bind:key="index"
+    ></li>
+    <fu-type
+        v-for="(item,index) in list" 
+        v-bind:title="item"
+        v-bind:index="item.id"
+        v-bind:key="item.id"
+    ></fu-type>
+    <li
+        is="kui-type"
+        v-if=true
+        v-bind:title='"jiufkui"'
+        v-bind:index='"item.id"'
+    ></li>
+    <kui-type
+        v-if=false
+        v-bind:title='"database"'
+        v-bind:index='"test111"'
+    ></kui-type>
+</div>
+<script>
+  var vm1=new Vue({
+    el:'#test1',
+    data:{
+        list:[
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8"
+        ],
+        ji:"jifukui"
+    },
+    components:{
+        'ji-type':{template:"<li>item: {{ji}}</li>",data(){ return{ji:'hahaha'}}},
+        'fu-type':{template:"<li>item: {{title}} {{name}} {{index}}</li>",props:['title','name','index']},
+        'kui-type':{template:"<li>kui: {{title}} {{name}} {{index}}</li>",props:['title','name','index']}
+    }
+});
+</script>
+</body>
+</html>
