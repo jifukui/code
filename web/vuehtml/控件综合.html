@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Vue 控件综合</title>
+<script src="./vue.js"></script>
+</head>
+<body>
+<div id="test1">
+    <p>输入文本</p>
+    <input v-model="message">
+    <br>
+    <br>
+    <textarea v-model="Message"></textarea>
+    <br>
+    <p>复选框</p>
+    <input type="checkbox" v-model="check">
+    <br>
+    <input type="checkbox"  id="checkbox1" value="json" v-model="check1" >
+    <label for="checkbox1">{{value}}</label>
+    <br>
+    <input type="checkbox"  id="checkbox2" value="Jack" v-model="check2" >
+    <label for="checkbox2">Jack</label>
+    <input type="checkbox"  id="checkbox3" value="John" v-model="check2" >
+    <label for="checkbox3">John</label>
+    <input type="checkbox"  id="checkbox4" value="Mike1" v-model="check2" >
+    <label for="checkbox4">Mike</label>
+    <br>
+    <div>Checked Name:{{check2}}</div>
+    <p>单选按钮</p>
+    <input type="radio" id="radio1" value="ONE" v-model='pick'>
+    <label for='radio1'>ONE</label>
+    <br>
+    <input type="radio" id="radio2" value="TWO" v-model='pick'>
+    <label for='radio1'>TWO</label>
+    <br>
+    <div>Pick is :{{pick}}</div>
+    <p>选择列表</p>
+    <!--multiple多行显示-->>
+    <select v-model="select">
+        <option>A</option>
+        <option>B</option>
+        <option>C</option>
+    </select>
+    <div>select is :{{select}}</div>
+</div>
+<script>
+  var vm1=new Vue({
+    el:'#test1',
+    data:{
+        jifukui:"just do it",
+        message:"",
+        Message:"",
+        check:true,
+        check1:true,
+        check2:[],
+        value:"",
+        value1:"",
+        pick:'',
+        select:''
+    },
+    methods:{
+        fclick:function()
+        {
+            if(this.check1)
+            {
+                this.value="a Have checked"
+                console.log("check")
+            }
+            else
+            {
+                this.value="no checked"
+                console.log("uncheck")
+            }
+        }
+    },
+    watch:{
+        /**监听的对象*/
+        check1:function(el){
+            this.value=this.check1?"checked":"no checked"
+        }
+    }
+});
+</script>
+</body>
+</html>
