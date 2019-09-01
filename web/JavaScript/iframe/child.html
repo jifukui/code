@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            H1{
+                color:brown;
+            }
+            button{
+                width: 50px;
+                height: 15px;
+            }
+        </style>
+        <script type="text/javascript"  src="jquery-lig.min.js"></script>
+        <script>
+            function test()
+            {
+                $("#child").attr("value","hahahah")
+            }
+        </script>
+    </head>
+    <body>
+        <H1>This is ji fukui test</H1>
+        <br>
+        <input id="child">
+        <br>
+        <button value="子按钮" onclick="test()"></button>
+        <script>
+            (function(){
+                console.log(window.self)
+                console.log(parent)
+                //window.self.$= 1
+                //console.log(window.self.$)
+            }())
+        </script>
+    </body>
+</html>

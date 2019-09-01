@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script type="text/javascript"  src="jquery-lig.min.js"></script>
+        <style>
+            button{
+                width: 50px;
+                height: 15px;
+            }
+        </style>
+    </head>
+    <body>
+        <input id="parten" value="test" >
+        <button onclick="changetext()" value="改变文档内容"></button>
+        <br>
+        <iframe id="iframe" style="width:300px;height: 200px;background-color: blue" src="./child.html"></iframe>
+        <script>
+            var jifukui=$.extend(window.$)
+            function changetext(){
+                $("#parten").attr("value","jifukui");
+                var iframe = $("iframe");
+                
+            }
+        </script>
+    </body>
+</html>
