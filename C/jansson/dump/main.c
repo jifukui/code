@@ -7,11 +7,12 @@ char JsonFromFile(char *filepath,char *data)
 	file=fopen(filepath,"r");
 	if(file)
 	{
+        printf("open file success\n");
 		unsigned int i;
 		for(i=0;i<8192;i++)
 		{
 			*(data+i)=fgetc(file);
-			
+			printf("the data is %c\n",*(data+i));
 			if(0==*(data+i))
 			{
 				break;
@@ -25,7 +26,7 @@ int main()
 {
 	char filepath[50]="./voltage_cfg.segment";
 	json_t *info;
-	char jsonfile[4096];
+	char jsonfile[8192];
 	json_error_t error;
 	if(JsonFromFile(filepath,jsonfile))
 	{
