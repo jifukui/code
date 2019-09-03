@@ -8,7 +8,7 @@ char JsonFromFile(char *filepath,char *data)
 	if(file)
 	{
 		unsigned int i;
-		for(i=0;i<4096;i++)
+		for(i=0;i<8192;i++)
 		{
 			*(data+i)=fgetc(file);
 			
