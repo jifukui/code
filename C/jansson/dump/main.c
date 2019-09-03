@@ -34,18 +34,16 @@ int main()
 		{
 			char *str;
 			str=json_dumps(info,JSON_PRESERVE_ORDER);
-			strcpy(data,str);
 			free(str);
 			if(str!=NULL)
 			{
 				str=NULL;
 			}
 			json_decref(info);
-			flag=1;
 		}
 		else
 		{
-			printf("Get voltage data error\n");
+			printf("Get voltage data error %s\n",error);
 		}
 	}
 	else
