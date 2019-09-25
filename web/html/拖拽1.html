@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>拖拽示例</title>
+        <script type="text/javascript">
+        function init(){
+            var source=document.getElementById("dragme");
+            var dest=document.getElementById("text");
+            var dragIcon=document.createElement("img");
+            dragIcon.src="http://twivatar.org/twitter/mini";
+            source.addEventListener("dragstart",function(ev){
+                var dt=ev.dataTransfer;
+                dt.effectAllowed="move";
+                dt.setDragImage(dragIcon,-10,-10);
+                dt.setData("text/plain","你好");
+            },false);
+            dest.addEventListener("dragend",function(ev){
+                ev.defaultPrevented();
+            },false);
+            dest.addEventListener("drop",function(ev){
+                var dt=ev.dataTransfer;
+                var text=dt.getData("text/plain");
+                dest.textContent+=text;
+                ev.preventDefault();
+                ev.stopPropagation();
+            },false);
+            document.ondrop=function(e){e.preventDefault()};
+            document.ondragover=function(e){e.preventDefault()};
+        }
+        </script>
+    </head>
+    <body onload="init()">
+        <div id="dragme" draggable="true" style="width:200px;border:solid 1px gray">请拖放</div>
+        <div id="text" style="width: 200px; height:200px;border:solid 1px gray"></div>
+    </body>
+</html>
