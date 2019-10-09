@@ -11,7 +11,16 @@
 }(this, (function () { 'use strict';
 
 /*  */
-
+function JifukuiPrintObject(str,obj)
+{
+  //return 
+  console.log("start "+str);
+  for(var data in obj)
+  {
+    console.log(str+" "+data+"  "+JSON.stringify(obj[data]));
+  }
+  console.log("end "+str);
+}
 // these helpers produces better vm code in JS engines due to their
 // explicitness and function inlining
 /**判断对象是否没有定义或者值为空 */
@@ -411,7 +420,9 @@ function once (fn)
 }
 /**数据服务器渲染 */
 var SSR_ATTR = 'data-server-rendered';
-/** */
+/**访问类型
+ * 组件，指令，过滤器
+ */
 var ASSET_TYPES = [
   'component',
   'directive',
@@ -2065,16 +2076,20 @@ function checkComponents (options)
 /**
  * Ensure all props option syntax are normalized into the
  * Object-based format.
+ * 规范设置子组件props的值
  */
 function normalizeProps (options, vm) 
 {
   var props = options.props;
+  /**判断options的props属性是否为空是返回 */
   if (!props) 
   { 
     return 
   }
+  /**对于props的值不为否的处理 */
   var res = {};
   var i, val, name;
+  /**判断props是否是数组对于是数组的处理 */
   if (Array.isArray(props)) 
   {
     i = props.length;
@@ -2083,6 +2098,7 @@ function normalizeProps (options, vm)
       val = props[i];
       if (typeof val === 'string') 
       {
+        /** */
         name = camelize(val);
         res[name] = { type: null };
       } 
@@ -2091,7 +2107,8 @@ function normalizeProps (options, vm)
         warn('props must be strings when using array syntax.');
       }
     }
-  } 
+  }
+  /**对于props是数组的处理 */ 
   else if (isPlainObject(props)) 
   {
     for (var key in props) 
@@ -2103,6 +2120,7 @@ function normalizeProps (options, vm)
         : { type: val };
     }
   } 
+  /**对于 */
   else if ("development" !== 'production' && props) 
   {
     warn(
@@ -2111,6 +2129,7 @@ function normalizeProps (options, vm)
       vm
     );
   }
+  /**设置options.props的值 */
   options.props = res;
 }
 
@@ -2119,8 +2138,10 @@ function normalizeProps (options, vm)
  */
 function normalizeInject (options, vm) 
 {
+  /**获取之前的值 */
   var inject = options.inject;
   var normalized = options.inject = {};
+  /**对于Inject属性为数组的处理 */
   if (Array.isArray(inject)) 
   {
     for (var i = 0; i < inject.length; i++) 
@@ -2128,6 +2149,7 @@ function normalizeInject (options, vm)
       normalized[inject[i]] = { from: inject[i] };
     }
   } 
+  /**对于inject为对象的处理 */
   else if (isPlainObject(inject)) 
   {
     for (var key in inject) 
@@ -2151,6 +2173,7 @@ function normalizeInject (options, vm)
 /**
  * Normalize raw function directives into object format.
  */
+/**规范设置directives的值 */
 function normalizeDirectives (options) 
 {
   var dirs = options.directives;
@@ -2206,15 +2229,19 @@ function mergeOptions (
   {
     child = child.options;
   }
-
+/**规范设置props的值 */
   normalizeProps(child, vm);
+/**规范设置inject的值 */
   normalizeInject(child, vm);
+/**规范设置 */
   normalizeDirectives(child);
+  /**对于extends的处理 */
   var extendsFrom = child.extends;
   if (extendsFrom) 
   {
     parent = mergeOptions(parent, extendsFrom, vm);
   }
+  /**对于mixins的处理 */
   if (child.mixins) 
   {
     for (var i = 0, l = child.mixins.length; i < l; i++) 
@@ -2224,10 +2251,12 @@ function mergeOptions (
   }
   var options = {};
   var key;
+  /**设置合并父组件的键 */
   for (key in parent) 
   {
     mergeField(key);
   }
+  /**设置合并子组件的键 */
   for (key in child) 
   {
     if (!hasOwn(parent, key)) 
@@ -2235,6 +2264,7 @@ function mergeOptions (
       mergeField(key);
     }
   }
+  /**合并域，对于 */
   function mergeField (key) 
   {
     var strat = strats[key] || defaultStrat;
@@ -2341,9 +2371,7 @@ var initProxy;
     );
   };
 
-  var hasProxy =
-    typeof Proxy !== 'undefined' &&
-    Proxy.toString().match(/native code/);
+  var hasProxy =typeof Proxy !== 'undefined' && Proxy.toString().match(/native code/);
 
   if (hasProxy) {
     var isBuiltInModifier = makeMap('stop,prevent,self,ctrl,shift,alt,meta,exact');
@@ -2372,23 +2400,30 @@ var initProxy;
   };
 
   var getHandler = {
-    get: function get (target, key) {
-      if (typeof key === 'string' && !(key in target)) {
+    get: function get (target, key) 
+    {
+      if (typeof key === 'string' && !(key in target)) 
+      {
         warnNonPresent(target, key);
       }
       return target[key]
     }
   };
-
-  initProxy = function initProxy (vm) {
-    if (hasProxy) {
+/**设置Vue的_renderProxy属性 */
+  initProxy = function initProxy (vm) 
+  {
+    JifukuiPrintObject("initProxy");
+    if (hasProxy) 
+    {
       // determine which proxy handler to use
       var options = vm.$options;
       var handlers = options.render && options.render._withStripped
         ? getHandler
         : hasHandler;
       vm._renderProxy = new Proxy(vm, handlers);
-    } else {
+    } 
+    else 
+    {
       vm._renderProxy = vm;
     }
   };
@@ -3515,7 +3550,7 @@ function deactivateChildComponent (vm, direct)
     callHook(vm, 'deactivated');
   }
 }
-
+/**回调钩子函数 */
 function callHook (vm, hook) 
 {
   var handlers = vm.$options[hook];
@@ -3625,7 +3660,8 @@ function flushSchedulerQueue ()
 
   // devtool hook
   /* istanbul ignore if */
-  if (devtools && config$1.devtools) {
+  if (devtools && config$1.devtools) 
+  {
     devtools.emit('flush');
   }
 }
@@ -4496,30 +4532,38 @@ var nextTick$1 = (function ()
   // that consistently queues the callback after all DOM events triggered in the
   // same loop is by using MessageChannel.
   /* istanbul ignore if */
-  if (typeof setImmediate !== 'undefined' && isNative$1(setImmediate)) {
+  if (typeof setImmediate !== 'undefined' && isNative$1(setImmediate)) 
+  {
     timerFunc = function () {
       setImmediate(nextTickHandler);
     };
-  } else if (typeof MessageChannel !== 'undefined' && (
+  } 
+  else if (typeof MessageChannel !== 'undefined' && (
     isNative$1(MessageChannel) ||
     // PhantomJS
     MessageChannel.toString() === '[object MessageChannelConstructor]'
-  )) {
+  )) 
+  {
     var channel = new MessageChannel();
     var port = channel.port2;
     channel.port1.onmessage = nextTickHandler;
     timerFunc = function () {
       port.postMessage(1);
     };
-  } else
+  } 
+  else
   /* istanbul ignore next */
-  if (typeof Promise !== 'undefined' && isNative$1(Promise)) {
+  if (typeof Promise !== 'undefined' && isNative$1(Promise)) 
+  {
     // use microtask in non-DOM environments, e.g. Weex
     var p = Promise.resolve();
-    timerFunc = function () {
+    timerFunc = function () 
+    {
       p.then(nextTickHandler);
     };
-  } else {
+  } 
+  else 
+  {
     // fallback to setTimeout
     timerFunc = function () {
       setTimeout(nextTickHandler, 0);
@@ -5044,9 +5088,11 @@ function bindObjectListeners (data, value)
   return data
 }
 
-/*  */
 
-function installRenderHelpers (target) {
+/**设置target的参数 */
+function installRenderHelpers (target) 
+{
+  JifukuiPrintObject("installRenderHelpers",target)
   target._o = markOnce;
   target._n = toNumber;
   target._s = toString;
@@ -5074,6 +5120,7 @@ function FunctionalRenderContext (
   Ctor
 ) 
 {
+  console.log("FunctionalRenderContext");
   var options = Ctor.options;
   this.data = data;
   this.props = props;
@@ -5081,7 +5128,10 @@ function FunctionalRenderContext (
   this.parent = parent;
   this.listeners = data.on || emptyObject;
   this.injections = resolveInject(options.inject, parent);
-  this.slots = function () { return resolveSlots(children, parent); };
+  this.slots = function () 
+  { 
+    return resolveSlots(children, parent); 
+  };
 
   // ensure the createElement function in functional components
   // gets a unique context - this is necessary for correct named slot check
@@ -5117,7 +5167,7 @@ function FunctionalRenderContext (
     this._c = function (a, b, c, d) { return createElement(contextVm, a, b, c, d, needNormalization); };
   }
 }
-
+/**这个是第一个运行的？ */
 installRenderHelpers(FunctionalRenderContext.prototype);
 
 function createFunctionalComponent (
@@ -5128,6 +5178,7 @@ function createFunctionalComponent (
   children
 ) 
 {
+  console.log("createFunctionalComponent");
   var options = Ctor.options;
   var props = {};
   var propOptions = options.props;
@@ -5149,7 +5200,7 @@ function createFunctionalComponent (
       mergeProps(props, data.props); 
     }
   }
-
+/** */
   var renderContext = new FunctionalRenderContext(
     data,
     props,
@@ -5633,6 +5684,7 @@ function initRender (vm)
 function renderMixin (Vue) 
 {
   // install runtime convenience helpers
+  console.log("renderMixin");
   installRenderHelpers(Vue.prototype);
 
   Vue.prototype.$nextTick = function (fn) 
@@ -5719,19 +5771,22 @@ function renderMixin (Vue)
 /*  */
 
 var uid$1 = 0;
-/**组件类 */
+/**初始化混入*/
 function initMixin (Vue) 
 {
+  JifukuiPrintObject("initMixin",Vue);
   Vue.prototype._init = function (options) 
   {
+    /**这里的this应该就是Vue$3 */
+    JifukuiPrintObject("initMixin this",this);
     var vm = this;
     // a uid
     vm._uid = uid$1++;
-
     var startTag, endTag;
     /* istanbul ignore if */
     if ("development" !== 'production' && config$1.performance && mark$1) 
     {
+
       startTag = "vue-perf-start:" + (vm._uid);
       endTag = "vue-perf-end:" + (vm._uid);
       mark$1(startTag);
@@ -5753,11 +5808,7 @@ function initMixin (Vue)
     } 
     else 
     {
-      vm.$options = mergeOptions(
-        resolveConstructorOptions(vm.constructor),
-        options || {},
-        vm
-      );
+      vm.$options = mergeOptions(resolveConstructorOptions(vm.constructor),options || {},vm);
     }
     /* istanbul ignore else */
     /** */
@@ -5815,6 +5866,7 @@ function initInternalComponent (vm, options)
 /** */
 function resolveConstructorOptions (Ctor) 
 {
+  JifukuiPrintObject("resolveConstructorOptions",Ctor);
   var options = Ctor.options;
   if (Ctor.super) 
   {
@@ -5886,17 +5938,16 @@ function dedupe (latest, extended, sealed)
     return latest
   }
 }
-
+/**创建对象应该是调用的这个函数 options是传入对象的数据参数 */
 function Vue$3 (options) 
 {
   /**判断是否是使用New创建的vue */
-  if ("development" !== 'production' &&
-    !(this instanceof Vue$3)
-  ) 
+  JifukuiPrintObject("Vue$3",options);
+  if ("development" !== 'production' &&!(this instanceof Vue$3)) 
   {
     warn('Vue is a constructor and should be called with the `new` keyword');
   }
-  /**初始化 */
+  /**初始化Vue对象 */
   this._init(options);
 }
 /**初始化入口 */
@@ -5941,7 +5992,7 @@ function initUse (Vue)
 }
 
 
-/**初始化 */
+/**初始化合并的属性，即合并子组件和父组件的属性 */
 function initMixin$2 (Vue) 
 {
   console.log("inittMixin$2 "+JSON.stringify(this));
@@ -5953,8 +6004,10 @@ function initMixin$2 (Vue)
   };
 }
 
-/*  */
 
+/**初始化延伸
+ * 定义vue的extend方法
+ */
 function initExtend (Vue) 
 {
   /**
@@ -5968,8 +6021,10 @@ function initExtend (Vue)
   /**
    * Class inheritance
    */
+  /**定义对象的延伸函数 */
   Vue.extend = function (extendOptions) 
   {
+    console.log("initExtend ");
     extendOptions = extendOptions || {};
     var Super = this;
     var SuperId = Super.cid;
@@ -6064,8 +6119,7 @@ function initComputed$1 (Comp)
   }
 }
 
-/*  */
-
+/**初始化资产注册 */
 function initAssetRegisters (Vue) 
 {
   /**
@@ -6078,6 +6132,7 @@ function initAssetRegisters (Vue)
       definition
     ) 
     {
+      console.log("initAssetRegisters type "+type+" id "+id+" definition "+definition);
       if (!definition) 
       {
         return this.options[type + 's'][id]
@@ -6110,9 +6165,7 @@ function initAssetRegisters (Vue)
   });
 }
 
-/*  */
 
-/*  */
 
 function getComponentName (opts) 
 {
@@ -6324,13 +6377,16 @@ function initGlobalAPI (Vue)
   console.log("initGlobalAPI "+JSON.stringify(Vue));
   /**将keeplive属性添加至Vue.options.components中 */
   extend(Vue.options.components, builtInComponents);
-
+  /**初始化use属性 */
   initUse(Vue);
+  /**合并子组件和父组件的属性 */
   initMixin$2(Vue);
+  /**定义vue的extend方法 */
   initExtend(Vue);
+  /** */
   initAssetRegisters(Vue);
 }
-
+/**这个应该是对象的主函数吧 */
 initGlobalAPI(Vue$3);
 
 Object.defineProperty(Vue$3.prototype, '$isServer', 
