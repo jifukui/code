@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <title>绘制路径</title>
+    </head>
+    <body>
+        <canvas id="canvas" width="500" height="500"></canvas>
+        <script>
+            function draw(){
+                var dist=document.getElementById("canvas");
+                if(dist.getContext)
+                {
+                    console.log("支持canvas");
+                    var content=dist.getContext("2d");
+                    content.strokeStyle="green";
+                    content.beginPath();
+                    content.arc(100,100,99,0,2*Math.PI,false);
+                    content.moveTo(194,100);
+                    content.arc(100,100,94,2*Math.PI,false);
+                    content.moveTo(100,100);
+                    content.lineTo(100,35);
+                    content.moveTo(100,100);
+                    content.lineTo(35,100);
+                    content.stroke();
+                }
+                else
+                {
+                    console.log("不支持canvas");
+                }
+            }
+            draw();
+        </script>
+    </body>
+</html>

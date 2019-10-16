@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <title>字体的处理</title>
+    </head>
+    <body>
+        <canvas id="canvas" width="500" height="500"></canvas>
+        <script>
+            function draw(){
+                var dist=document.getElementById("canvas");
+                if(dist.getContext)
+                {
+                    console.log("支持canvas");
+                    var content=dist.getContext("2d");
+                    content.strokeStyle="green";
+                    content.beginPath();
+                    content.arc(100,100,99,0,2*Math.PI,false);
+                    content.moveTo(194,100);
+                    content.arc(100,100,94,2*Math.PI,false);
+                    content.translate(100,100);
+                    //content.rotate(1);
+                    //content.scale(2,2);
+                    content.moveTo(0,0);
+                    content.lineTo(0,35);
+                    content.moveTo(0,0);
+                    content.lineTo(-35,0);
+                    content.stroke();
+                    content.font="bold 14px Arial";
+                    content.textAlign="left";
+                    content.textBaseline="middle";
+                    //content.fillText("12",100,20);
+                    content.strokeText("12",100,20);
+                }
+                else
+                {
+                    console.log("不支持canvas");
+                }
+            }
+            function draw1(){
+                var dist=document.getElementById("canvas");
+                var content=dist.getContext("2d");
+                content.rotate(1);
+            }
+            draw();
+            //draw1();
+        </script>
+    </body>
+</html>
