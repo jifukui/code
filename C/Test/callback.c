@@ -1,15 +1,15 @@
 #include <stdio.h>
 typedef struct  Person{
-    char name[12];
+    char* name;
     unsigned age;
     void (*display)();
-} typedef person;
-void (*test)(){
-    printf("hhahaahah");
+}  person;
+void test(){
+    printf("hhahaahah\n");
 }
 int main()
 {
-     struct person ji;
+     person ji;
      ji.name="jifukui";
      ji.age=28;
      ji.display=test;
