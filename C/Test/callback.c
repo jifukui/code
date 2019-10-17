@@ -1,9 +1,9 @@
 #include <stdio.h>
-struct typedef person{
+struct typedef Person{
     char name[12];
     unsigned age;
     void (*display)();
-}Person;
+} typedef person;
 void (*test)(){
     printf("hhahaahah");
 }
