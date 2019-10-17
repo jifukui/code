@@ -1,5 +1,5 @@
 #include <stdio.h>
-struct typedef Person{
+typedef struct  Person{
     char name[12];
     unsigned age;
     void (*display)();
