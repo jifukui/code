@@ -1,11 +1,14 @@
 const path=require("path");
-const ExtractTextPlugin=require('extract-text-webpack-plugin');
+//const ExtractTextPlugin=require('extract-text-webpack-plugin');
 module.exports={
-    entry:'./main.js',
-    output:{
-        filename:'bundle.js',
-        path:path.resolve(__dirname,"./dist")
+    entry:{
+        utils:'./utils.js',
+        audioswitch:'./audioswitch.js'
     },
+    output:{
+        filename:'[name].js',
+        path:path.resolve(__dirname,"./dist")
+    }/*,
     module:{
         rules:[
             {
@@ -23,5 +26,5 @@ module.exports={
         new ExtractTextPlugin({
             filename:'[name]_[contenthash:8].css'
         })
-    ]
+    ]*/
 }

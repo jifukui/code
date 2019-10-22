@@ -5778,7 +5778,8 @@ function initMixin (Vue)
   Vue.prototype._init = function (options) 
   {
     /**这里的this应该就是Vue$3 */
-    JifukuiPrintObject("initMixin this",this);
+    //JifukuiPrintObject("initMixin this",this);
+    JifukuiPrintObject("options is ",options);
     var vm = this;
     // a uid
     vm._uid = uid$1++;
@@ -5849,6 +5850,7 @@ function initInternalComponent (vm, options)
 {
   var opts = vm.$options = Object.create(vm.constructor.options);
   // doing this because it's faster than dynamic enumeration.
+  JifukuiPrintObject("initInternalComponent opts is ",opts);
   opts.parent = options.parent;
   opts.propsData = options.propsData;
   opts._parentVnode = options._parentVnode;
