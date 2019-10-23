@@ -9,13 +9,13 @@ int main(int argc,char **argv )
     if(rc)
     {
         fprintf(stderr,"Can't open databases: %s\n",sqlite3_errmsg(db));
-        printf("%s",stderr);
+        //printf("%s",stderr);
         exit(0);
     }
     else
     {
         fprintf(stderr,"opened database successful\n");
-        printf("%s",stderr);
+        //printf("%s",stderr);
     }
     sqlite3_close(db);
 }
