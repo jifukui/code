@@ -3,7 +3,7 @@
 int main(int argc,char **argv )
 {
     sqlite3 *db;
-    char *zErrmsg=null;
+    char *zErrmsg=NULL;
     int rc;
     rc=sqlite3_open("test.db",&db);
     if(rc)
