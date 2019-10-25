@@ -1,5 +1,5 @@
 const print=console.log;
-/**对象属性 */
+/**对象属性,这个现在好像不支持 */
 {
     let data={
         a:{
