@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <script src="../vue.js" type="application/javascript"></script>
+    </head>
+    <body>
+        <div id="app">
+        </div>
+        <script>
+            var vm1=Vue.filter("ji",function(data){
+                return data+" jifukui"
+            });
+            var vm=new Vue({
+                el:'#app',
+                data:{
+                    name:"jifukui",
+                    paly:"dota and football"
+                },
+                template:'<div>\
+                            <div>{{name|ji}}</div>\
+                            <div>{{paly|ji}}</div>\
+                        </div>'
+
+            })
+        </script>
+    </body>
+</html>

@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <script src="../vue.js" type="application/javascript"></script>
+    </head>
+    <body>
+        <div id="app">
+            <input type="text" v-model="value"/>
+            <div>{{data|ji}}</div>
+        </div>
+        <script>
+            Vue.filter("ji",{
+                read:function(value)
+                {
+                    data= value/1000;
+                }
+            })
+            var vm=new Vue({
+                el:'#app',
+                data:{
+                   value:1000,
+                   data:0
+                }
+            })
+        </script>
+    </body>
+</html>
