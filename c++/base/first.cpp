@@ -1,4 +1,4 @@
-#include <iostream.h>
+#include <iostream>
 int main()
 {
     using namespace std;
