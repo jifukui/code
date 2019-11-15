@@ -18,5 +18,5 @@ int main()
     {
         /* code */
     }
-    printf("pid=%d;glob=%d;var=%d\n",(long)getpid(),global,var);
+    printf("pid=%d;glob=%d;var=%d\n",(long)getpid(),global,val);
 }
