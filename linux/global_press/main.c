@@ -1,10 +1,10 @@
 #include <stdio.h>
 #include <unistd.h>
-int global=0;
+int global=1;
 int main()
 {
     pid_t pid;
-    int val;
+    int val=10;
     if((pid<fork())<0)
     {
         printf("fork error\n");
