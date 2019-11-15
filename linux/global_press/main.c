@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <unistd.h>
 int global=0;
 int main()
 {
