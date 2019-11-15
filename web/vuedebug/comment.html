@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Vue 组件传参</title>
+<script src="./vue_ji.js"></script>
+</head>
+<body>
+    <div id="blog-posts-events-demo">
+      <div :style="{ fontSize: postFontSize + 'em' }">
+        <blog-post
+          v-for="post in posts"
+          v-bind:key="post.id"
+          v-bind:post="post"
+          v-on:enlarge-text1="postFontSize += $event"
+          v-on:enlarge-text2="onEnlargeText"
+        ></blog-post>
+        <div v-for="post in posts">{{post.title}}</div>
+        <input v-model="searchText">
+      </div>
+    </div>
+    <div id="jitest">
+      <div v-model="name">{{name}}</div>
+      <div v-if="show">{{name}}</div>
+    </div>
+    <div id="test1">
+      <div v-jifukui-directive:nameji.a="{color:'yellow'}" name="jianghu" a="paramA" b="ParamB"><div>{{jifukui}}</div></div>
+  </div>
+<script>
+  Vue.component('blog-post', {
+  props: ['post'],
+  template: `
+    <div class="blog-post">
+        <h3>{{ post.title }}</h3>
+        <button v-on:click="$emit('enlarge-text1', 0.1)">
+            Enlarge text
+        </button>
+        <button v-on:click="$emit('enlarge-text2', 0.2)">
+            Enlarge text
+        </button>
+        <div v-html="post.content"></div>
+    </div>
+  `
+})
+Vue.component('custom-input', {
+  props: ['value'],
+  template: `
+    <input
+      v-bind:value="value"
+      v-on:input="$emit('input', $event.target.value)"
+    >
+  `
+})
+  var vm1=new Vue({
+  el: '#blog-posts-events-demo',
+  data: {
+    posts: [
+        { id: 1, title: 'My journey with Vue' },
+        { id: 2, title: 'Blogging with Vue' },
+        { id: 3, title: 'Why Vue is so fun' }
+    ],
+    postFontSize: 1,
+    searchText:"test"
+  },
+  methods:{
+    onEnlargeText:function(value){
+        this.postFontSize+=value
+    }
+  }
+});
+var vm=new Vue({
+  el:'#jitest',
+  data:{
+    name:"hello,world",
+    show:true
+  }
+});
+var vm2=new Vue({
+    el:'#test1',
+    data:{
+        jifukui:"我自己的组件"
+    },
+    directives:{
+        'jifukui-directive':{
+            params:['a','b','name'],
+            insert:function(el,binding)
+            {
+                el.style.backgroundColor="blue"
+                console.log("I have insert")
+            },
+            bind:function(el){
+                
+                el.style.backgroundColor="red"
+                console.log(el.getAttribute("name"))
+                console.log(this.params)
+                console.log("i Have bind")
+            },
+            update:function(el,binding,vnode,params)
+            {
+                console.log(s(binding.name))
+                console.log("I have update")
+                el.style.backgroundColor=binding.value.color
+                console.log(params.a)
+                console.log(el.getAttribute("name"))
+                console.log(el.getAttribute("a"))
+                    el.innerHTML =
+                                'name: '       + s(binding.name) + '<br>' +
+                                'value: '      + s(binding.value) + '<br>' +
+                                'expression: ' + s(binding.expression) + '<br>' +
+                                'argument: '   + s(binding.arg) + '<br>' +
+                                'modifiers: '  + s(binding.modifiers) + '<br>' +
+                                'vnode keys: ' + Object.keys(vnode).join(', ')
+            },
+            unbind:function(el){
+                console.log(el.value);
+                console.log("i have unbind")
+            },
+
+        }
+    }
+  });
+</script>
+</body>
+</html>

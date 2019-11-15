@@ -39,7 +39,7 @@ function applyMixins(derivedCtos:any,baseCtos:any[]) {
             return "mooncake";
         }
     }
-    class Mammal{
+    class Mammal extends Animal{
         breathe():string{
             return "I'm alive";
         }
@@ -47,7 +47,7 @@ function applyMixins(derivedCtos:any,baseCtos:any[]) {
             return "Mammal";
         }
     }
-    class WingedAnimal{
+    class WingedAnimal extends Animal{
         fly():string{
             return "I can Fly";
         }
