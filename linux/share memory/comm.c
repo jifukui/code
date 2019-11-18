@@ -17,7 +17,7 @@ static int CommShm(int size,int flags)
 }
 int DestoryShm(int shmid)
 {
-    if(shmctl(shmid.IPC_RMID,NULL)<0)
+    if(shmctl(shmid,IPC_RMID,NULL)<0)
     {
         perror("shmctl error\n");
         return -1;
@@ -26,7 +26,7 @@ int DestoryShm(int shmid)
 }
 int CreateShm(int size)
 {
-    return CommShm(size,IPC_CREAT|IPC_EXECL|0666);
+    return CommShm(size,IPC_CREAT|IPC_EXCL|0666);
 }
 int GetShm(int size)
 {
