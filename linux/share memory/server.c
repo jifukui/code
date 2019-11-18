@@ -12,7 +12,7 @@ int main()
     }
     shmdt(addr);
     sleep(2);
-    DertoryShm(shmid);
+    DestoryShm(shmid);
     return 0;
     
 }
