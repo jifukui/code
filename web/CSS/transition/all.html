@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <style>
+            div{
+                background-color: brown;
+                width: 100px;
+                height: 100px;
+                transition:  2s;
+                -moz-transition:  2s;
+                -webkit-transition:  2s;
+                -o-transition:  2s;
+            }
+        </style>
+        <script>
+            var test;
+            var top1=0;
+            var left1=0;
+            function init()
+            {
+                console.log("hello ");
+                test=document.getElementById("jifukui");
+                setInterval(ji,2000);
+            }
+            function ji()
+            {
+                top1+=100;
+                left1+=200;
+                top1%=900;
+                left1%=1700;
+                console.log(`-webkit-transform:translate(${left1}px,${top1}px);`);
+                test.style=`-webkit-transform:translate(${left1}px,${top1}px);width:100px;height:100px`; 
+            }
+        </script>
+    </head>
+    <body onload="init()">
+        <div onclick="ji()" id="jifukui" style="padding: 20px;" title="jifukui"  >
+            hahahahha
+        </div>
+    </body>
+</html>
