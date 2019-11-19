@@ -29,10 +29,10 @@ void phil(int num)
     while (1)
     {
         printf("%d is thinking ...\n",num);
-        sleep(rand()%5);
+        sleep(1);
         get_sour(num);
         printf("%d start eating...\n",num);
-        sleep(rand()%3);
+        sleep(1);
         printf("%d end eating...\n",num);
         free_sour(num);
     }  
