@@ -1,0 +1,18 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <script type="text/javascript">
+            if(localStorage.count)
+            {
+                localStorage.count=parseInt(localStorage.count)+1;
+            }
+            else
+            {
+                localStorage.count=1;
+            }
+            document.write(`visit is ${localStorage.count}`);
+        </script>
+    </body>
+</html>

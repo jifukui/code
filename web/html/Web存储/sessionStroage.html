@@ -1,0 +1,18 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <script type="text/javascript">
+            if(sessionStorage.count)
+            {
+                sessionStorage.count=parseInt(sessionStorage.count)+1;
+            }
+            else
+            {
+                sessionStorage.count=1;
+            }
+            document.write(`visit is ${sessionStorage.count}`);
+        </script>
+    </body>
+</html>
