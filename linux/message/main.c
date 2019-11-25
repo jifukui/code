@@ -1,8 +1,11 @@
 #include <sys/types.h>
 #include <sys/msg.h>
+#include <sys/ipc.h>
+#include <stdio.h>
+#define NUM 5
 int main()
 {
-    ket_t keyid;
+    key_t keyid;
     keyid=ftok(".",1);
     int msqid=0;
     printf("The father id is %d\n",getpid());
@@ -14,25 +17,27 @@ int main()
     int i=0;
     int err=0;
     int value=-1;
-    for(i;i<15;i++)
+	int num=0;
+    for(i;i<NUM;i++)
     {
         err=fork();
         if(err==0)
         {
-            err=msgsend(msqid,&i,sizeof i,0);
-            printf("The child id is %d\n",getpid());
+            err=msgsnd(msqid,&i,sizeof i,0);
+            printf("The child id is %d send value is %d\n",getpid(),i);
             if(err<0)
             {
-                printf("have error");
+                printf("have error of send message\n");
             }
+			exit(0);
         }
         else if(err<0)
         {
-            printf("Have error\n");
+            printf("Have error of fork\n");
         }
         else
         {
-            err=msgrvc(msqid,&value,10,0);
+            err=msgrcv(msqid,&value,10,0,0);
             if(err<0)
             {
                 printf("get value error\n");
@@ -44,5 +49,20 @@ int main()
             
         }     
     }
-
+	pid_t childpid=0;
+	do{
+		childpid=wait(NULL);
+		if(childpid==-1)
+		{
+			printf("have error\n");
+		}
+		else
+		{
+			num++;
+			printf("father have know child %d have over\n",getpid());
+		}
+	}while(num<NUM);
+	printf("All of this have over");
+	msgctl(msqid,IPC_RMID,0);
+	return 0;
 }
