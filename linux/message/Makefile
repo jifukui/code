@@ -1,6 +1,6 @@
 CC=gcc
 CFLAGS=
-Page85:main.o
-	$(CC) $(CFLAGS) -o Page85.exe main.o
+message:main.o
+	$(CC) $(CFLAGS) -o message.exe main.o
 main.o:main.c
 	$(CC) $(CFLAGS) -c main.c

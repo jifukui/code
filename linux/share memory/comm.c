@@ -1,6 +1,7 @@
 #include "comm.h"
 static int CommShm(int size,int flags)
 {
+    /**获取资源唯一标识符*/
     key_t key=ftok(PATHNAME,PROJ_ID);
     if(key<0)
     {
@@ -8,6 +9,7 @@ static int CommShm(int size,int flags)
         return -1;
     }
     int shmid=0;
+    /**获取共享内存*/
     if((shmid=shmget(key,size,flags))<0)
     {
         perror("shmget error\n");

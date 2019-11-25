@@ -1,67 +1,124 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
 #include <sys/ipc.h>
 #include <sys/sem.h>
-#include <string.h>
-int semid;
-union semun{
-    int value;
+#include <sys/types.h>
+#include <stdio.h>
+#include <errno.h>
+#include <stdlib.h>
+/**
+ * 创建信号量int semget(key_t key, int nsems, int semflg)
+ * key为信号量的标识符，nsems为信号量的数量，semflg为权限的标识符
+*/
+union semun
+{
+    int val;
+    struct semid_ds *buf;
+    unsigned short int *array;
+    struct seminfo *__buf;
 };
-void get_sour(int num)
+int binary_semaphore_allocation(key_t key,int sem_flags)
 {
-    struct sembuf sb[2]={
-        {num,-1,0},
-        {(num+1)%5,-1,0}
-    };
-    semop(semid,sb,2);
+    return semget(key,1,sem_flags);
 }
-void free_sour(int num)
+int binary_semaphore_deallocate(int semid)
 {
-    struct sembuf sb[2]={
-        {num,-1,0},
-        {(num+1)%5,-1,0}
-    };
-    semop(semid,sb,2);
+    union semun ignored_argument;
+    return semctl(semid,1,IPC_RMID,ignored_argument);
 }
-void phil(int num)
+int binary_semaphore_initialize(int semid)
 {
-    while (1)
-    {
-        printf("%d is thinking ...\n",num);
-        sleep(1);
-        get_sour(num);
-        printf("%d start eating...\n",num);
-        sleep(1);
-        printf("%d end eating...\n",num);
-        free_sour(num);
-    }  
+    union semun argument;
+    unsigned short values[1];
+    values[0]=1;
+    argument.array=values;
+    return semctl(semid,0,SETALL,argument);
+}
+int binary_semaphore_wait(int semid)
+{
+    struct sembuf operations[1];
+    operations[0].sem_num=0;
+    operations[0].sem_op=-1;
+    operations[0].sem_flg=SEM_UNDO;
+    printf("waitting is %d\n",(int)getpid());
+    return semop(semid,operations,1);
+}
+int binary_semaphore_post(int semid)
+{
+    struct sembuf operations[1];
+    operations[0].sem_num=0;
+    operations[0].sem_op=1;
+    operations[0].sem_flg=SEM_UNDO;
+    printf("process is %d\n",(int)getpid());
+	sleep(1);
+    return semop(semid,operations,1);
 }
 int main()
 {
-    srand(getpid());
-    semid=semget(1234,5,IPC_CREAT|0600);
+	//extern int errno;
+	key_t semid;
+	key_t key;
+	key=ftok(".",1);
+	errno=0;
+    int err=0; 
+	semid=binary_semaphore_allocation(key,IPC_CREAT |0666);
+	printf("father is %d semid is %d key is %d\n",getpid(),(int)semid,(int)key);
     if(semid==-1)
     {
-        printf("semment error\n");
-        return 0;
+        printf("error of greated %d %s\n",errno,strerror(errno));
+		exit(1);
     }
-    union  semun s;
-    s.value=1;
+	errno=0;
+    err=binary_semaphore_initialize(semid);
+    if(err==-1)
+    {
+        printf("init error %d %s\n",errno,strerror(errno));
+		exit(2);
+    }
     int i=0;
     for(i;i<5;i++)
     {
-        semctl(semid,i,SETVAL,s);
-    }
-    int num=0;
-    for(i=1;i<5;i++)
-    {
-        pid_t pid=fork();
-        if(pid==0)
+        err=fork();
+        if(err<0)
         {
-            num=i;
-            break;
-        }        
+            printf("%d have error\n",i);
+        }
+        else if(err==0)
+        {
+            printf("great is %d\n",(int)getpid());
+            binary_semaphore_wait(semid);
+            binary_semaphore_post(semid);
+			printf("end of this %d\n",getpid());
+			exit(0);
+        }
+        
     }
-    phil(num);
+	printf("Hello ,this is father\n");
+	int num=0;
+	pid_t childpid;
+	do{
+		childpid=wait(NULL);
+		if(childpid==-1)
+		{
+			if(errno==ECHILD)
+			{
+				printf("all of child have over\n");
+				err=binary_semaphore_deallocate(semid);
+				if(err==-1)
+				{
+					printf("error is %d info is %s\n",errno,strerror(errno));
+				}
+				break;
+			}
+			else
+			{
+				printf("have some error\n");
+			}
+		}
+		else
+		{
+			num++;
+			printf("father have know The child %d have over is the %d\n",(int)childpid,num);
+		}
+	}while(num<6);
+	printf("Hello father have end\n");	
+	return 0;
 }
