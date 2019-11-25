@@ -2,6 +2,7 @@
 #include <sys/msg.h>
 #include <sys/ipc.h>
 #include <stdio.h>
+#include <errno.h>
 #define NUM 5
 int main()
 {
@@ -18,6 +19,7 @@ int main()
     int err=0;
     int value=-1;
 	int num=0;
+    int errno;
     for(i;i<NUM;i++)
     {
         err=fork();
@@ -27,7 +29,7 @@ int main()
             printf("The child id is %d send value is %d\n",getpid(),i);
             if(err<0)
             {
-                printf("have error of send message\n");
+                printf("have error of send message info is %s \n",strerrno(errno));
             }
 			exit(0);
         }
