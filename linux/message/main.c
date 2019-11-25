@@ -4,6 +4,10 @@
 #include <stdio.h>
 #include <errno.h>
 #define NUM 5
+struct mymsg{
+	long mtype;
+	int mvalue;
+};
 int main()
 {
     key_t keyid;
@@ -25,11 +29,14 @@ int main()
         err=fork();
         if(err==0)
         {
-            err=msgsnd(msqid,&i,sizeof i,0);
+			struct mymsg msg;
+			msg.mtype=1;
+			msg.mvalue=i;
+            err=msgsnd(msqid,&msg,sizeof(int),IPC_NOWAIT);
             printf("The child id is %d send value is %d\n",getpid(),i);
-            if(err<0)
+            if(err==-1)
             {
-                printf("have error of send message info is %s \n",strerrno(errno));
+                printf("have error of send message info is %s \n",strerror(errno));
             }
 			exit(0);
         }
@@ -39,20 +46,23 @@ int main()
         }
         else
         {
-            err=msgrcv(msqid,&value,10,0,0);
+			//sleep(1);
+			struct mymsg value;	
+            err=msgrcv(msqid,&value,sizeof(int),0,IPC_NOWAIT);
             if(err<0)
             {
                 printf("get value error\n");
             }
             else
             {
-                printf("Get The value success is %d\n",value);
+                printf("Get The value success is %d\n",value.mvalue);
             }
             
         }     
     }
 	pid_t childpid=0;
 	do{
+		printf("waitting ... ...\n");
 		childpid=wait(NULL);
 		if(childpid==-1)
 		{
