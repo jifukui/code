@@ -22,9 +22,8 @@
 </head>
 <body>
 <div id="test1">
-    <div v-bind:class="[classA,{classB:isB,classC:isC}]">样式改变效果</div>
-    <input type="button" @click="changestyle()" value="点击改变样式">
-    <!--classA为类的名称，后面的classB classC 是此类是否存在修改数据的时候记得不需要使用data---->
+    <div v-bind:class="[classA,{classB:isB,classC:isC}]" :id="'div1'">样式改变效果</div>
+    <input :id="'button'" :[test]="value" :style="{color:color1,width:bwidth,height:'30px'}"  type="button" @click="changestyle()">
 </div>
 <script>
     var num=false;
@@ -33,7 +32,11 @@
     data:{
         classA:'font',
         isB:true,
-        isC:false
+        isC:false,
+        value:"默认样式",
+        color1:"red",
+        bwidth:"150px",
+        test:"value"
     }
 });
 var changestyle=()=>
@@ -43,11 +46,13 @@ var changestyle=()=>
     {
         vm1.classA="fontbig"
         vm1.isC=true;
+        vm1.value="修改后的样式"
     }
     else
     {
         vm1.classA="font"
         vm1.isC=false;
+        vm1.value="默认样式"
     }
 }
 </script>
