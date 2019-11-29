@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Vue v-bind</title>
+<script src="https://cdn.bootcss.com/vue/2.6.2/vue.min.js"></script>
+<style>
+    .font{
+        font-size: 20px;
+    }
+    .classB
+    {
+        color: blue;
+    }
+    .classC{
+        color: brown;
+    }
+    .fontbig{
+        font-size: 30px;
+    }
+</style>
+</head>
+<body>
+<div id="test1">
+    <div v-bind:class="[classA,{classB:isB,classC:isC}]">样式改变效果</div>
+    <input type="button" @click="changestyle()" value="点击改变样式">
+    <!--classA为类的名称，后面的classB classC 是此类是否存在修改数据的时候记得不需要使用data---->
+</div>
+<script>
+    var num=false;
+    var vm1=new Vue({
+    el:'#test1',
+    data:{
+        classA:'font',
+        isB:true,
+        isC:false
+    }
+});
+var changestyle=()=>
+{
+    num=!num;
+    if(num)
+    {
+        vm1.classA="fontbig"
+        vm1.isC=true;
+    }
+    else
+    {
+        vm1.classA="font"
+        vm1.isC=false;
+    }
+}
+</script>
+</body>
+</html>
