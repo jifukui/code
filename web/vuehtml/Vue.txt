@@ -1,4 +1,4 @@
-Vue的常用属性
+﻿Vue的常用属性
 el:挂载点
 data：数据
 template：模板
@@ -35,3 +35,4 @@ compile
 observervable
 version
 内置组件
+实例属性：
