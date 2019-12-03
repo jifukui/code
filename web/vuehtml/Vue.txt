@@ -5,6 +5,7 @@ template：模板
 props：
 methods：方法
 computed：计算属性
+watch
 Vue常用的指令
 v-text
 v-html
@@ -20,3 +21,17 @@ v-slot
 v-pre
 v-cloak
 v-once
+Vue全局API
+extend
+nextTick
+set
+delete
+directive
+filter
+component
+use
+mixin
+compile
+observervable
+version
+内置组件
