@@ -1,0 +1,5 @@
+编辑过程 hello.c
+预编译过程：gcc -E hello.c -o hello.i
+编译过程：gcc -S hello.i -o hello.s
+汇编过程：gcc -c hello.s -o hello.o
+连接过程：gcc  hello.o -o hello
