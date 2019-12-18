@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>盒类型的使用</title>
+        <meta charset="utf-8">
+        <style>
+            div p{
+                border: red solid 3px;
+            }
+            div div{
+                border: red solid 3px;
+            }
+        </style>
+    </head>
+    <body>
+        <article>盒类型的使用</article>
+        <div style="width: 100%;height: 100%;">
+            <p>这个是原始的p标签的使用</p>
+            <p style="display: inline;">这个是行内属性</p>
+            <div style="display: inline-block;">
+                <input type="text" style="display: block;">
+                <input type="button">
+                <input type="checkbox">
+            </div>
+        </div>
+    </body>
+</html>

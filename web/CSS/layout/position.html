@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>浮动的九宫格布局</title>
+        <meta charset="utf-8">
+        <style>
+            div div{
+                background-color: salmon;
+                width: 60px;
+                height: 60px;
+                margin: 3px;
+            }
+            p:first-of-type{
+                position: relative;
+                top: -12px;
+                left: 0px;
+                color: black;
+            }
+            P:last-of-type{
+                position: relative;
+                top:-52px;
+                left: 34px;
+                color: red;
+            }
+            p:nth-child(2)
+            {
+                position: relative;
+                top: -30px;
+                left: 20px;
+                color: darkblue;
+            }
+        </style>
+    </head>
+    <body>
+        <div style="width: 100%;height: 100%;background-color: seashell;">
+            <div style="float: left;"><p>1</p><p>A</p><p>on</p></div>
+            <div style="float: left;"><p>2</p><p>B</p><p>on</p></div>
+            <div style="float: left;"><p>3</p><p>C</p><p>on</p></div>
+            <div style="visibility: hidden;clear: both; height: 0px;"></div>
+            <div style="float: left;"><p>4</p><p>D</p><p>on</p></div>
+            <div style="float: left;"><p>5</p><p>E</p><p>on</p></div>
+            <div style="float: left;"><p>6</p><p>F</p><p>off</p></div>
+            <div style="visibility: hidden;clear: both;height: 0px;"></div>
+            <div style="float: left;"><p>7</p><p>G</p><p>off</p></div>
+            <div style="float: left;"><p>8</p><p>H</p><p>off</p></div>
+            <div style="float: left;"><p>9</p><p>I</p><p>off</p></div>
+        </div >
+    </body>
+</html>

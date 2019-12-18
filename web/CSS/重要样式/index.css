@@ -1,0 +1,7 @@
+@import "./base.css";
+p{
+    color: red;
+};
+b{
+    font-size: 12px;
+}
