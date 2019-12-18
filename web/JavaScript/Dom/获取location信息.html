@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>获取Location信息</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <script>
+            var a=document;
+            var data=["protocol","host","hostname","port","pathname","search","hash"];
+            //a.location.hash
+            a.writeln("<pre>");
+            data.forEach(function(value){
+                a.writeln(value+":"+a.location[value])
+            });
+            a.writeln("</pre>");
+        </script>
+    </body>
+</html>

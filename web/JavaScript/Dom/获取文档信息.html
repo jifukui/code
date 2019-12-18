@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>获取文档信息</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <script>
+            var a=document;
+            var data=["charset","characterSet","compatMode","defaultCharset","dir","domain","lastModified","referrer","title","timeline"];
+            a.writeln("<pre>");
+            data.forEach(function(value){
+                a.writeln(value+":"+a[value])
+            });
+            a.writeln("</pre>");
+        </script>
+    </body>
+</html>
