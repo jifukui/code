@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>readystate和load的使用</title>
+        <script src="../jquery-3.3.1.js" defer></script>
+        <link rel="stylesheet" type="text/css" href="../common.css">
+        <script>
+            //var a=document.getElementsByTagName("body");
+            //a.onload=load();
+            //document.onreadystatechange=load("change "+document.readyState);
+            document.onreadystatechange=function()
+            {
+                console.log(document.readyState);
+                load("change "+document.readyState)
+            }
+            document.DOMContentLoaded=load("domload");
+            document.getElementsByTagName("body").onload=load("onload");
+            function load(value )
+            {
+                console.log("have load "+value);
+            }  
+            
+        </script>
+    </head>
+    <body>
+        <div>
+            <p>这个例子使用来测试文档的状态变化和load事件</p>
+            <p>jifukui</p>
+            <p>吉富逵</p>
+        </div>
+        
+    </body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>cookie的使用</title>
+    </head>
+    <body>
+        <div>
+            <p id="cookiedata">
+
+            </p>
+            <button id="write">Add Cookie</button>
+            <button id="update">Update Cookie</button>
+        </div>
+        <script>
+            var count=0;
+            document.getElementById("update").onclick=updateCookie;
+            document.getElementById("write").onclick=creatCookie;
+            readCookie();
+            function readCookie()
+            {
+                document.getElementById("cookiedata").innerHTML="jifukui"+document.cookie;
+            }
+            function creatCookie()
+            {
+                count++;
+                var a="Cookie_"+count+"=Value"+count;
+                document.cookie=a;
+                console.log(a);
+                readCookie();
+            }
+            function updateCookie()
+            {
+                document.cookie="Cookie_"+count+"=Update"+count;
+                console.log(document.cookie);
+               readCookie();
+            }
+        </script>
+    </body>
+</html>

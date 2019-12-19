@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CSS选择器的使用</title>
+        <meta charset="utf-8">
+        <style>
+            b[class="jifukui"],i[class="jifukui"]
+            {
+                display: block;
+            }
+            b[class="ji"],i[class="ji"]
+            {
+                display: block;
+                color: red;
+            }
+        </style>
+    </head>
+    <body>
+        <p >1</p>
+        <p >2</p>
+        <p>3</p>
+        <p >4</p>
+        <p>5</p>
+        <p >6</p>
+        <p>7</p>
+        <p >8</p>
+        <p>9</p>
+        <p>10</p>
+        <b class="jifukui">11</b>
+        <b class="jifukui">12</b>
+        <b class="ji">13</b>
+        <b>14</b>
+        <br>
+        <b class="jifukui">15</b>
+        <b>16</b>
+        <br>
+        <i>17</i>
+        <br>
+        <i class="jifukui">18</i>
+        <i class="jifukui">19</i>
+        <i class="ji">20</i>
+        <button>change</button>
+        <script>
+            function changeinfo()
+            {
+                console.log("hello");
+                let a=document.querySelectorAll("b[class*='ji']");
+                console.log(a.length);
+                for(var index=0;index<a.length;index++)
+                {
+                    a[index].innerText=(parseInt(a[index].innerHTML)*2);
+                }
+                //a.innerHTML=parseInt(a.innerHTML)*2;
+            }
+            var dade=document.getElementsByTagName("button")[0].onclick=changeinfo;
+            //a.onclick=changeinfo;
+        </script>
+    </body>
+</html>
