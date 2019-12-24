@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>设置元素的类</title>
+        <meta charset="utf-8">
+        <style>
+            .blue{
+                color: blue;
+            }
+            .red{
+                color: red;
+            }
+            .font{
+                font-size: 19px;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <p id="data">hahahahahah</p>
+            <p id="info"></p>
+            <div>
+                <input type="button" value="显示红字" onclick="red()">
+                <input type="button" value="toggle字体大小" onclick="fontsize()">
+                <input type="button" value="将红字换为蓝字" onclick="replace()">
+                <input type="button" value="清除蓝字"onclick="remove()">
+            </div>
+        </div>
+        <script>
+            var dim = document.getElementById("data").classList;
+            var info=document.getElementById("info");
+            function red()
+            {
+                if(!dim.contains("red"))
+                {
+                    dim.add("red");
+                }
+                display();
+            }
+            function fontsize()
+            {
+                dim.toggle("font");
+                display();
+            }
+            function replace()
+            {
+                dim.replace("red","blue");
+                display();
+            }
+            function remove()
+            {
+                dim.remove("blue");
+                display();
+            }
+            function display()
+            {
+                info.innerHTML=document.getElementById("data").className;
+            }
+            display();
+        </script>
+    </body>
+</html>

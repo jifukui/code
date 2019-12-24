@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>获取元素的属性值</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <div>
+            <input type="checkbox" checked id="checkbox">
+            <p id="result"></p>
+        </div>
+        <script>
+            var value=[
+                    "checked",
+                    "classList",
+                    "className",
+                    "dir",
+                    "disabled",
+                    "hidden",
+                    "id",
+                    "lang",
+                    "spellcheck",
+                    "tabIndex",
+                    "tagName",
+                    "title"
+                ];
+            function info(){
+                console.log("good");
+                var data=document.getElementById("result");
+                var ori=document.getElementById("checkbox");
+                //data.innerHTML+="<pre>";
+                value.forEach(
+                    function(dat)
+                    {
+                        data.innerHTML+=dat+": "+ori[dat]+"<br>";
+                    }
+                )
+                //data.innerHTML+="<\\pre>";
+            }
+            info();
+        </script>
+    </body>
+</html>

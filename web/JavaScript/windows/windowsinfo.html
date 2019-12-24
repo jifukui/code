@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>窗口信息</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <script>
+            var a=document;
+            var b=window;
+            var data=["innerHeight",
+            "innerWidth",
+            "outerHeight",
+            "outerWidth",
+            "pageXOffset",
+            "pageYOffset",
+            "screenLeft",
+            "screenTop",
+            "screenX",
+            "screenY"
+            ];
+            //window.screen.availWidth
+            a.writeln("<pre>");
+            data.forEach((info)=>{
+                a.writeln(info+": "+b[info]);
+            });
+            a.writeln("</pre>");
+        </script>
+
+    </body>
+</html>
