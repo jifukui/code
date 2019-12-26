@@ -4,14 +4,94 @@
         <title>设置读取元素的属性</title>
         <meta charset="utf-8">
         <style>
-            
+            input[type="checkbox"]
+            {
+                color: crimson;
+            }
+            input[type="button"]
+            {
+                background-color: black;
+                color: blanchedalmond;
+            }
         </style>
     </head>
     <body>
         <div>
-            <p id="data">hahahahahah</p>
+            <input type="checkbox" id="checkbox"  checked data-test="just do it" data-value="have fun">
+            <pre id="info"></pre>
+            <!--input type="button" onclick="display()" value="显示信息"-->
+            <input type="button" onclick="UserSet()" value="显示自定义属性">
+            <input type="button" onclick="check()" value="显示checked的属性值">
+            <input type="button" onclick="has()" value="判断是否有checked的属性值">
+            <input type="button" onclick="removecheck()" value="删除checked的属性值">
+            <input type="button" onclick="removeuser()" value="删除test的属性值">
+            <input type="button" onclick="setcheck()" value="设置checked的属性值">
+            <input type="button" onclick="setuser()" value="设置用户自定义的属性值">
         </div>
         <script>
+            var dim=document.getElementById("checkbox");
+            var info=document.getElementById("info");
+            function display()
+            {
+                info.innerHTML="当前元素具有的属性的数量为:"+dim.attributes.length+"<br>";
+                for(var i=0;i<dim.attributes.length;i++)
+                {
+                    info.innerHTML+=`第${parseInt(i+1)} 个属性为:${dim.attributes[i].name} 属性值为：${dim.attributes[i].value}<br>`;
+                }
+            }
+            function UserSet(){
+                let value="",n=0;
+                value=objp(dim.dataset);
+                console.log(value);
+                window.alert(`自定义的用户数据为:\n${value}`)
+            }
+            function objp(obj) 
+            {
+                let str="";
+                for(let data in obj)
+                {
+                    if(Object.prototype.toString.call(obj[data])==='[object Object]')
+                    {
+                        str+=`属性名${data}\n`
+                        str+=objp(obj[data]);
+                    }
+                    else
+                    {
+                        str+=`属性名为：${data} 属性值为 ${obj[data]} \n`;
+                    }
+                }
+                return str;
+            }
+            function check()
+            {
+                window.alert(`当前的checked的属性值为:${dim.getAttribute('checked')}`);
+            }
+            function has()
+            {
+                window.alert(`是否具有checked属性:${dim.hasAttribute('checked')}`);
+            }
+            function removecheck()
+            {
+                dim.removeAttribute("checked");
+                display();
+            }
+            function removeuser()
+            {
+                dim.removeAttribute("data-test");
+                display();
+            }
+            function setcheck()
+            {
+                dim.setAttribute("checked","checked");
+                display();
+            }
+            function setuser()
+            {
+                dim.setAttribute("data-haha","hahahahh");
+                display();
+            }
+            display();
+            
         </script>
     </body>
 </html>
