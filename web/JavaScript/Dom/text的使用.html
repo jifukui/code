@@ -6,8 +6,55 @@
     </head>
     <body>
         <p id="text">hello,my name is <strong>jifukui</strong> and I like play football <i>good game</i>  </p>
+        <input type="button" onclick="firstWhole()" value="显示第一个子文档的内容1">
+        <hr>
+        <input type="button" onclick="firstdata()" value="显示第一个子文档的内容2">
+        <hr>
+        <input type="button" onclick="datalength()" value="显示第一个子文档的字符串的长度">
+        <hr>
+        <input type="button" onclick="deletelast()" value="删除第一个子文档的字符串的最后一个字符">
+        <hr>
+        <input type="button" onclick="addlast()" value="在第一个子文档的字符串的后面添加一个字符a">
+        <hr>
+        <input type="button" onclick="addlast1()" value="在第一个子文档的字符串的后面添加一个字符串jifukuitest">
+        <hr>
+        <input type="button" onclick="reset()" value="复位第一个子文档的字符串">
+        <hr>
+        <input type="button" onclick="display()" value="显示第一个子文档第2个字符到最后一个字符">
+        <hr>
+        <input type="button" onclick="display1()" value="元素第一个子文档分离">
+        <hr>
         <script>
             var dim=document.getElementById("text");
+            function firstWhole(){
+                window.alert("当前文档的第一个子text的内容 "+dim.firstChild.wholeText);
+            }
+            function firstdata(){
+                window.alert("当前文档的第一个子text的内容 "+dim.firstChild.data);
+            }
+            function datalength(){
+                window.alert("当前文档的第一个子text的长度"+dim.firstChild.length);
+            }
+            function deletelast(){
+                dim.firstChild.deleteData(dim.firstChild.length-1,1);
+            }
+            function addlast(){
+                dim.firstChild.insertData(dim.firstChild.length,"a");
+            }
+            function reset(){
+                dim.firstChild.replaceWith("hello,my name is ");
+            }
+            function display(){
+                window.alert("当前文档的第一个子text第2个字符到最后一个字符的内容 "+dim.firstChild.substringData(1,-1));
+            }
+            function display1(){
+                //window.alert("当前文档的第一个子text后一半的内容 "+dim.firstChild.splitText(dim.firstChild.length/2).data);
+                dim.firstChild.splitText(dim.firstChild.length/2);
+            }
+            function addlast1(){
+                dim.firstChild.replaceData(dim.firstChild.length,2,"jifukuitest");
+            }
+            
         </script>
     </body>
 </html>
