@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <title>使用eval进行词法域欺骗</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <script>
+            function val1(str,b){
+                var a=1;
+                eval(str);
+                console.log(a,b);
+            }
+            function val2(str,b){
+                "use strict";
+                var a=1;
+                eval(str);
+                console.log(a,b);
+            }
+            //var a=1;
+            val1("var a=9",6);
+            val2("var a=9",6);
+        </script>
+    </body>
+</html>

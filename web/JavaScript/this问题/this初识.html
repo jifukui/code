@@ -1,0 +1,22 @@
+<!Doctype html>
+<html>
+    <head>
+        <title>this 的初识</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <script>
+            function foo(num){
+                console.log("this is "+num);
+                this.count++;
+                console.log(this);
+            }
+            foo.count=0;
+            for(let i=0;i<10;i++)
+            {
+                foo(i);
+            }
+            console.log(foo.count);
+        </script>
+    </body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>finish和catch的使用</title>
+    </head>
+    <body>
+        <script>
+            var pro=new Promise((reslove,reject)=>{
+                // reslove("成功的完成");
+                // return "good";
+                reject("失败的完成");
+                
+            });
+            pro.then(reslove=>{
+                console.log("成功的完成1");
+            },
+            // null
+            reject=>{
+                console.log("失败处理1");
+            }
+            ).catch(reson=>{
+                console.log("错误处理1");
+            }).finally(end=>{
+                console.log("最终的完成");
+            });
+            console.log(pro);
+        </script>
+    </body>
+</html>

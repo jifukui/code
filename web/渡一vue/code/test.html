@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>父子组件通信</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <div id="app"></div>
+        <script type="text/javascript" src="../Vue.js"></script>
+        <script>
+            var vm=new Vue({
+                el:"#app",
+                data:{                    
+                    mes:"Hello,World",
+                    info:[
+                        {
+                            name:"json",
+                            age:12,
+                            salary:1999,
+                        },
+                        {
+                            name:"jack",
+                            age:13,
+                            salary:1995,
+                        },
+                        {
+                            name:"luck",
+                            age:15,
+                            salary:1929,
+                        },
+                        {
+                            name:"tom",
+                            age:17,
+                            salary:1299,
+                        }
+                    ]
+                },
+                template:"\
+                    <div>\
+                    <span> {{ mes }} </span>\
+                    <Mychild v-for='(temp,index) in info'  v-bind='temp' @change='SetSalary(this.$event,index)'></Mychild>\
+                    </div>\
+                ",
+                methods:{
+                    SetSalary:function(event,val){
+                        console.log("event "+event);
+                        console.log("the father value is "+ val);
+                    }
+                },
+                components:{
+                    Mychild:{
+                        props:["name","age","salary"],
+                        methods:{
+                            GetMoreMoney:function(){
+                                console.log("call change");
+                                // this.$emit("change",this.$event,this.salary);
+                                this.$emit("change");
+                            }
+                        },
+                        template:"\
+                            <div>           \
+                                <label >姓名：</label>\
+                                <span :ref= ' \"tname\" '>{{ name }}</span>\
+                                <label >年龄：</label>\
+                                <span>{{ age }}</span>\
+                                <label >薪金</label>\
+                                <span>{{ salary }}：</span>\
+                                <input type='button' @click='GetMoreMoney' value='加薪'>\
+                            </div>         \
+                        "
+                    }
+                }
+            })
+        </script>
+    </body>
+</html>

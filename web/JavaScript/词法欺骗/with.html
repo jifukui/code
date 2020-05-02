@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>with的语法欺骗</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <script>
+            var o1={
+                a:1
+            };
+            var o2={
+                b:2
+            }
+            with(o1){
+                a=3;
+            }
+            with(o2){
+                a=4;
+            }
+        </script>
+    </body>
+</html>
