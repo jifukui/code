@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>生成器传入参数的使用</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <script>
+            var a=3,b=5;
+            var x;
+            function *foo(){
+                let x;
+                console.log("before x is "+x);
+                x="as"+(yield("jifukui"));
+                console.log("after x is "+x.value);
+                return x;
+            }
+            var data=foo();
+            console.log(data);
+            a=9;
+            b=8;
+            x=data.next();
+            console.log(data);
+        </script>
+    </body>
+</html>

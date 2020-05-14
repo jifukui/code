@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>普通的错误处理</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <script>
+            function  foo(){
+                try{
+                    var a=new Error("fuck");
+                    throw(a);
+                    //var a=19;
+                    //return a;
+                    //b=a/r;
+                    //return b;
+                    }
+                catch(error){
+                    console.log("have error");
+                    console.log(error);
+                }
+                finally{
+                    console.log("end this ");
+                    //var b=new Error("guandian");
+                    throw("guandian");
+                }
+                console.log("function end");
+                return "good"
+            }
+            var c=foo();
+            console.log(c);
+        </script>
+    </body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>call apply bind的使用</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <script>
+            let a = 0;
+            const obj = {
+                a: 1,
+                b: function() {
+                    console.log(this)
+                    console.log(this.a);
+                }
+            }
+            const obj1 = {
+                a: 2
+            }
+            const fun = obj.b;
+            fun(); 
+            fun.apply(obj);
+            //bind执行完成后将会返回一个绑定this的函数，且这个函数的this不允许修改 
+            fun.bind(obj1).apply(obj); 
+            const fun1 = fun.bind(obj1);
+            //使用new调用函数的时候会创建一个this对象但是这个this对象没有a这个属性所以将会返回undefined
+            new fun();
+        </script>
+    </body>
+</html>

@@ -1,0 +1,19 @@
+<!Doctype html>
+<html>
+    <head>
+        <title>使用标签语句</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <script>
+            foo:for(var i=0;i<4;i++)
+            {
+                for(var j=0;j<4;j++)
+                {
+                    if(i==2){break foo}
+                    console.log(i,j);
+                }
+            }
+        </script>
+    </body>
+</html>

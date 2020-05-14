@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>promise的调用方法</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <script>
+            function foo()
+            {
+                return new Promise(function(reslove,reject){reslove("jifukuistudy")});
+            }
+            var p=foo(42);
+            console.log("p is "+p)
+            bar(p);
+            baz(p);
+            function bar(data){
+                data.then(good=>{
+                    console.log("this is good"+good);
+                },bad=>{
+                    console.log("this is bad"+bad)
+                })
+            }
+            function baz(data){
+                data.then(good=>{
+                    console.log("this is good1"+good);
+                },bad=>{
+                    console.log("this is bad1"+bad)
+                })
+            }
+            function good(value){
+                console.log("this is very good"+value);
+            }
+            function bad(value){
+                console.log("This is Very bad"+value);
+            }
+            function good1(value){
+                console.log("this is very good1"+value);
+            }
+            function bad1(value){
+                console.log("This is Very bad1"+value);
+            }
+            var q=foo(33);
+            console.log("q is "+q)
+            q.then(good,bad);
+            q.then(good1,bad1);
+        </script>
+    </body>
+</html>

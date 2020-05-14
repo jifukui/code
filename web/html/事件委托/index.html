@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>事件委托</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <a>1</a>
+        <hr/>
+        <a>2</a>
+        <hr/>
+        <a>3</a>
+        <hr/>
+        <a>4</a>
+        <hr/>
+        <a>5</a>
+        <hr/>
+        <a>6</a>
+        <hr/>
+        <a>7</a>
+        <hr/>
+        <a>8</a>
+        <hr/>
+        <a>9</a>
+        <hr/>
+        <a>10</a>
+    </body>
+    <script>
+        var dom=document.body;
+        dom.addEventListener("click",function(event){
+            console.log(event);
+            console.warn(event.target.innerText);
+        },false);
+    </script>
+</html>

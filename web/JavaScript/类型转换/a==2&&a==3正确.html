@@ -1,0 +1,31 @@
+<!Doctype>
+<html>
+    <head>
+        <title>实现a==2&&a==3</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <script>
+            var i=2;
+            Number.prototype.valueOf=function()
+            {
+                console.log(this);
+                return i++;
+            }
+            Number.prototype.toString=function()
+            {
+                //console.log(this);
+                return "7";
+            }
+            var a=new Object(2);
+            if(a==2&&a==3)
+            {
+                console.log("good");
+            }
+            else
+            {
+                console.log("not good");
+            }
+        </script>
+    </body>
+</html>
