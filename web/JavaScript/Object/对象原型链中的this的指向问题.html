@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>对象原型链中的this的指向问题</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <script>
+            var name="liguo";
+            function father(name) {
+                this.name=name;
+            }
+            father.prototype.say=function (params) {
+                console.log(this.name);
+            }
+            var chile=new father("guandian");
+            chile.say();
+        </script>
+    </body>
+</html>

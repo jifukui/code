@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>对于引入的文件进行处理</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <img style="width: 400px;height: 400px;" src="./niu.jpg" onload="draw()">
+        <canvas style="width: 400px;height: 400px;">
+
+        </canvas>
+        <canvas style="width: 400px;height: 400px;" id="canvas">
+
+        </canvas>
+    </body>
+    <script>
+        function draw()
+        {
+            //console.log("Have called");
+            var dom=document.querySelector("canvas");
+            //var dom1=document.getElementById("canvas");
+            if(dom.getContext){
+                var canvas=dom.getContext("2d");
+                //var canvas1=dom1.getContext("2d");
+                var img=document.querySelector("img");
+                //canvas.rotate(180*Math.PI/180);
+                canvas.drawImage(img,0,0,300,150);
+                //var imagedata=canvas.getImageData(30,30,30,30);
+                
+                //canvas.putImageData(0,0,300,150);
+                //canvas1.putImageData(imagedata,0,0);
+                //canvas1.fillRect(0,0,300,300);
+            }
+            else{
+                alert("cannot support canvas");
+            }
+        }
+    </script>
+</html>

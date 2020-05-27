@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>对象的设置函数和获取函数</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <script>
+              var foo={
+                name:"object",
+                get name(){
+                    console.log("获取参数");
+                    return "jifukui";
+                },
+                set name(value){
+                    console.log("设置参数name"+"的值为"+this.name);
+                    this[value]=8;
+                },
+                //descriable:"test for Object"
+            }
+            Object.defineProperty(foo,"descriable",{
+                 set:function(params) {
+                    console.log("设置的属性值为"+params);
+                    descriable=9;
+                },
+                get:function(params) {
+                    console.log("属性的值为："+params);
+                }
+            })
+        </script>
+    </body>
+</html>

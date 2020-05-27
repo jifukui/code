@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>freeze的作用</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <script>
+            var data={
+                name:"吉富逵",
+                like:"football",
+                number:7
+            }
+            Object.freeze(data);
+            console.log(data);
+            data.edid="00ffffff";
+            console.log(data);
+            data.like="足球";
+            console.log(data);
+        </script>
+    </body>
+</html>

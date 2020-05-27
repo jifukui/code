@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>简单的画一条直线</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <canvas style="width: 100%;height: 100%;">
+
+        </canvas>
+    </body>
+    <script>
+        var dom=document.querySelector("canvas");
+        if(dom.getContext){
+            var canvas=dom.getContext("2d");
+            canvas.lineWidth=10;
+            canvas.strokeStyle="red";
+            canvas.lineCap="butt"
+            canvas.beginPath();
+            canvas.moveTo(20,20);
+            canvas.lineTo(220,20);
+            canvas.stroke();
+            canvas.lineCap="round"
+            canvas.beginPath();
+            canvas.moveTo(20,50);
+            canvas.lineTo(220,50);
+            canvas.stroke();
+            canvas.lineCap="square";
+            canvas.beginPath();
+            canvas.moveTo(20,100);
+            canvas.lineTo(220,100);
+            canvas.stroke();
+        }
+        else{
+            alert("cannot support canvas");
+        }
+    </script>
+</html>

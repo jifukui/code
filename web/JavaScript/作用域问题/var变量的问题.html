@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>变量的作用域问题</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <script>
+            let name="apple"
+            function say(){
+                console.log(name);
+                if(1){
+                    let name="banana";
+                }
+                console.log(name);
+                name="orange";
+                console.log(name);
+            }
+            say();
+            console.log(name);
+            console.log(age);
+        </script>
+    </body>
+</html>

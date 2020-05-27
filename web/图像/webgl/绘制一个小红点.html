@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>WebGL绘制一个小红点</title>
+        <meta charset="utf-8">
+        <script src="./webgl-debug.js"></script>
+        <script src="./webgl-utils.js"></script>
+        <script src="./cuon-utils.js"></script>
+    </head>
+    <body>
+        <canvas style="width: 400;height: 400;">
+
+        </canvas>
+    </body>
+    <script>
+        var VSHADER_SOURCE=
+        `void main(){\n`+
+        `gl_Position=vec4(0.0,0.0,0.0,1.0);\n`+
+        `gl_PointSize=10.0;\n`+
+            `}\n`;
+        var FSHADER_SOURCE=
+        `void main(){\n`+
+        `gl_FragColor=vec4(1.0,0.0,0.0,1.0);\n`+
+        `}\n`;
+        function main()
+        {
+            var dom=document.querySelector("canvas");
+            if(dom.getContext){
+                var canvas=dom.getContext("webgl");
+                if(canvas)
+                {
+                    if(!initShaders(canvas,VSHADER_SOURCE,FSHADER_SOURCE))
+                    {
+                        console.log("init error");
+                        return ;
+                    }
+                    else
+                    {
+                        canvas.clearColor(0.0,0.0,0.0,1.0);
+                        canvas.clear(canvas.COLOR_BUFFER_BIT);
+                        canvas.drawArrays(canvas.POINTS,0,1);
+                    }
+                }
+                else
+                {
+                    alert("not support webgl");
+                }
+            }
+            else{
+                alert("cannot support canvas");
+            }
+        }
+        main();
+    </script>
+</html>

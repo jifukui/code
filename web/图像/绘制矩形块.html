@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>绘制矩形块</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <canvas style="width: 100%;height: 100%;">
+
+        </canvas>
+    </body>
+    <script>
+        var dom=document.querySelector("canvas");
+        if(dom.getContext){
+            var canvas=dom.getContext("2d");
+            canvas.fillStyle="blue";
+            canvas.fillRect(15,15,50,50);
+        }
+        else{
+            alert("cannot support canvas");
+        }
+    </script>
+</html>

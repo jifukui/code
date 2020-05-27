@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>图像的旋转</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <canvas style="width: 100%;height: 100%;">
+
+        </canvas>
+    </body>
+    <script>
+        var dom=document.querySelector("canvas");
+        if(dom.getContext){
+            var canvas=dom.getContext("2d");
+            canvas.strokeStyle="red";
+            canvas.fillRect(5,5,20,10);
+            canvas.rotate(45*Math.PI/180);
+            canvas.fillStyle="blue";
+            canvas.fillRect(35,15,20,10);
+        }
+        else{
+            alert("cannot support canvas");
+        }
+    </script>
+</html>
