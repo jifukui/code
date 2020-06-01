@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>矩阵变换</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <canvas style="width: 100%;height: 100%;">
+
+        </canvas>
+    </body>
+    <script>
+        var dom=document.querySelector("canvas");
+        if(dom.getContext){
+            var canvas=dom.getContext("2d");
+            canvas.strokeStyle="red";
+            canvas.fillRect(5,5,20,10);
+            /**移动*/
+            canvas.transform(1,0,0,1,20,20);
+            canvas.fillRect(5,5,20,10);
+            /**缩放*/
+            //canvas.transform(2,0,0,2,0,0);
+            //canvas.fillRect(10,10,20,10);
+            /**旋转*/
+            //canvas.transform(Math.cos(60*Math.PI/180),Math.sin(60*Math.PI/180),Math.sin(-60*Math.PI/180),Math.cos(60*Math.PI/180),0,0);
+            //canvas.rotate(60*Math.PI/180);
+            //canvas.fillRect(60,40,20,10);
+            /**拉伸*/
+            canvas.transform(1,Math.tan(30*Math.PI/180),Math.tan(30*Math.PI/180),1,0,0);
+            canvas.fillRect(60,40,20,10);
+        }
+        else{
+            alert("cannot support canvas");
+        }
+    </script>
+</html>
