@@ -15,12 +15,15 @@
 </template>
 
 <script>
-import { mapState, mapMutations, mapActions } from "vuex";
+import { createNamespacedHelpers } from "vuex";
+const { mapState, mapMutations, mapActions } = createNamespacedHelpers(
+  "jifukui"
+);
 export default {
   name: "vuex",
   data() {
     return {
-      count: this.$store.state.count,
+      count: this.$store.state.jifukui.count,
       buttoninfo: "点击我",
       value: 0,
       countlimit: false
@@ -28,17 +31,17 @@ export default {
   },
   methods: {
     incream: function() {
-      this.$store.commit("incream");
-      this.count = this.$store.state.count;
-      console.log("counted is " + this.$store.getters.countend);
-      this.countlimit = this.$store.getters.countend;
+      this.$store.commit("jifukui/incream");
+      this.count = this.$store.state.jifukui.count;
+      console.log("counted is " + this.$store.getters["jifukui/countend"]);
+      this.countlimit = this.$store.getters["jifukui/countend"];
     },
     ...mapMutations(["message1", "message2"]),
     ...mapMutations({
       add: "message1"
     }),
     async1: function() {
-      this.$store.dispatch("increamasy");
+      this.$store.dispatch("jifukui/increamasy");
     },
     ...mapActions({
       async2: "increamasy"
@@ -47,15 +50,15 @@ export default {
   computed: {
     ...mapState({
       count1: function(state) {
-        return state.count;
+        return state.count || 1;
       },
       asyncnum: function(state) {
-        return state.asycount;
+        return state.asycount || 1;
       }
     }),
     countlimit1: function() {
-      console.log(this.$store.getters.countend);
-      return this.$store.getters.countend;
+      console.log(this.$store.getters["jifukui/countend"]);
+      return this.$store.getters["jifukui/countend"];
     }
   }
 };
