@@ -41,7 +41,7 @@ h1 {
 #main {
   display: flex;
 }
-.courent{
+.courent {
   margin: auto;
   height: 50%;
   width: 50%;

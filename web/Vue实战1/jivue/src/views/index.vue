@@ -1,3 +1,3 @@
 <template>
-    <sapn>Hello this is text index page</sapn>
+  <sapn>Hello this is text index page</sapn>
 </template>
