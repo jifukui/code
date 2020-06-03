@@ -1,3 +1,8 @@
 <template>
-  <sapn>Hello this is text index page</sapn>
+  <div>Hello this is text index page</div>
 </template>
+<script>
+export default {
+  name: "index"
+};
+</script>

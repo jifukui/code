@@ -3,10 +3,11 @@
     <h1>Hello this is jifukui Vue test</h1>
     <div id="main">
       <div id="nav">
-        <router-link to="/">根网页信息</router-link>
+        <router-link to="/">Vuex的实验</router-link>
+        <router-link to="/router">Vue-Router实验</router-link>
         <router-link to="/index">index界面</router-link>
         <router-link to="/jifukui">吉富逵的网页</router-link>
-        <router-link to="/about">about网页</router-link>
+        <router-link to="/errorinfo">about网页</router-link>
       </div>
       <router-view></router-view>
     </div>
@@ -24,13 +25,15 @@ h1 {
 
 #nav {
   display: flex;
-  width: 10%;
+  width: 8%;
   flex-direction: column;
 }
 #nav a {
   color: brown;
   text-decoration-line: none;
   display: block;
+  border: 3px solid aquamarine;
+  margin: 2px;
 }
 #nav a:focus {
   background: lawngreen;

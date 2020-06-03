@@ -1,5 +1,6 @@
 <template>
   <div class="courent">
+    <h2>同步数据的更新</h2>
     <div v-text="count"></div>
     <input type="button" v-bind:value="buttoninfo" @click="incream" />
     <div v-text="countlimit"></div>
@@ -8,6 +9,7 @@
     <input type="button" v-bind:value="buttoninfo" @click="message1" />
     <input type="button" v-bind:value="buttoninfo" @click="message2" />
     <input type="button" v-bind:value="buttoninfo" @click="add" />
+    <h2>异步数据的更新</h2>
     <div v-text="asyncnum"></div>
     <input type="button" v-bind:value="buttoninfo" @click="async1" />
     <input type="button" v-bind:value="buttoninfo" @click="async2" />

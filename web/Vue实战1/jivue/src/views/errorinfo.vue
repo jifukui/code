@@ -1,15 +1,16 @@
 <template>
-    <div>
-        <h1>您打开了一个错误的网页</h1>
-        <sapn v-text="info"></sapn>
-    </div>
+  <div>
+    <h1>您打开了一个错误的网页</h1>
+    <span v-text="info"></span>
+  </div>
 </template>
 <script>
 export default {
-    data(){
-        return{
-            info:this.$store.state.errorinfo
-        }
-    }
-}
+  name: "errorinfo",
+  data() {
+    return {
+      info: this.$store.state.jifukui.errorinfo
+    };
+  }
+};
 </script>
