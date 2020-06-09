@@ -13,6 +13,7 @@
     <div v-text="asyncnum"></div>
     <input type="button" v-bind:value="buttoninfo" @click="async1" />
     <input type="button" v-bind:value="buttoninfo" @click="async2" />
+    <h3>完成这部分CSS的渲染</h3>
   </div>
 </template>
 

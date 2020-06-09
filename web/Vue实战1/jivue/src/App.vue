@@ -5,6 +5,8 @@
       <div id="nav">
         <router-link to="/">Vuex的实验</router-link>
         <router-link to="/router">Vue-Router实验</router-link>
+        <router-link to="/vue">Vue的使用</router-link>
+        <router-link to="/elementui">ElementUI的使用</router-link>
         <router-link to="/index">index界面</router-link>
         <router-link to="/jifukui">吉富逵的网页</router-link>
         <router-link to="/errorinfo">about网页</router-link>
@@ -46,7 +48,13 @@ h1 {
 }
 .courent {
   margin: auto;
-  height: 50%;
+  height: 100%;
   width: 50%;
+}
+h1,
+h2,
+h3,
+h4 {
+  text-align: center;
 }
 </style>

@@ -1,7 +1,10 @@
 <template>
   <div>
     <h1>运动员个人信息表</h1>
-    <label>姓名</label><input type="text" v-bind:value="name" />
+    <div>
+      <label>姓名</label><input type="text" v-bind:value="value.name" />
+    </div>
+    <div><label>年龄</label><input type="text" v-bind:value="value.age" /></div>
   </div>
 </template>
 
@@ -27,8 +30,8 @@ export default {
     }
   },
   computed: {
-    name: function() {
-      return this.$store.state.play.current.name;
+    value: function() {
+      return this.$store.state.play.current;
     }
   },
   methods: {

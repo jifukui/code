@@ -1,6 +1,7 @@
 import Vue from "vue";
 import Vuex from "vuex";
 import createLogger from "vuex/dist/logger";
+import vuetest from "./vue.js";
 Vue.use(Vuex);
 const myplay = function(store) {
   /**每次调用mutation时都会触发 */
@@ -9,7 +10,7 @@ const myplay = function(store) {
     console.log(state);
   });
 };
-const jilog =createLogger({
+const jilog = createLogger({
   collapsed: false,
   filter(mutation) {
     //console.log("filter");
@@ -22,11 +23,11 @@ const jilog =createLogger({
     //console.log("mutationTransformer");
     //mutation.type = "jifukui/incream";
     //return mutation.type;
-    console.log(mutation.type)
+    console.log(mutation.type);
   },
   logger: console
 });
-const info=[
+const info = [
   {
     path: "/router/info/messi",
     info: "梅西的个人资料",
@@ -117,12 +118,14 @@ export default new Vuex.Store({
               console.log("The i is " + i);
               console.log("current " + state.current.name);
               console.log("current " + state.playinfo[i].name);
+              return;
             }
           }
-          this.errorinfo(this.state);
+          state.current = state.playinfo[state.playinfo.length - 1];
         }
       }
-    }
+    },
+    jivue: vuetest
   },
   plugins: [myplay, jilog]
 });

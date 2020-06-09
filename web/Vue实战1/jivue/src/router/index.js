@@ -6,18 +6,10 @@ import index from "../views/index.vue";
 import jifukui from "../views/jifukui.vue";
 import route from "../views/router.vue";
 import info from "../components/player/info.vue";
-import playerinfo from "../components/player/playerinfo.vue";
+import jivue from "../components/Vue/vue.vue";
+import ji_elemnetui from "../components/elementui/elementui.vue";
+
 Vue.use(VueRouter);
-/*function Getinfo() {
-  let value = [];
-  Vue.$store.state.play.playinfo.map(function(item) {
-    let data = {};
-    data.path = item.path;
-    data.name = item.name;
-    data.component = messi;
-    value.push(data);
-  });
-}*/
 const routes = [
   {
     path: "/",
@@ -33,15 +25,21 @@ const routes = [
         path: "info",
         name: "info",
         component: info,
-        children: [
-          {
-            path: "*",
-            name: "playerinfo",
-            component: playerinfo
-          }
-        ]
+        params: { userid: 123 },
+        query: { userid: 123 }
       }
     ]
+  },
+  {
+    path: "/vue",
+    name: "vue",
+    component: jivue,
+    alias: "jifukuivue"
+  },
+  {
+    path: "/elementui",
+    name: "elementui",
+    component: ji_elemnetui,
   },
   {
     path: "/jifukui",
@@ -55,6 +53,12 @@ const routes = [
   },
   {
     path: "*",
+    redirect: {
+      name: "route"
+    }
+  },
+  {
+    path: "/index",
     name: "errorinfo",
     component: errorinfo
   }
@@ -63,5 +67,10 @@ const router = new VueRouter({
   mode: "history",
   base: process.env.BASE_URL,
   routes
+});
+router.beforeEach(function(to, from, next) {
+  console.log("to is " + to);
+  console.log("from is " + from);
+  next();
 });
 export default router;
