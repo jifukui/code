@@ -7,6 +7,10 @@
         <router-link to="/router">Vue-Router实验</router-link>
         <router-link to="/vue">Vue的使用</router-link>
         <router-link to="/elementui">ElementUI的使用</router-link>
+        <router-link to="/three">ThreeJs的使用</router-link>
+        <router-link to="/heightchart">HeightChart的使用</router-link>
+        <router-link to="/echart">echart的使用</router-link>
+        <router-link to="/axios">axios的使用</router-link>
         <router-link to="/index">index界面</router-link>
         <router-link to="/jifukui">吉富逵的网页</router-link>
         <router-link to="/errorinfo">about网页</router-link>
@@ -20,6 +24,10 @@
 * {
   background-color: lightgoldenrodyellow;
   margin: 0;
+}
+button > span,
+button > i {
+  background-color: rgba(0, 0, 0, 0);
 }
 h1 {
   text-align: center;
@@ -49,7 +57,7 @@ h1 {
 .courent {
   margin: auto;
   height: 100%;
-  width: 50%;
+  width: 70%;
 }
 h1,
 h2,

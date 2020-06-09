@@ -8,7 +8,7 @@ import route from "../views/router.vue";
 import info from "../components/player/info.vue";
 import jivue from "../components/Vue/vue.vue";
 import ji_elemnetui from "../components/elementui/elementui.vue";
-
+import ji_threejs from "../components/three/three.vue";
 Vue.use(VueRouter);
 const routes = [
   {
@@ -39,7 +39,12 @@ const routes = [
   {
     path: "/elementui",
     name: "elementui",
-    component: ji_elemnetui,
+    component: ji_elemnetui
+  },
+  {
+    path: "/three",
+    name: "three",
+    component: ji_threejs
   },
   {
     path: "/jifukui",

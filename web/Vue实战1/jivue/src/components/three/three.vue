@@ -1,6 +1,6 @@
 <template>
   <div class="courent">
-    <h2>这一部分开始使用elementUI进行开发</h2>
+    <h2>ThreeJS的使用</h2>
     <div class="main">
       <div class="left">
         <router-link
@@ -19,28 +19,28 @@
 </template>
 <script>
 import VueRouter from "vue-router";
-import eleButton from "./button.vue";
-import eleIcon from "./icons.vue";
-import eleradio from "./radio.vue";
-const BasePath = "/elementui";
+import jisence from "./sence.vue";
+import jimaterial from "./material.vue";
+import jianimation from "./animation.vue";
+const BasePath = "/three";
 const routes = [
   {
-    path: BasePath + "/button",
-    name: "button",
-    component: eleButton,
-    info: "学习使用ElementUI中的按钮控件"
+    path: BasePath + "sence",
+    name: "sence",
+    component: jisence,
+    info: "这是一个简单的场景"
   },
   {
-    path: BasePath + "/Icons",
-    name: "Icons",
-    component: eleIcon,
-    info: "文字图标的使用"
+    path: BasePath + "material",
+    name: "material",
+    component: jimaterial,
+    info: "添加灯光和材质"
   },
   {
-    path: BasePath + "/radio.vue",
-    name: "radio",
-    component: eleradio,
-    info: "radio控件的使用"
+    path: BasePath + "animation",
+    name: "animation",
+    component: jianimation,
+    info: "一个简单的动画"
   }
 ];
 const router = new VueRouter({
@@ -69,12 +69,12 @@ a {
   width: 100%;
 }
 .left {
-  width: 40%;
+  width: 30%;
   border: 2px solid blue;
   margin: 0px 20px;
 }
 .right {
-  width: 60%;
+  width: 70%;
 }
 i {
   margin: 6px;

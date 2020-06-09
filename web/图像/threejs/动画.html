@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Threejs一个简单的场景</title>
+        <title>Threejs一个简单的场景的动画</title>
         <meta charset="utf-8">
         <style>
             body{
@@ -17,6 +17,7 @@
         <div></div>
     </body>
     <script>
+        var stats = initStats();
         //场景
         var sense=new THREE.Scene();
         //相机
@@ -79,5 +80,43 @@
         var dom=window.document.querySelector("div");
         dom.append(renderer.domElement);
         renderer.render(sense,camera);
+
+        var step = 0;
+        renderScene();
+
+        function renderScene() {
+            console.log("render");
+            stats.update();
+            // rotate the cube around its axes
+            cube.rotation.x += 0.02;
+            cube.rotation.y += 0.02;
+            cube.rotation.z += 0.02;
+
+            // bounce the sphere up and down
+            step += 0.04;
+            sphere.position.x = 20 + ( 10 * (Math.cos(step)));
+            sphere.position.y = 2 + ( 10 * Math.abs(Math.sin(step)));
+
+            // render using requestAnimationFrame
+            requestAnimationFrame(renderScene);
+            renderer.render(sense, camera);
+        }
+
+        function initStats() {
+
+            var stats = new Stats();
+
+            stats.setMode(0); // 0: fps, 1: ms
+
+            // Align top-left
+            stats.domElement.style.position = 'absolute';
+            stats.domElement.style.left = '0px';
+            stats.domElement.style.top = '0px';
+
+            var dom=window.document.querySelector("div");
+            dom.appendChild(stats.domElement);
+
+            return stats;
+        }
     </script>
 </html>
