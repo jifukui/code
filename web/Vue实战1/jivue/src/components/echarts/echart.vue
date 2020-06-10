@@ -1,6 +1,6 @@
 <template>
   <div class="courent">
-    <h2>ThreeJS的使用</h2>
+    <h2>echart的使用</h2>
     <div class="main">
       <div class="left">
         <router-link
@@ -19,28 +19,14 @@
 </template>
 <script>
 import VueRouter from "vue-router";
-import jisence from "./sence.vue";
-import jimaterial from "./material.vue";
-import jianimation from "./animation.vue";
-const BasePath = "/three";
+import jiedemo from "./demo1.vue";
+const BasePath = "/echart";
 const routes = [
   {
-    path: BasePath + "/sence",
-    name: "sence",
-    component: jisence,
-    info: "这是一个简单的场景"
-  },
-  {
-    path: BasePath + "/material",
-    name: "material",
-    component: jimaterial,
-    info: "添加灯光和材质"
-  },
-  {
-    path: BasePath + "/animation",
-    name: "animation",
-    component: jianimation,
-    info: "一个简单的动画"
+    path: BasePath + "/demo1",
+    name: "demo1",
+    component: jiedemo,
+    info: "一个简单的Echarts Demo"
   }
 ];
 const router = new VueRouter({

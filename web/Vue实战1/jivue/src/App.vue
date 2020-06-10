@@ -55,7 +55,7 @@ h1 {
   display: flex;
 }
 .courent {
-  margin: auto;
+  margin: 0 auto;
   height: 100%;
   width: 70%;
 }

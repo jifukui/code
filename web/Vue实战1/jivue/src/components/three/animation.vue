@@ -83,7 +83,7 @@ export default {
 
       // eslint-disable-next-line no-unused-vars
       function renderScene() {
-        console.log("render");
+        //console.log("render");
         stats.update();
         // rotate the cube around its axes
         cube.rotation.x += 0.02;

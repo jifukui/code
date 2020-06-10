@@ -9,6 +9,8 @@ import info from "../components/player/info.vue";
 import jivue from "../components/Vue/vue.vue";
 import ji_elemnetui from "../components/elementui/elementui.vue";
 import ji_threejs from "../components/three/three.vue";
+import ji_heightchart from "../components/heightcharts/heightchart.vue";
+import ji_echart from "../components/echarts/echart.vue";
 Vue.use(VueRouter);
 const routes = [
   {
@@ -45,6 +47,16 @@ const routes = [
     path: "/three",
     name: "three",
     component: ji_threejs
+  },
+  {
+    path: "/heightchart",
+    name: "heightchart",
+    component: ji_heightchart
+  },
+  {
+    path: "/echart",
+    name: "echart",
+    component: ji_echart
   },
   {
     path: "/jifukui",
