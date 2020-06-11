@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Vue 作用域插槽</title>
+<script src="https://cdn.bootcss.com/vue/2.6.2/vue.min.js"></script>
+<style>
+    
+</style>
+</head>
+<body>
+<div id="test"></div>
+<script>
+    var child=Vue.component("jifukui",{
+        template:"<div>\
+            <slot name='info' :user='user' :test='test'><p>Hello this is info message</p></slot>\
+            </div>",
+        data(){
+            return {
+                user:{
+                    first:"很多接口和hi",
+                    second:"递归会儿"
+                },
+                test:{
+                    first:"带回家看实例化的",
+                    second:"对话框商调函有"
+                }
+            }
+        }
+    })
+    var vm=new Vue({
+        el:"#test",
+        template:"<jifukui>\
+            <!--template v-slot:info='jifukui'><p>Hello this is message{{jifukui.user.second}}{{jifukui.test.first}}</p></template-->\
+            \</jifukui>",
+        data:{
+            name:"吉富逵"
+        }
+    })
+</script>
+</body>
+</html>

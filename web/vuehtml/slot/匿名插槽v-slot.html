@@ -12,11 +12,14 @@
 <div id="test"></div>
 <script>
     var child=Vue.component("jifukui",{
-        template:"<div>jifukuitest<slot></slot><div>"
+        template:"<div>\
+            <span>this is child info</span> \
+            <slot></slot>            \
+            </div>"
     })
     var vm=new Vue({
         el:"#test",
-        template:"<jifukui>start {{name}} end</jifukui>",
+        template:"<jifukui><template v-slot:default>这里是匿名插槽的内容<a href='www.baidu.com'>www.baidu.com</a></template></jifukui>",
         data:{
             name:"吉富逵"
         }

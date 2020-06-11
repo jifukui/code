@@ -58,11 +58,11 @@ export default {
   },
   methods: {
     display: function() {
-      console.log(this.json);
+      //console.log(this.json);
       let mychart = echarts.init(document.getElementById("demo"));
       //console.log(mychart);
-      let status = mychart.setOption(this.json);
-      console.log(status);
+      mychart.setOption(this.json);
+      //console.log(status);
     }
   },
   mounted: function() {

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Vue 具名插槽</title>
+<script src="https://cdn.bootcss.com/vue/2.6.2/vue.min.js"></script>
+<style>
+    
+</style>
+</head>
+<body>
+<div id="test"></div>
+<script>
+    var child=Vue.component("jifukui",{
+        template:"<div>\
+            <span>this is child info</span> \
+            news 1<hr>\
+            <slot name='info'>我是信息插槽</slot>\
+            news2<hr>\
+            <slot name='message'>我是消息插槽</slot> \
+            </div>"
+    })
+    var vm=new Vue({
+        el:"#test",
+        template:"<jifukui>\
+            <template v-slot:message>Hello this is message</template>\
+            <template v-slot:info>Hello this is info</template>\
+            \</jifukui>",
+        data:{
+            name:"吉富逵"
+        }
+    })
+</script>
+</body>
+</html>
