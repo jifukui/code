@@ -61,9 +61,10 @@ export default {
     }
   },
   mounted: function() {
-    console.log(this.data[0]);
+    console.log("hello this is zoom ball");
     this.step1();
     this.step2();
+    console.log(this.data[0]);
   }
 };
 </script>
