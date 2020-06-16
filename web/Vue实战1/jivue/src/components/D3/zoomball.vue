@@ -17,8 +17,10 @@ export default {
       currentTransform: [this.width / 2, this.height / 2],
       svg: null,
       g: null,
+      info: { length: 2000 },
       data: function() {
-        Array.from({ length: 2000 }, (_, i) => {
+        //let length = 2000;
+        Array.from(this.info, (_, i) => {
           const r = this.step * Math.sqrt((i += 0.5)),
             a = this.theta * i;
           return [
