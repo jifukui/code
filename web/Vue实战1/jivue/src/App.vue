@@ -10,6 +10,7 @@
         <router-link to="/three">ThreeJs的使用</router-link>
         <router-link to="/heightchart">HeightChart的使用</router-link>
         <router-link to="/echart">echart的使用</router-link>
+        <router-link to="/D3">D3的使用</router-link>
         <router-link to="/axios">axios的使用</router-link>
         <router-link to="/index">index界面</router-link>
         <router-link to="/jifukui">吉富逵的网页</router-link>
