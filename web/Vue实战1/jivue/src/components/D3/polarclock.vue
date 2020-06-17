@@ -64,26 +64,15 @@ export default {
   },
   methods: {
     step1: function() {
-      //let supper = this ;
-      this.svg = d3
-        .select("#d3")
+      //初始化对象窗口
+      this.svg = d3.select("#d3");
+      this.svg  
         .attr("viewBox", [0, 0, width, height])
         .attr("text-anchor", "middle")
         .style("display", "block")
         .style("font", "700 14px 'Helvetica Neue'");
-      this.field = this.svg
-        .append("g")
-        .attr("transform", `translate(${width / 2},${height / 2})`)
-        .selectAll("g")
-        .data(fields)
-        .enter()
-        .append("g");
-      this.field
-        .append("circle")
-        .attr("file", "none")
-        .attr("stroke", "#000")
-        .attr("stroke-width", 1.5)
-        .attr("r", d => d.radius);
+      /*
+      
       this.fieldTick = this.field
         .selectAll("g")
         .data(d => {
@@ -130,6 +119,23 @@ export default {
         const then = Math.ceil((Date.now() + 1) / 1000) * 1000;
         //yield Promises.when(then, then).then(update);
       }*/
+    },
+    step2: function() {
+      this.field = this.svg
+        .append("g")
+        .attr("transform", `translate(${width / 2},${height / 2})`)
+        .selectAll("g")
+        .data(fields)
+        .enter()
+        .append("g");
+    },
+    setp3: function() {
+      this.field
+        .append("circle")
+        .attr("file", "none")
+        .attr("stroke", "#000")
+        .attr("stroke-width", 1.5)
+        .attr("r", d => d.radius);
     },
     update: function(then) {
       for (const d of fields) {
