@@ -84,12 +84,16 @@ export default {
     },
     step3: function() {
       //绘制
+      console.log("the field is " + JSON.stringify(this.field));
       this.field
         .append("circle")
         .attr("file", "none")
         .attr("stroke", "#000")
         .attr("stroke-width", 1.5)
-        .attr("r", d => d.radius);
+        .attr("r", function(d) {
+          console.log("the data is " + d.radius);
+          return d.radius;
+        });
     },
     step4: function() {
       //初始化事件域的参数
