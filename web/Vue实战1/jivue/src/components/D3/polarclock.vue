@@ -66,33 +66,12 @@ export default {
     step1: function() {
       //初始化对象窗口
       this.svg = d3.select("#d3");
-      this.svg  
+      this.svg
         .attr("viewBox", [0, 0, width, height])
         .attr("text-anchor", "middle")
         .style("display", "block")
         .style("font", "700 14px 'Helvetica Neue'");
       /*
-      
-      this.fieldTick = this.field
-        .selectAll("g")
-        .data(d => {
-          const date = d.interval(new Date(2000, 0, 1));
-          d.range = d.subinterval.range(date, d.interval.offset(date, 1));
-          return d.range.map(t => ({ time: t, field: d }));
-        })
-        .enter()
-        .append("g")
-        .attr("transform", (d, i) => {
-          const angle = (i / d.field.range.length) * 2 * Math.PI - Math.PI / 2;
-          return `translate(${Math.cos(angle) * d.field.radius},${Math.sin(
-            angle
-          ) * d.field.radius})`;
-        });
-      this.fieldTick
-        .append("text")
-        .attr("dy", "0.35em")
-        .attr("fill", "#222")
-        .text(d => d.field.format(d.time).slice(0, 2));
       this.fieldCircle = this.fieldTick
         .append("circle")
         .attr("r", dotRadius)
@@ -121,6 +100,7 @@ export default {
       }*/
     },
     step2: function() {
+      //在svg中添加g标签的数据的初始化
       this.field = this.svg
         .append("g")
         .attr("transform", `translate(${width / 2},${height / 2})`)
@@ -130,12 +110,37 @@ export default {
         .append("g");
     },
     setp3: function() {
+      //绘制
       this.field
         .append("circle")
         .attr("file", "none")
         .attr("stroke", "#000")
         .attr("stroke-width", 1.5)
         .attr("r", d => d.radius);
+    },
+    step4: function() {
+      //初始化事件域的参数
+      this.fieldTick = this.field
+        .selectAll("g")
+        .data(d => {
+          const date = d.interval(new Date(2000, 0, 1));
+          d.range = d.subinterval.range(date, d.interval.offset(date, 1));
+          return d.range.map(t => ({ time: t, field: d }));
+        })
+        .enter()
+        .append("g")
+        .attr("transform", (d, i) => {
+          const angle = (i / d.field.range.length) * 2 * Math.PI - Math.PI / 2;
+          return `translate(${Math.cos(angle) * d.field.radius},${Math.sin(
+            angle
+          ) * d.field.radius})`;
+        });
+      //填充时间域的内容
+      this.fieldTick
+        .append("text")
+        .attr("dy", "0.35em")
+        .attr("fill", "#222")
+        .text(d => d.field.format(d.time).slice(0, 2));
     },
     update: function(then) {
       for (const d of fields) {
@@ -168,6 +173,8 @@ export default {
   },
   mounted: function() {
     this.step1();
+    this.step2();
+    this.step3();
   }
 };
 </script>
