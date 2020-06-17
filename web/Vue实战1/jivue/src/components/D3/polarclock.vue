@@ -10,7 +10,7 @@ let height = 594;
 let width = height;
 let radius = width / 1.67;
 let armRadius = radius / 22;
-//let dotRadius = armRadius - 9;
+let dotRadius = armRadius - 9;
 let fields = [
   {
     radius: 0.2 * radius,
@@ -72,14 +72,7 @@ export default {
         .style("display", "block")
         .style("font", "700 14px 'Helvetica Neue'");
       /*
-      this.fieldCircle = this.fieldTick
-        .append("circle")
-        .attr("r", dotRadius)
-        .attr("fill", "white")
-        .style("color", (d, i) =>
-          this.color((i / d.field.range.length) * 2 * Math.PI)
-        )
-        .style("transition", "fill 750ms ease-out");
+      
       this.fieldTick
         .append("text")
         .attr("dy", "0.35em")
@@ -109,7 +102,7 @@ export default {
         .enter()
         .append("g");
     },
-    setp3: function() {
+    step3: function() {
       //绘制
       this.field
         .append("circle")
@@ -141,6 +134,17 @@ export default {
         .attr("dy", "0.35em")
         .attr("fill", "#222")
         .text(d => d.field.format(d.time).slice(0, 2));
+    },
+    step5: function() {
+      //绘制圆圈
+      this.fieldCircle = this.fieldTick
+        .append("circle")
+        .attr("r", dotRadius)
+        .attr("fill", "white")
+        .style("color", (d, i) =>
+          this.color((i / d.field.range.length) * 2 * Math.PI)
+        )
+        .style("transition", "fill 750ms ease-out");
     },
     update: function(then) {
       for (const d of fields) {
