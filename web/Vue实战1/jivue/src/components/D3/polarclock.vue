@@ -70,23 +70,7 @@ export default {
         .attr("viewBox", [0, 0, width, height])
         .attr("text-anchor", "middle")
         .style("display", "block")
-        .style("font", "700 14px 'Helvetica Neue'");
-      /*
-      
-      
-      this.fieldFocus = this.field
-        .append("circle")
-        .attr("r", dotRadius)
-        .attr("fill", "none")
-        .attr("stroke", "#000")
-        .attr("stroke-width", 3)
-        .attr("cy", d => -d.radius)
-        .style("transition", "transform 500ms ease");
-      /*yield this.update(Math.floor((Date.now() + 1) / 1000) * 1000);
-      while ( true ) {
-        const then = Math.ceil((Date.now() + 1) / 1000) * 1000;
-        //yield Promises.when(then, then).then(update);
-      }*/
+        .style("font", "700 14px 'Helvetica Neue'");  
     },
     step2: function() {
       //在svg中添加g标签的数据的初始化
@@ -149,6 +133,21 @@ export default {
         .attr("fill", "#222")
         .text(d => d.field.format(d.time).slice(0, 2));
     },
+    step7: function(){
+      this.fieldFocus = this.field
+        .append("circle")
+        .attr("r", dotRadius)
+        .attr("fill", "none")
+        .attr("stroke", "#000")
+        .attr("stroke-width", 3)
+        .attr("cy", d => -d.radius)
+        .style("transition", "transform 500ms ease");
+      /*yield this.update(Math.floor((Date.now() + 1) / 1000) * 1000);
+      while ( true ) {
+        const then = Math.ceil((Date.now() + 1) / 1000) * 1000;
+        //yield Promises.when(then, then).then(update);
+      }*/
+    },
     update: function(then) {
       for (const d of fields) {
         const start = d.interval(then);
@@ -179,6 +178,7 @@ export default {
     }
   },
   mounted: function() {
+    console.log("the data is " + JSON.stringify(this.fields));
     this.step1();
     this.step2();
     this.step3();
