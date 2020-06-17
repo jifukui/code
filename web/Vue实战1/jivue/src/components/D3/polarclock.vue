@@ -73,11 +73,7 @@ export default {
         .style("font", "700 14px 'Helvetica Neue'");
       /*
       
-      this.fieldTick
-        .append("text")
-        .attr("dy", "0.35em")
-        .attr("fill", "#222")
-        .text(d => d.field.format(d.time).slice(0, 2));
+      
       this.fieldFocus = this.field
         .append("circle")
         .attr("r", dotRadius)
@@ -146,6 +142,13 @@ export default {
         )
         .style("transition", "fill 750ms ease-out");
     },
+    step6: function() {
+      this.fieldTick
+        .append("text")
+        .attr("dy", "0.35em")
+        .attr("fill", "#222")
+        .text(d => d.field.format(d.time).slice(0, 2));
+    },
     update: function(then) {
       for (const d of fields) {
         const start = d.interval(then);
@@ -179,6 +182,9 @@ export default {
     this.step1();
     this.step2();
     this.step3();
+    this.step4();
+    this.step5();
+    this.step6();
   }
 };
 </script>
