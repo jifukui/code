@@ -22,6 +22,7 @@ import VueRouter from "vue-router";
 import demo1 from "./demo1.vue";
 import barchart from "./barchart.vue";
 import zoomball from "./zoomball.vue";
+import polarclock from "./polarclock.vue";
 const BasePath = "/D3";
 const routes = [
   {
@@ -41,6 +42,12 @@ const routes = [
     name: "zoomball",
     component: zoomball,
     info: "缩放球"
+  },
+  {
+    path: BasePath + "/polarclock",
+    name: "polarclock",
+    component: polarclock,
+    info: "宇宙时间"
   }
 ];
 const router = new VueRouter({
