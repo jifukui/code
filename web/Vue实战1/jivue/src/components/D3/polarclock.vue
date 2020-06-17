@@ -10,7 +10,7 @@ let height = 594;
 let width = height;
 let radius = width / 1.67;
 let armRadius = radius / 22;
-let dotRadius = armRadius - 9;
+//let dotRadius = armRadius - 9;
 let fields = [
   {
     radius: 0.2 * radius,
