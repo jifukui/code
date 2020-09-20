@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>温度监控</title>
+        <meta charset="utf-8">
+        <style>
+             g:hover polyline{
+                stroke:rgba(81, 236, 89, 0.541) !important;
+                stroke-width: 5px !important;
+            }
+            svg circle:hover{
+               fill: whitesmoke;
+               r:6;
+            }
+            div::after{
+               content: "";
+            }
+        </style>
+    </head>
+    <body style="width: 1920px;height: 1080px;">
+        <svg id="svg" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" version="1.1">            
+            <text x="200" y="80" fill="blue" font-size="24">温度监测</text>
+            <line x1="100" y1="500" x2="100" y2="100"
+                style="stroke:rgb(255,0,0);stroke-width:2"/>
+            <line x1="100" y1="500" x2="500" y2="500"
+                style="stroke:rgb(255,0,0);stroke-width:2"/>
+            <text x="60" y="500"  >0</text>
+            <text x="60" y="460"  >10</text>
+            <text x="60" y="420"  >20</text>
+            <text x="60" y="380"  >30</text>
+            <text x="60" y="340"  >40</text>
+            <text x="60" y="300"  >50</text>
+            <text x="60" y="260"  >60</text>
+            <text x="60" y="220"  >70</text>
+            <text x="60" y="180"  >80</text>
+            <text x="60" y="140"  >90</text>
+            <text x="60" y="100"  >100</text>
+            <text x="80" y="80"  >温度(摄氏度)</text>
+            <text x="100" y="520"  >0</text>
+            <text x="130" y="520"  >1</text>
+            <text x="170" y="520"  >2</text>
+            <text x="210" y="520"  >3</text>
+            <text x="250" y="520"  >4</text>
+            <text x="290" y="520"  >5</text>
+            <text x="330" y="520"  >6</text>
+            <text x="370" y="520"  >7</text>
+            <text x="410" y="520"  >8</text>
+            <text x="450" y="520"  >9</text>
+            <text x="490" y="520"  >10</text>
+            <text x="520" y="500"  >监测点</text>
+            <circle  cx="104" cy="496" r="3" stroke="black"
+                stroke-width="1" fill="blue" data-title="开始检测"/>
+            <circle cx="134" cy="456" r="3" stroke="black"
+                stroke-width="1" fill="blue" data-title="温度：10"/>
+            <circle cx="174" cy="326" r="3" stroke="black"
+                stroke-width="1" fill="blue" data-title="温度：42"/>
+            <circle cx="214" cy="326" r="3" stroke="black"
+                stroke-width="1" fill="blue" data-title="温度：42"/>
+            <circle cx="254" cy="136" r="3" stroke="black"
+                stroke-width="1" fill="blue" data-title="温度：87"/>
+            <circle cx="294" cy="123" r="3" stroke="black"
+                stroke-width="1" fill="blue" data-title="温度：93" />
+            <circle cx="334" cy="453" r="3" stroke="black"
+                stroke-width="1" fill="blue" data-title="温度：13"/>
+            <circle cx="374" cy="417" r="3" stroke="black"
+                stroke-width="1" fill="blue" data-title="温度：18"/>
+            <circle cx="414" cy="200" r="3" stroke="black"
+                stroke-width="1" fill="blue" data-title="温度：72"/>
+            <circle cx="454" cy="241" r="3" stroke="black"
+                stroke-width="1" fill="blue" data-title="温度：62"/>
+            <g>
+                <polyline points="100,500,104,496,134,456,174,326,214,326,
+                    256,136,294,123,334,453,374,417,414,200,454,241"
+                    style="stroke:rgba(167, 10, 83, 0.541);stroke-width:2;fill:none">
+                </polyline>
+            </g>
+                
+        </svg>
+        <p id="tooltip" hidden style="position: absolute;top: 100px;left: 100px;">吉富逵到此一游</p>
+    </body>
+    <script>
+        var svg = document.getElementById("tooltip");
+        var circle = document.querySelectorAll("#svg circle")
+        circle.forEach((value)=>{
+            value.addEventListener("mouseover",function(info){
+                svg.innerText=this.getAttribute("data-title");
+                svg.setAttribute("style",`position: absolute;top: ${info.y+10}px;left: ${info.x+10}px;`)
+                svg.removeAttribute("hidden"); 
+            });
+            value.addEventListener("mouseout",function(info){
+                setTimeout(() => {
+                    svg.setAttribute("hidden",true);
+                }, 200);
+            });
+        })
+    </script>
+</html>
