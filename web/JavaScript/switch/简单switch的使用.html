@@ -6,24 +6,29 @@
     </head>
     <body>
         <script>
+            var a="1";
+            var b=2;
             function foo(){
-                var a="1";
-                var b=console.log;
-                switch(true){
+                
+                switch(a){
                     case 1:{
-                        b("num1");
+                        console.log("number 1");
                         break;
                     }
                     case 2:{
-                        b("num2");
+                        console.log("number 2");
                         break;
                     }
-                    case a==1:{
-                        b("string2");
+                    case "1":{
+                        console.log("string 1");
+                        break;
+                    }
+                    case (function(){return "2"})():{
+                        console.log("value is true");
                         break;
                     }
                     default:{
-                        b("not match");
+                        console.log("not match");
                         break;
                     }
                 }
