@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+    <head>
+        <title>原生方法实现继承</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <script>
+            function Math(x,y){
+                this.x=x;
+                this.y=y;
+            }
+            Math.prototype.add=function(){
+                return this.x+this.y;
+            }
+            var data=new Math(4,9);
+            document.writeln(data.add());
+        </script>
+    </body>
+</html>

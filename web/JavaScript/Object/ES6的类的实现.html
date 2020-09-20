@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+    <head>
+        <title>ES6方法实现对象</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <script>
+            class Math{
+                constructor(x,y){
+                    this.x=x;
+                    this.y=y;
+                }
+                add(){
+                    return this.x+this.y;
+                }
+            }
+            var data=new Math(4,9);
+            document.writeln(data.add());
+        </script>
+    </body>
+</html>
