@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JavaScript数组的every方法</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <textarea id="value" style="height: 400px;width: 200px;"></textarea>
+    </body>
+    <script>
+        var dom = document.getElementById("value");
+        let a=[1,2,3,4,5,6,7,8,9];
+        let data = 0;
+        let str = []
+        let value=a.every((val,index)=>{
+            str.push(`the value ${val} the index is ${index}`);
+            data += val;
+            return val<8;
+        },data);
+        str.push(`the result is ${value}`);
+        str.push(`the data is ${data}`);
+        dom.innerHTML=str.join("\n");
+    </script>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>数组遍历之map遍历</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <input type="button" value="执行结果" id="map">
+        <div id="value" style="width: 600px;height: 400;"></div>
+    </body>
+    <script>
+        let a=[1,2,3,4,5,6,7,8,9];
+        let data=0;
+        let str=[];
+        let value=a.map((val,index)=>{
+            data+=val;
+            // continue;
+            // return ;
+            str.push(`the val is ${val} and the index is ${index}`);
+        },data);
+        str.push(`the value is ${value}`);
+        str.push(`The data is ${data}`);
+        str=str.join("\r\n");
+        let demo=document.getElementById("value");
+        demo.innerText=str;
+    </script>
+</html>

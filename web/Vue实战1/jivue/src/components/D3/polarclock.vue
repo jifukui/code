@@ -84,7 +84,7 @@ export default {
     },
     step3: function() {
       //绘制
-      console.log("the field is " + JSON.stringify(this.field));
+      //console.log("the field is " + JSON.stringify(this.field));
       this.field
         .append("circle")
         .attr("file", "none")
@@ -182,7 +182,7 @@ export default {
     }
   },
   mounted: function() {
-    console.log("the data is " + JSON.stringify(this.fields));
+    //console.log("the data is " + JSON.stringify(this.fields));
     this.step1();
     this.step2();
     this.step3();

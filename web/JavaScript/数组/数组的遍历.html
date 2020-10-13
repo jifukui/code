@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>数组的遍历的使用</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <h3>for循环</h3>
+        <p>for循环是JavaScript语言的循环语句使用的是数组的特性进行对数组元素的遍历</p>
+        <code>
+            <div>let a=[1,2,3,4,5,6,7,8,9];</div>
+            <div>let value=0;</div>
+            <div>for(i=0;i&lt;a.length;i++){</div>
+            <div>value+=a[i];</div>
+            <div>}</div>
+            <div>return value;</div>
+        </code>
+        <input type="button" value="计算求和" id="for">
+        <h3>foreach</h3>
+        <p>foreach有2个参数，第一个参数是一个回调函数可以有三个参数第一个参数是当前值第二个参数是当前的索引第三个参数是数组对象
+            除了第一个参数之外其他两个参数为可选参数；第二个参数为传递给参数的值可以不写默认值为this，foreach函数中不允许使用
+            break和continue语句，同时没有返回值。与for循环不同的是这个是数组的方法。
+        </p>
+        <code>
+            <div>let a=[1,2,3,4,5,6,7,8,9];</div>
+            <div>var data=0;</div>
+            <div>a.forEach((val,ind)=>{</div>
+            <div>data+=val;</div>
+            <div>},data);</div>
+        </code>
+        <input type="button" value="执行结果" id="foreach">
+        <div id="value1" style="width: 600px;height: 400;"></div>
+        <h3>map</h3>
+        <p>map方法其实和foreach方法的功能和参数其实大致一致，但是他有返回值，返回值是由函数每次执行时返回值组成的数组</p>
+        <code>
+            <div>let a=[1,2,3,4,5,6,7,8,9];</div>
+            <div>var data=0;</div>
+            <div>a.map((val,ind)=>{</div>
+            <div>data+=val;</div>
+            <div>},data);</div>
+        </code>
+        <input type="button" value="执行结果" id="map">
+        <div id="value2" style="width: 600px;height: 400;"></div>
+    </body>
+    <script>
+        let a=[1,2,3,4,5,6,7,8,9];
+        let demo1=document.getElementById("for");
+        demo1.addEventListener("click",function(){
+            let value =0 ;
+            for(let i=0;i<a.length;i++){
+                value +=a[i];
+            }
+            alert(`The result is ${value}`);
+        });
+        let demo2=document.getElementById("foreach");
+        var data=0;
+        demo2.addEventListener("click",function(){
+            let value ="";
+            data=0;
+            a.forEach((val,ind)=>{
+                data+=val;
+                value+=`当前值为 ${val} 索引值为${ind}\r\n`
+            },data);
+            value+=`结果为${data}`
+            let demo=document.getElementById("value1");
+            demo.innerText=value;
+        });
+        let demo3=document.getElementById("map");
+        demo3.addEventListener("click",function(){
+            let value ="";
+            let value1 ;
+            data=0;
+            value1=a.map((val,ind)=>{
+                data+=val;
+                value+=`当前值为 ${val} 索引值为${ind}\r\n`
+            },data);
+            value+=`结果为${data}\r\n`;
+            value+=`value的值为${value1.toString()}`;
+            let demo=document.getElementById("value2");
+            demo.innerText=value;
+        });
+    </script>
+</html>

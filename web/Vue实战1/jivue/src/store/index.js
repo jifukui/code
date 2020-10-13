@@ -3,6 +3,7 @@ import Vuex from "vuex";
 import createLogger from "vuex/dist/logger";
 import vuetest from "./vue.js";
 Vue.use(Vuex);
+
 const myplay = function(store) {
   /**每次调用mutation时都会触发 */
   store.subscribe(function(mutation, state) {
@@ -122,6 +123,25 @@ export default new Vuex.Store({
             }
           }
           state.current = state.playinfo[state.playinfo.length - 1];
+        }
+      }
+    },
+    socketio: {
+      mutations: {
+        JI_USER_INFO(state, data) {
+          console.log("mThe state is " + state);
+          console.log("mThe data is " + data);
+        },
+        JI_connect(state, data) {
+          console.log("Have connect " + state);
+          console.log("Have connect " + data);
+        }
+      },
+      actions: {
+        JIA_USER_INFO(state, data) {
+          console.log("aThe state is " + state);
+          console.log("aThe data is " + data);
+          //this.$socket.emit("SOCKET_JI", "Hello this jifukui emmit");
         }
       }
     },

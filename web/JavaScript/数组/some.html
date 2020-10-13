@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>some方法进行数组遍历</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <textarea style="height: 500px;width: 300px;" id="value"></textarea>
+    </body>
+    <script>
+        let dom = document.getElementById("value");
+        let a=[1,2,3,4,5,6,7,8,9];
+        let data = 0;
+        let data1 = 0;
+        let str = [];
+        data=a.some((val,index)=>{
+            data1 += val;
+            str.push(`The value is ${val} and the index is ${index}`);
+            return val>7;
+        },data1);
+        str.push(`The data is ${data}`);
+        str.push(`The data1 is ${data1}`);
+        dom.value = str.join("\n");
+    </script>
+</html>

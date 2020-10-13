@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>数组的reduce方法</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <div id="value" style="width: 240px;height: 400;"></div>
+    </body>
+    <script>
+        let dom = document.getElementById("value");
+        let a = [1,2,3,4,5,6,7,8,9];
+        let data = 0;
+        let data1 = 0 ;
+        let str = [];
+        let data2 = 0;
+        data2 = a.reduce((data,val,index)=>{
+            data1 += val;
+            data ++;
+            // continue;
+            str.push(`The val is ${val} and the index is ${index}`);
+            return data1;
+        },data1);
+        str.push(`The data is ${data}`);
+        str.push(`The data1 is ${data1}`);
+        str.push(`The data2 is ${data2}`);
+        dom.innerHTML=str.join("\r\n");
+    </script>
+</html>

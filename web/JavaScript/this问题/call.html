@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JavaScript中call的使用</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <input type="text" id="value">
+    </body>
+    <script>
+        let value  = document.getElementById("value");
+        function Persion(name){
+            this.name = name;
+        }
+        Persion.prototype.sayname=function(val){
+            value.value=this.name+"the value is "+val;
+        }
+        let json =new Persion("jack");
+        json.sayname();
+    </script>
+</html>

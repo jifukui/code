@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>鼠标轨迹</title>
+        <meta charset="utf-8">
+        <style>
+            div{
+                width: 10px;
+                height: 10px;
+                background: red;
+                position: absolute;
+                border-radius: 50%;
+            }
+        </style>
+    </head>
+    <body>
+        <div style="width: 1920;height: 1080;background-color: aliceblue;"></div>
+    </body>
+    <script>
+        document.onmousemove = function () {
+            //var div = document.createElement('div');
+            var x = event.clientX;
+            var y = event.clientY;
+            //div.style.left = x + "px";
+            //div.style.top = y + "px";
+            //document.body.appendChild(div);
+        }
+    </script>
+</html>

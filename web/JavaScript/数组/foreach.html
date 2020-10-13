@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>foreach的使用</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <input type="button" value="执行结果" id="foreach">
+        <div id="value" style="width: 600px;height: 400;"></div>
+    </body>
+    <script>
+        let a=[1,2,3,4,5,6,7,8,9];
+        let demo2=document.getElementById("foreach");
+        var data=0;
+        demo2.addEventListener("click",function(){
+            let value ="";
+            data=0;
+            a.forEach((val,ind)=>{
+                data+=val;
+                value+=`当前值为 ${val} 索引值为${ind}\r\n`
+            },data);
+            value+=`结果为${data}`
+            let demo=document.getElementById("value");
+            demo.innerText=value;
+        });
+    </script>
+</html>

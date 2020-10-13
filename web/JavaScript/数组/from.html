@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JavaScript form的使用</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <textarea id="value" style="width: 400px;height: 300px;"></textarea>
+    </body>
+    <script>
+        let dom =document.getElementById("value");
+        let str=[];
+        let data={"3":888}
+        let a=Object.create(data);
+        a.length=4;
+        a.name="kuikui",
+        a["0"]=4;
+        a["6"]=666;
+        str.push(`the a data is ${Array.from(a)}`);
+        let b=[1,2,3,4,5,6,7,8];
+        str.push(`the b data is ${Array.from(b)}`);
+        let c=new Set();
+        c.add(1);
+        c.add(5);
+        str.push(`the c data is ${Array.from(c)}`);
+        let d =new Array(8);
+        let i=0;
+        str.push(`the d data is ${Array.from(d,()=>{
+            return (i++)>4;
+        })}`);
+        let e="Hello,world";
+        str.push(`the e data is ${Array.from(e)}`);
+        dom.value=str.join("\n");
+    </script>
+</html>

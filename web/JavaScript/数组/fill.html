@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>数组的fill方法</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <textarea style="height: 500px;width: 300px;" id="value"></textarea>
+    </body>
+    <script>
+        let dom = document.getElementById("value");
+        let str=[]
+        let a=new Array(5);
+        str.push(`the init value is ${a}`);
+        a.fill(1);
+        str.push(`the a.fill(1) value is ${a}`);
+        a.fill(2,1);
+        str.push(`the a.fill(2,1) value is ${a}`);
+        a.fill(3,3,5);
+        str.push(`the a.fill(3,3,5) value is ${a}`);
+        a.fill(3,5,10);
+        str.push(`the a.fill(3,5,10) value is ${a}`);
+        a.length=10
+        a.fill(3,5,10);
+        str.push(`after set length is 10 the a.fill(3,5,10) value is ${a}`);
+        dom.value =str.join("\n");
+    </script>
+</html>

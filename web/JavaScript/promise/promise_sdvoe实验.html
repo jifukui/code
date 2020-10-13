@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>利国SDVoE Promise的使用</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <input type="button" value="点击触发成功" onclick="jifukui()">
+        <input type="button" value="点击触发失败" onclick="jifukui1()">
+        <textarea id="value" style="width: 300px;height: 500px;"></textarea>
+    </body>
+    <script>
+        let obj={ok:null,cancle:null};
+        let value =new Promise((res,rej)=>{
+                obj.ok=res;
+                obj.cancle=rej;
+            }).then(success,failed);
+        /*function value(){
+            return new Promise((res,rej)=>{
+                obj.ok=res;
+                obj.cancle=rej;
+            }).then(success,failed);
+        }*/
+        function jifukui(){
+            console.log("jifukui");
+            //let index=value();
+            //console.log(index);
+            setTimeout(()=>{
+                obj.ok();
+            },2000);
+            //obj.ok();
+        }
+        function jifukui1(){
+            console.log("jifukui1");
+            //let index=value();
+            //console.log(index);
+            setTimeout(()=>{
+                obj.cancle();
+            },2000);
+            //obj.cancle();
+        }
+        function success(){
+            console.log("hello this is successfull");
+        }
+        function failed(){
+            console.log("hello this is failed");
+        }
+    </script>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>手写Promise的实现</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <script src="./promise.js"></script>
+        <script>
+            let value = new JiPromise((resolve,reject)=>{
+                // resolve("good time");
+                // reject("bad time");
+                setTimeout(()=>{
+                    resolve("good time");
+                },1222)
+            });
+            // console.log(value);
+            // value.then((value)=>{
+            //     console.log("hello the good is "+value);
+            //     console.log(sss)
+            // })
+            value.then((value)=>{
+                console.log("hello the good is " + value);
+            },(value)=>{
+                console.log("hello the bad is " + value);
+                console.log(dkalh)
+            });
+            console.log("start")
+        </script>
+    </body>
+</html>
