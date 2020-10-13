@@ -1,4 +1,5 @@
-const { app, BrowserWindow } = require('electron')
+const { app, BrowserWindow } = require('electron');
+const server = require("fs");
 console.log(app);
 function createWindow () {   
   // 创建浏览器窗口
