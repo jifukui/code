@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>北京市利国电子温度监控</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <div id="liguo" style="width: 800px;height: 600px;"></div>
+    </body>
+    <!-- <script src="./echart1.js"></script>-->
+    <script src="./echarts.min.js"></script> 
+    <!-- <script src="./echarts.js"></script> -->
+    <!-- <script src="https://cdn.staticfile.org/echarts/4.3.0/echarts.min.js"></script> -->
+    <script>
+        let dom = document.getElementById("liguo");
+        let echart = echarts.init(dom);
+        let options={
+            //配置标题
+            color:["green"],
+            title:{
+                x:"center",//水平对齐方式
+                y:"top",//垂直对齐方式
+                //backgroundColor:"rgba(0,0,0,0)",//背景颜色
+                //borderColor:"rgb(0,255,0)",//边框颜色
+                //borderWidth:2,//边框宽度
+                padding:5,//边框的内边距
+                itemGap:4,//主辅标题之间的间距
+                //标题文字
+                textStyle:{
+                    fontSize:18,
+                    fontWeight:"bolder"
+                    //color:"yellow"
+                },
+                //子标题样式
+                subtextStyle:{},
+                text:"北京市利国电子"
+            },
+            tooltip:{},
+            //x轴
+            xAxis:{
+                //type:"time",
+                name:"时间",
+                data:["一月","二月","三月","四月","五月","六月"]
+                //min:0,
+                //max:100
+            },
+            yAxis:{
+                type:"value",
+                name:"温度",
+                //data:[0,10,20,30,40,50,60,70,80,90,100]
+                min:0,
+                max:100
+            },
+            //图标
+            legend:{
+
+                data:[
+                    {
+                        name:"系列1",
+                        icon:'circle',
+                        textStyle:'red'
+                    }
+                ],
+                borderColor:"blue"
+            },
+            series:[{
+                name:"温度",
+                type:"line",
+                data:[15.6,36.4]
+            }],
+            textStyle:{
+                fontSize:12
+            }/*,
+            visualMap:{
+                show:false,
+                dimension:0,
+                pieces:[],
+                outOfRange:{
+                    color:"green"
+                }
+            },
+            dispatchAction:{
+                type:"selectDataRange",
+                selected:[2,4]
+
+            }
+        }
+        let j = 0; 
+        for(let i = 0 ; i < options.series[0].data.length; i++) {
+            if(options.series[0].data[i]>40&&options.series[0].data[i+1]>40) {
+                options.visualMap.pieces[j] =  {gte:i,lte:i+1,color:'red'}; 
+                j++; 
+            }*/
+        }
+        echart.setOption(options)
+    </script>
+</html>
