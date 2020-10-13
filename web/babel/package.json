@@ -1,0 +1,23 @@
+{
+  "name": "babel",
+  "version": "1.0.0",
+  "description": "babel",
+  "main": "in.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "jifukui"
+  ],
+  "author": "jifukui",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/plugin-transform-runtime": "^7.11.5",
+    "babel-preset-es2015": "^6.24.1",
+    "babelify": "^10.0.0"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.11.2",
+    "babel-polyfill": "^6.26.0"
+  }
+}
