@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>北京市利国电子技术有限公司SDVOE演示程序</title>
+        <meta charset="utf-8">
+        <link href="./ji.css" rel="Stylesheet">
+    </head>
+    <body>
+        <h3>设备连接</h3>
+        <label>设备地址：</label><input type="text" id="ip" value="192.168.20.222">
+        <label>设备端口:</label><input type="number" id="port" value="6970">
+        <input type="button" value="连接" id="link" onclick="login()">
+        <h3>视频切换</h3>
+        <p>
+            视频切换为常规的视频切换模式
+        </p>
+        <div>
+            <label>切换状态选择：</label>
+            <select id="switch">
+                <option value="genlock">帧同步</option>
+                <option value="fastswitch"selected>快速切换</option>
+            </select>
+            <br>
+            <label>输入：</label>
+            <select id="v_input">
+                <option value="1">编码器1</option>
+                <option value="2">编码器2</option>
+                <option value="3">编码器3</option>
+                <option value="4">编码器4</option>
+                <option value="5">编码器5</option>
+                <option value="6">编码器6</option>
+                <option value="7">编码器7</option>
+            </select>
+            <br>
+            <label>输出：</label>
+            <select id="v_output">
+                <option value="1">解码器1</option>
+                <option value="2">解码器2</option>
+                <option value="3">解码器3</option>
+                <option value="4">解码器4</option>
+                <option value="5">解码器5</option>
+                <option value="6">解码器6</option>
+                <option value="7">解码器7</option>
+                <option value="all">全部</option>
+            </select>
+            <br>
+            <div id="v_set">
+                <label>输出分辨率：</label>
+                <select id="v_out_res">
+                    <option value="640 480">640x480</option>
+                    <option value="800 600">800x600</option>
+                    <option value="1280 720">1280x720</option>
+                    <option value="1280 768">1280x768</option>
+                    <option value="1024 768">1024x768</option>
+                    <option value="1366 768">1366x768</option>
+                    <option value="1360 768">1360x768</option>
+                    <option value="1920 1080" selected>1920x1080</option>
+                    <option value="1920 1200">1920x1200</option>
+                    <option value="2560 1440">2560x1440</option>
+                    <option value="3840 2160">3840x2160</option>
+                    <option value="4096 2160">4096x2160</option>
+                </select>
+                <label>输出帧率：</label>
+                <select id="v_out_fs">
+                    <option value="24">24</option>
+                    <option value="25">25</option>
+                    <option value="30">30</option>
+                    <option value="50">50</option>
+                    <option value="60" selected>60</option>
+                </select>
+            </div>
+            <br>
+            <input type="button" value="切换" id="v_switch_btn">
+            <h3>视频墙</h3>
+            <h4>设置</h4>
+            <label>墙模式列:</label>
+            <select id="wall_mode_w">
+                <option value="1" >1</option>
+                <option value="2" selected>2</option>
+                <option value="3" >3</option>
+                <option value="4" >4</option>
+                <option value="5" >5</option>
+                <option value="6" >6</option>
+                <option value="7" >7</option>
+                <option value="8" >8</option>
+            </select>
+            <label>墙模式行:</label>
+            <select id="wall_mode_h">
+                <option value="1" >1</option>
+                <option value="2" selected>2</option>
+                <option value="3" >3</option>
+                <option value="4" >4</option>
+                <option value="5" >5</option>
+                <option value="6" >6</option>
+                <option value="7" >7</option>
+                <option value="8" >8</option>
+            </select>
+            <label>切换模式：</label>
+            <select id="wall_switch">
+                <option value="wall">帧同步</option>
+                <option value="wall_fs"selected>快速切换</option>
+            </select>    
+            <h4>输入</h4>
+            <label>输入源：</label>
+            <select id="wall_input">
+                <option value="1">编码器1</option>
+                <option value="2">编码器2</option>
+                <option value="3">编码器3</option>
+                <option value="4">编码器4</option>
+                <option value="5">编码器5</option>
+                <option value="6">编码器6</option>
+                <option value="7">编码器7</option>
+            </select>
+            <br>
+            <label>H_Pixel:</label>  
+            <input type="number" id="wall_res_H" value="1920">
+            <label>V_Pixel:</label>  
+            <input type="number" id="wall_res_V" value="1080">
+            <br>
+            </div>
+            <input type="button" value="切换" id="wall_switch_btn">   
+            <h4>输出</h4>
+            <label>输出：</label>
+            <select id="wall_output">
+                <option value="1">解码器1</option>
+                <option value="2">解码器2</option>
+                <option value="3">解码器3</option>
+                <option value="4">解码器4</option>
+                <option value="5">解码器5</option>
+                <option value="6">解码器6</option>
+                <option value="7">解码器7</option>
+            </select> 
+            <label>位置：</label>  
+            <select id="wall_position">
+                <option value="1" selected>1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+            </select>
+            <br>
+            <label>输出分辨率：</label>
+            <select id="wall_out_res">
+                <option value="640 480">640x480</option>
+                <option value="800 600">800x600</option>
+                <option value="1280 720">1280x720</option>
+                <option value="1280 768">1280x768</option>
+                <option value="1024 768">1024x768</option>
+                <option value="1366 768">1366x768</option>
+                <option value="1360 768">1360x768</option>
+                <option value="1920 1080" selected>1920x1080</option>
+                <option value="1920 1200">1920x1200</option>
+                <option value="2560 1440">2560x1440</option>
+                <option value="3840 2160">3840x2160</option>
+                <option value="4096 2160">4096x2160</option>
+            </select>
+            <label>输出帧率：</label>
+            <select id="wall_out_fs">
+                <option value="24">24</option>
+                <option value="25">25</option>
+                <option value="30">30</option>
+                <option value="50">50</option>
+                <option value="60" selected>60</option>
+            </select>
+            </div>  
+            <input style="display: block;" type="button" id="wall_btn" value="确定"> 
+            <h4>边框调节(Pixel)</h4>
+            <label>左边界：</label>
+            <input type="number" id="left" value="0">
+            <br>
+            <label>右边界：</label>
+            <input type="number" id="right" value="0">
+            <br>
+            <label>上边界：</label>
+            <input type="number" id="top" value="0">
+            <br>
+            <label>下边界：</label>
+            <input type="number" id="bottom" value="0">
+            <div id="wall_set" hidden>
+            </div>  
+            <input style="display: block;" type="button" id="wall_borden_btn" value="确定">       
+            <div>
+                <div >
+                    <table style="height: 270px;width: 480px;color: blue;background-color: chartreuse;" id="videowall">
+                        <tr>
+                            <td>1</td>
+                            <td>2</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>4</td>
+                        </tr>
+                    </table>
+                </div>
+                <br>
+            </div>
+        </div>
+        <h3>Multiview</h3>
+            <p>
+                Multiview_4分屏
+            </p>
+            <h4>输出源选择</h4>
+            <label>输入：</label>
+            <select id="Multiview1_input">
+                <option value="1">编码器1</option>
+                <option value="2">编码器2</option>
+                <option value="3">编码器3</option>
+                <option value="4">编码器4</option>
+                <option value="5">编码器5</option>
+                <option value="6">编码器6</option>
+                <option value="7">编码器7</option>
+            </select> 
+            <label>位置：</label>  
+            <select id="Multiview1_position">
+                <option value="1" selected>1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+            </select>
+            <input type="button" id="Multiview1_setect_btn" value="选择">   
+            <br>
+            <label>输出：</label>
+            <select id="Multiview1_output">
+                <option value="1">解码器1</option>
+                <option value="2">解码器2</option>
+                <option value="3">解码器3</option>
+                <option value="4">解码器4</option>
+                <option value="5">解码器5</option>
+                <option value="6">解码器6</option>
+                <option value="7">解码器7</option>
+            </select> 
+            <br>
+            <label>输出分辨率：</label>
+            <select id="Multiview1_output_res">
+                <option value="640 480">640x480</option>
+                <option value="800 600">800x600</option>
+                <option value="1280 720">1280x720</option>
+                <option value="1280 768">1280x768</option>
+                <option value="1024 768">1024x768</option>
+                <option value="1366 768">1366x768</option>
+                <option value="1360 768">1360x768</option>
+                <option value="1920 1080" selected>1920x1080</option>
+                <option value="1920 1200">1920x1200</option>
+                <option value="2560 1440">2560x1440</option>
+                <option value="3840 2160">3840x2160</option>
+                <option value="4096 2160">4096x2160</option>
+            </select>
+            <label>输出帧率：</label>
+            <select id="Multiview1_output_fps">
+                <option value="24">24</option>
+                <option value="25">25</option>
+                <option value="30">30</option>
+                <option value="50">50</option>
+                <option value="60" selected>60</option>
+            </select>
+            </div>  
+            <input style="display: block;" type="button" id="Multiview1_btn" value="确定">       
+        </div>
+        <p>
+            Multiview_PIP  <br>
+                窗口1在上 窗口2在下
+        </p>
+        <h4>窗口1选择</h4>
+        <label>输入：</label>
+        <select id="Multiview2_input1">
+            <option value="1">编码器1</option>
+            <option value="2">编码器2</option>
+            <option value="3">编码器3</option>
+            <option value="4">编码器4</option>
+            <option value="5">编码器5</option>
+            <option value="6">编码器6</option>
+            <option value="7">编码器7</option>
+        </select> 
+        <br>
+        <label>窗口1分辨率(H_Pixel):</label>  
+        <input type="number" id="Multiview2_src1_res_H" value="1920">
+        <label>窗口1分辨率(V_Pixel):</label>  
+        <input type="number" id="Multiview2_src1_res_V" value="1080">
+        <br>
+        <label>窗口1偏移位置(H_Pixel):</label>  
+        <input type="number" id="Multiview2_src1_posi_H" value="0">
+        <label>窗口1偏移位置(V_Pixel):</label>  
+        <input type="number" id="Multiview2_src1_posi_V" value="0">
+        <br>
+        <input type="button" id="Multiview2_setect_btn1" value="确定">   
+        <br>
+        <h4>窗口2选择</h4>
+        <label>输入：</label>
+        <select id="Multiview2_input2">
+            <option value="1">编码器1</option>
+            <option value="2"selected>编码器2</option>
+            <option value="3">编码器3</option>
+            <option value="4">编码器4</option>
+            <option value="5">编码器5</option>
+            <option value="6">编码器6</option>
+            <option value="7">编码器7</option>
+        </select> 
+        <br>
+        <label>窗口2分辨率(H_Pixel):</label>  
+        <input type="number" id="Multiview2_src2_res_H" value="1920">
+        <label>窗口2分辨率(V_Pixel):</label>  
+        <input type="number" id="Multiview2_src2_res_V" value="1080">
+        <br>
+        <label> 窗口2偏移位置(H_Pixel):</label>  
+        <input type="number" id="Multiview2_src2_posi_H" value="0">
+        <label> 窗口2偏移位置(V_Pixel):</label>  
+        <input type="number" id="Multiview2_src2_posi_V" value="0">
+        <br>
+        <input type="button" id="Multiview2_setect_btn2" value="确定">   
+        <br>
+        <h4>输出</h4>
+        <label>输出：</label>
+        <select id="Multiview2_output">
+            <option value="1">解码器1</option>
+            <option value="2">解码器2</option>
+            <option value="3">解码器3</option>
+            <option value="4">解码器4</option>
+            <option value="5">解码器5</option>
+            <option value="6">解码器6</option>
+            <option value="7">解码器7</option>
+        </select> 
+        <br>
+        <label>输出分辨率：</label>
+        <select id="Multiview2_output_res">
+            <option value="640 480">640x480</option>
+            <option value="800 600">800x600</option>
+            <option value="1280 720">1280x720</option>
+            <option value="1280 768">1280x768</option>
+            <option value="1024 768">1024x768</option>
+            <option value="1366 768">1366x768</option>
+            <option value="1360 768">1360x768</option>
+            <option value="1920 1080" selected>1920x1080</option>
+            <option value="1920 1200">1920x1200</option>
+            <option value="2560 1440">2560x1440</option>
+            <option value="3840 2160">3840x2160</option>
+            <option value="4096 2160">4096x2160</option>
+        </select>
+        <label>输出帧率：</label>
+        <select id="Multiview2_output_fps">
+            <option value="24">24</option>
+            <option value="25">25</option>
+            <option value="30">30</option>
+            <option value="50">50</option>
+            <option value="60" selected>60</option>
+        </select>
+        </div>  
+        <input style="display: block;" type="button" id="Multiview2_btn" value="确定">       
+        <p>
+            Multiview_PIP画圆  <br>
+                窗口1在窗口2中画圆
+        </p>
+        <h4>窗口1选择</h4>
+        <label>输入：</label>
+        <select id="Multiview3_input1">
+            <option value="1">编码器1</option>
+            <option value="2">编码器2</option>
+            <option value="3">编码器3</option>
+            <option value="4">编码器4</option>
+            <option value="5">编码器5</option>
+            <option value="6">编码器6</option>
+            <option value="7">编码器7</option>
+        </select> 
+        <br>
+        <label>窗口1分辨率(H_Pixel):</label>  
+        <input type="number" id="Multiview3_src1_res_H" value="1920">
+        <label>窗口1分辨率(V_Pixel):</label>  
+        <input type="number" id="Multiview3_src1_res_V" value="1080">
+        <br>
+        <input type="button" id="Multiview3_setect_btn1" value="确定">   
+        <br>
+        <h4>窗口2选择</h4>
+        <label>输入：</label>
+        <select id="Multiview3_input2">
+            <option value="1">编码器1</option>
+            <option value="2"selected>编码器2</option>
+            <option value="3">编码器3</option>
+            <option value="4">编码器4</option>
+            <option value="5">编码器5</option>
+            <option value="6">编码器6</option>
+            <option value="7">编码器7</option>
+        </select> 
+        <br>
+        <input type="button" id="Multiview3_setect_btn2" value="确定">   
+        <br>
+        <h4>输出</h4>
+        <label>输出：</label>
+        <select id="Multiview3_output">
+            <option value="1">解码器1</option>
+            <option value="2">解码器2</option>
+            <option value="3">解码器3</option>
+            <option value="4">解码器4</option>
+            <option value="5">解码器5</option>
+            <option value="6">解码器6</option>
+            <option value="7">解码器7</option>
+        </select> 
+        <br>
+        <label>输出分辨率：</label>
+        <select id="Multiview3_output_res">
+            <option value="640 480">640x480</option>
+            <option value="800 600">800x600</option>
+            <option value="1280 720">1280x720</option>
+            <option value="1280 768">1280x768</option>
+            <option value="1024 768">1024x768</option>
+            <option value="1366 768">1366x768</option>
+            <option value="1360 768">1360x768</option>
+            <option value="1920 1080" selected>1920x1080</option>
+            
+            <option value="1920 1200">1920x1200</option>
+            <option value="2560 1440">2560x1440</option>
+            <option value="3840 2160">3840x2160</option>
+            <option value="4096 2160">4096x2160</option>
+        </select>
+        <label>输出帧率：</label>
+        <select id="Multiview3_output_fps">
+            <option value="24">24</option>
+            <option value="25">25</option>
+            <option value="30">30</option>
+            <option value="50">50</option>
+            <option value="60" selected>60</option>
+        </select>
+        </div>  
+        <input style="display: block;" type="button" id="Multiview3_btn" value="确定">   
+        <input type="button" id="Multiview3_setect_btn3" value="停止画圆">   
+        <h3>KVM</h3>
+        <p>
+            KVM切换
+        </p>
+        <div>
+            <label>近端选择：</label>
+            <select id="KVM_input">
+                <option value="1">编码器1</option>
+                <option value="4">编码器4</option>
+            </select>
+            <br>
+            <label>远端选择：</label>
+            <select id="KVM_output">
+                <option value="1">解码器1</option>
+                <option value="4">解码器4</option>
+            </select>
+            <br>
+            <input type="button" value="切换" id="KVM_switch_btn">    
+    </div>
+    
+        <script src="./ji.js"></script>
+    </body>
+</html>
