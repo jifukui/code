@@ -1,4 +1,4 @@
-#include <libusb.h>
+#include <libusb-1.0/libusb.h>
 int main(){
     libusb_version * version = NULL;
     version = libusb_get_version();
