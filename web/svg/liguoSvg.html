@@ -100,10 +100,11 @@
         var kui
         circle.forEach((value)=>{
             value.addEventListener("mouseover",function(info){
+                console.log("have move in")
                 ji=info
                 kui=this
                 svg.innerText=this.getAttribute("data-title");
-                svg.setAttribute("style",`position: absolute;top: ${info.y+10}px;left: ${info.x+10}px;`)
+                svg.setAttribute("style",`position: absolute;top: ${info.clientY+10}px;left: ${info.clientX+10}px;`)
                 svg.removeAttribute("hidden"); 
             });
             value.addEventListener("mouseout",function(info){

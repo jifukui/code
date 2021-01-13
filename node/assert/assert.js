@@ -53,4 +53,9 @@ let c={
 let d=a;
 // assert.deepStrictEqual(a,b);
 // assert.deepStrictEqual(a,c);
-assert.deepStrictEqual(a,c,"我们不相等的啊");
+try{
+    assert.deepStrictEqual(c,a,"我们不相等的啊");
+}catch(err){
+    console.log("the error is")
+    console.dir(err);
+}

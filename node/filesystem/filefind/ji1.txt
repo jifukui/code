@@ -1,0 +1,10 @@
+[
+  'netbios name = LigSDVOE',
+  'netbios name',
+  ' ',
+  ' ',
+  'LigSDVOE',
+  index: 4,
+  input: '    netbios name = LigSDVOE',
+  groups: undefined
+]

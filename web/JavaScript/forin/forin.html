@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>For-in的实验</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+    </body>
+    <script>
+        function Person(){
+            this.age = 15;
+        }
+        Person.username = "jifukui";
+        Person.type = "god"
+        var value = new Person();
+        value.name = "jack"
+        function GetInfo(obj){
+            if(obj&&typeof obj == "object"){
+                for(val in obj){
+                    if(typeof val =="object"){
+                        GetInfo(obj[val]);
+                    }else{
+                        console.log(`the obj ${val} value is ${obj[val]}`)
+                    }
+                }
+            }
+        }
+    </script>
+</html>

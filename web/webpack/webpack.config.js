@@ -3,8 +3,7 @@ const path=require("path");
 module.exports={
     /**输入文件 */
     entry:{
-        utils:'./utils.js',
-        audioswitch:'./audioswitch.js'
+        utils:'./src/main.js'
     },
     /**输出文件 */
     output:{

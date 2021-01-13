@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>canvas像素操作</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <h1>像素图像</h1>
+        <canvas width="400px" width="400px" id="jifukui">
+
+        </canvas>
+    </body>
+    <script>
+        var ji = new ImageData(300,150);
+        var dom = document.getElementById("jifukui");
+        var canvas = dom.getContext("2d",{alpha:false});
+        function red(){
+            for(let i=0;i<ji.data.length;i+=4){
+                ji.data[i]=255;
+            }
+            canvas.putImageData(ji,0,0)
+        }
+        function Green(){
+            for(let i=1;i<ji.data.length;i+=4){
+                ji.data[i]=255;
+            }
+            canvas.putImageData(ji,0,0)
+        }
+        function Blue(){
+            for(let i=2;i<ji.data.length;i+=4){
+                ji.data[i]=255;
+            }
+            canvas.putImageData(ji,0,0)
+        }
+        function Clear(){
+            for(let i=0;i<ji.data.length;i++){
+                if(i%4==3){
+                    ji.data[i]=255;
+                    // break;
+                }else{
+                    ji.data[i]=0;
+                }
+            }
+            canvas.putImageData(ji,0,0)
+        }
+    </script>
+</html>

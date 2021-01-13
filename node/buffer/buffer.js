@@ -1,0 +1,11 @@
+let buffer1 = Buffer.alloc(10,0x31);
+console.log(buffer1);
+console.log(buffer1.toString());
+let arr = [1,2,3,4,5,6,7,8,9];
+let buffer2 = Buffer.from(arr);
+console.log(buffer2);
+console.log(buffer2.toString());
+let str = "123456789";
+let buffer3 = Buffer.from(str);
+console.log(buffer3);
+console.log(buffer3.toString());
