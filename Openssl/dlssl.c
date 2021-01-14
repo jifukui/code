@@ -1,8 +1,17 @@
 #include <stdio.h>
 #include <openssl/ssl.h>
 #include <openssl/err.h>
+#include <dlfcn.h>
 int main(){
+    void		*ssllib;
     SSL_CTX		*jifukuictx;
+    printf("the ssl lib is \r\n");
+	if ((ssllib = dlopen("libssl.so", RTLD_LAZY)) == NULL) {
+		printf("open ssl error\r\n");
+		return 0;
+	}else{
+		printf("open ssl lib success\r\n");
+	}
     char *sslfunc[]={
 		"SSL_free",
 		"SSL_accept",
