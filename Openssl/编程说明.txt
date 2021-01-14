@@ -1,3 +1,4 @@
 编译程序需要使用指明库的位置，比我的默认位置为/usr/local/lib/
 需要使用的动态库为 -lssl 和 -lcrypto
 需要使用的头文件为#include<openssl/ssl.h>
+gcc GetVersion.c -lssl -lcrypto

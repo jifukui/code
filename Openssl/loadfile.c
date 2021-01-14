@@ -1,7 +1,7 @@
 #include<openssl/ssl.h>
 #include<openssl/err.h>
 int main(){
-    SSL_CTX		*ctx;
+    SSL_CTX		*jifukuictx;
 	SSL_library_init();
     SSL_library_init();
 	if ((jifukuictx = SSL_CTX_new(SSLv23_server_method())) == NULL)
