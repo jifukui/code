@@ -18,7 +18,7 @@ int main (){
         ret = EVP_Digest((const void *)in,strlen(in),out,&len,(const EVP_MD*)EVP_md5(),NULL);
     }while(ret!=1);
     printf("the data is \r\n");
-    for(i = 0 ; i < out_len ; i++){
+    for(i = 0 ; i < len ; i++){
         printf("%02X ",(unsigned char)out[i]);
     }
     printf("\r\n");
