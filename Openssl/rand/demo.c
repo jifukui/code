@@ -15,7 +15,7 @@ int main(){
     char data[rand_num];
     char out[out_len];
     srand((unsigned int ) time(t));
-    for(i = 0 ; i < rand_num-1 ; i++ ){
+    for(i = 0 ; i < rand_num ; i++ ){
         //do{
             data[i] = (unsigned char) (rand() % 128);
         //}while(data[i] == 0);
@@ -23,6 +23,7 @@ int main(){
     }
     data[rand_num-1] = 0 ;
     RAND_add(data,rand_len,rand_num);
+    RAND_seed(data,rand_len);
     while(1)
 	{
 		ret=RAND_status();
