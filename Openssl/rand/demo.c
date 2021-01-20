@@ -7,13 +7,11 @@ int main(){
     printf("the max number is %u\r\n",RAND_MAX);
     time_t *t;
     unsigned int value = 0;
-    char data[1024];
+    char data[64];
     srand((unsigned int ) time(t));
-    value = rand()/(1024*1024*256);
-    printf("the value is %u\r\n",value);
-    memcpy(data,(const char *)value,1024);
-    for(int i = 0 ; i < 1024 ; i++){
-        printf("the %d value is %c and  %c\r\n",i,data[i],(char *)(value+1));
+    for(int i = 0 ; i < 64 ; i++ ){
+        data[i] = rand() % 256;
+        printf("the i is %u and the value is %u\r\n",i,data[i]);
     }
     return 0;
 }
