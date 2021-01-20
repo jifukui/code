@@ -6,7 +6,7 @@
 #include <openssl/evp.h>
 const int out_len  = 16 ;
 int main (){
-    char in[] = "amlmdWt1aQ==" ;
+    char in = "amlmdWt1aQ==" ;
     char out [out_len];
     int i ;
     int len;
@@ -17,8 +17,9 @@ int main (){
     do{
         ret = EVP_Digest((const void *)in,strlen(in),out,&len,(const EVP_MD*)EVP_md5(),NULL);
     }while(ret!=1);
+    printf("the data is \r\n");
     for(i = 0 ; i < out_len ; i++){
-        printf("the data is %02X ",(unsigned char)out[i]);
+        printf("%02X ",(unsigned char)out[i]);
     }
     printf("\r\n");
     
