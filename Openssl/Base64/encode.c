@@ -10,7 +10,9 @@ int main(){
     EVP_EncodeInit(ectx);
     printf("start undate \r\n");
     EVP_EncodeUpdate(ectx,out,&outl,in,inl);
-    //EVP_EncodeFinal(&ectx,out+total,&outl);
+    printf("input final\r\n");
+    printf("the encode string is %s and the length is %d\r\n",out,outl);
+    EVP_EncodeFinal(&ectx,out,&outl);
     printf("the encode string is %s and the length is %d\r\n",out,outl);
     return 0;
 }
