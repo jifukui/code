@@ -10,7 +10,7 @@ const int out_len  = 32 ;
 int main(){
     printf("the max number is %u\r\n",RAND_MAX);
     time_t *t;
-    int i = 0,ret;
+    int i = 0 , ret ;
     unsigned int value = 0;
     char data[rand_num];
     char out[out_len];
@@ -21,7 +21,7 @@ int main(){
         //}while(data[i] == 0);
         printf("the i is %u and the value is %u\r\n",i,data[i]);
     }
-    data[rand_num-1] = 0 ;
+    //data[rand_num-1] = 0 ;
     RAND_add(data,rand_len,rand_num);
     RAND_seed(data,rand_len);
     while(1)
