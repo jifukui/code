@@ -14,7 +14,7 @@ int main (){
     //EVP_DigestUpdate(ctx,(const void *)in,strlen(in));
     int ret ;
     do{
-        ret = EVP_Digest((const void *)in,strlen(in),out,out_len,(const EVP_MD*)EVP_md5());
+        ret = EVP_Digest((const void *)in,strlen(in),out,out_len,(const EVP_MD*)EVP_md5(),NULL);
     }while(ret!=1);
     for(i = 0 ; i < out_len ; i++){
         printf("the data is %02X ",(unsigned char)out[i]);
