@@ -43,8 +43,9 @@ int main(){
     }while(ret!=1);	
 	printf("rand data: \r\n");
 	for (i = 0; i < out_len; i++){
-		printf("%02x ", out[i]);
+		printf("%02x",(unsigned char) out[i]);
 	}
+    printf("\r\n");
 	RAND_cleanup();
     return 0;
 }
