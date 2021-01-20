@@ -9,12 +9,12 @@ const int rand_len = 64 ;
 const int out_len  = 32 ;
 int main(){
     printf("the max number is %u\r\n",RAND_MAX);
-    time_t *t;
+    time_t t;
     int i = 0 , ret ;
     unsigned int value = 0;
     char data[rand_num];
     char out[out_len];
-    srand((unsigned int ) time(t));
+    srand((unsigned int ) time(&t));
     for(i = 0 ; i < rand_num ; i++ ){
         //do{
             data[i] = (unsigned char) (rand() % 128);
