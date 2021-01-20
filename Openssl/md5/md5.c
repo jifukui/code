@@ -6,7 +6,7 @@
 #include <openssl/evp.h>
 const int out_len  = 16 ;
 int main (){
-    char in = "amlmdWt1aQ==" ;
+    char in[] = "amlmdWt1aQ==" ;
     char out [out_len];
     int i ;
     int len;
