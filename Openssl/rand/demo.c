@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include <openssl/ssl.h>
+#include <openssl/rand.h>
 const int rand_num = 16 ;
 const int rand_len = 64 ;
 const int out_len  = 32 ;
