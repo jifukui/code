@@ -4,7 +4,7 @@ int main(){
         "123456",
         "jifukui"
     };
-    char temp[] = "%[^0-9]";
+    char temp[] = "%[^0-9]c";
     int len;
     int i;
     for( i = 0 ; i < 2 ; i++){
