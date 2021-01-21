@@ -7,7 +7,7 @@ int main(){
     char temp[] = "%*1[^0-9]";
     int len;
     int i;
-    for( i = 0 ; i < 1 ; i++){
+    for( i = 0 ; i < 2 ; i++){
         len = sscanf(str[i],temp);
         printf("the %d match is %d\r\n",i,len);
     }
