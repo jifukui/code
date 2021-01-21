@@ -1,5 +1,5 @@
 #include<stdio.h>
-const int num = 4;
+#define  num  4
 int main(){
     char *str[num]={
         "123456",
