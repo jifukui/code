@@ -12,8 +12,8 @@ int main(){
         "**-_798"
     };
     char buf[16];
-    char temp[]="%*[0-9][^0-9]";
-    char temp1[]="%*[0-9a-zA-Z_-][^0-9a-zA-Z_-]";
+    char temp[]="%*[0-9]%[^0-9]";
+    char temp1[]="%*[0-9a-zA-Z_-]%[^0-9a-zA-Z_-]";
     int len;
     int i;
     for( i = 0 ; i < num ; i++){
