@@ -81,7 +81,7 @@ void * thread_main(void *arg)
     if(err<0)
     {
         printf("ssl accerr\n");
-        return ;
+        return 0;
     }
 
     printf ("SSL connection using %s\n", SSL_get_cipher (ssl));
@@ -110,8 +110,8 @@ void * thread_main(void *arg)
     if(err<0)
     {
         printf("ssl read err\n");
-        closesocket(s);
-        return;
+        BIO_closesocket(s);
+        return 0;
     }
     printf("get : %s\n",buf);
     SSL_free (ssl);
@@ -129,7 +129,6 @@ pthread_t pthreads_thread_id(void)
 
 void pthreads_locking_callback(int mode, int type, char *file,int line)
 {
-
     if (mode & CRYPTO_LOCK)
     {
         pthread_mutex_lock(&(lock_cs[type]));
@@ -157,7 +156,7 @@ int main ()
     SSL_METHOD     *meth;
     SSL_load_error_strings();
     SSLeay_add_ssl_algorithms();
-    meth = SSLv3_server_method();
+    meth = SSLv23_server_method();
     ctx = SSL_CTX_new (meth);
     if (!ctx)
     {
@@ -198,7 +197,7 @@ int main ()
     service.sin_family = AF_INET;
     service.sin_addr.s_addr = inet_addr("127.0.0.1");
     service.sin_port = htons(1111);
-    if (bind( s, &service, sizeof(service),8) == SO_ERROR)
+    if (bind( s, &service, sizeof(service)) == SO_ERROR)
     {
         printf("bind() failed.\n");
         closesocket(s);

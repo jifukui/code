@@ -89,7 +89,7 @@ void*thread_main(void *arg)
     dest_sin.sin_addr.s_addr = inet_addr( "127.0.0.1" );
     dest_sin.sin_port = htons( 1111 );
 again:
-    err=connect( sock,&dest_sin, sizeof( dest_sin));
+    err=connect( sock,(struct sockaddr_in *)&dest_sin, sizeof( dest_sin));
     if(err<0)
     {
         sleep(1);
@@ -99,14 +99,14 @@ again:
     if(ssl==NULL)
     {
         printf("ss new err\n");
-        return ;
+        return 0;
     }
     SSL_set_fd(ssl,sock);
     err = SSL_connect (ssl);                    
     if(err<0)
     {
         printf("SSL_connect err\n");
-        return;
+        return 0;
     }
     printf ("SSL connection using %s\n", SSL_get_cipher (ssl));
     server_cert = SSL_get_peer_certificate (ssl);      
@@ -122,11 +122,11 @@ again:
     if(err<0)
     {
         printf("ssl write err\n");
-        return ;
+        return 0;
     }
     SSL_shutdown (ssl);  /* send SSL/TLS close_notify */
     SSL_free (ssl);
-    closesocket(sock);
+    BIO_closesocket(sock);
 
 }
 
@@ -145,7 +145,7 @@ int main ()
     int i;
     pthread_t pid[MAX_T];  
     SSLeay_add_ssl_algorithms();
-    meth = SSLv3_client_method();  
+    meth = SSLv23_client_method();  
     SSL_load_error_strings();
     ctx = SSL_CTX_new (meth);    
     if(ctx==NULL)
