@@ -71,7 +71,7 @@ int  SSL_CTX_use_PrivateKey_file_pass(SSL_CTX *ctx,char *filename,char *pass)
 
  
 
-void*thread_main(void *arg)
+void * thread_main(void *arg)
 {
     int err,buflen,read;
     int sd;
@@ -126,7 +126,7 @@ again:
     }
     SSL_shutdown (ssl);  /* send SSL/TLS close_notify */
     SSL_free (ssl);
-    BIO_closesocket(sock);
+    close(sock);
 
 }
 

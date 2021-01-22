@@ -15,7 +15,7 @@
 #include <openssl/pem.h>
 #include <openssl/ssl.h>
 #include <openssl/err.h>
-
+//编译gcc server.c -L /usr/local/lib/ -lssl -lcrypto -lpthread  -o server
 #define CERTF "certs/sslservercert.pem"
 #define KEYF  "certs/sslserverkey.pem"
 #define CAFILE  "certs/cacert.pem"
@@ -110,7 +110,7 @@ void * thread_main(void *arg)
     if(err<0)
     {
         printf("ssl read err\n");
-        BIO_closesocket(s);
+        close(s);
         return 0;
     }
     printf("get : %s\n",buf);
@@ -200,7 +200,7 @@ int main ()
     if (bind( s, &service, sizeof(service)) == SO_ERROR)
     {
         printf("bind() failed.\n");
-        closesocket(s);
+        close(s);
         return -1;
     }
 
