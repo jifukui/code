@@ -198,14 +198,14 @@ int main ()
     service.sin_family = AF_INET;
     service.sin_addr.s_addr = inet_addr("127.0.0.1");
     service.sin_port = htons(1111);
-    if (bind( s, (SOCKADDR*) &service, sizeof(service)) == SOCKET_ERROR)
+    if (bind( s, &service, sizeof(service),8) == SO_ERROR)
     {
         printf("bind() failed.\n");
         closesocket(s);
         return -1;
     }
 
-    if (listen( s, 1 ) == SOCKET_ERROR)
+    if (listen( s, 1 ) == SO_ERROR)
     {
         printf("Error listening on socket.\n");
     }

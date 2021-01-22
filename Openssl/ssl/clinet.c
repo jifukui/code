@@ -89,10 +89,10 @@ void*thread_main(void *arg)
     dest_sin.sin_addr.s_addr = inet_addr( "127.0.0.1" );
     dest_sin.sin_port = htons( 1111 );
 again:
-    err=connect( sock,(PSOCKADDR) &dest_sin, sizeof( dest_sin));
+    err=connect( sock,&dest_sin, sizeof( dest_sin));
     if(err<0)
     {
-        Sleep(1);
+        sleep(1);
         goto again;
     }
     ssl = SSL_new (ctx);                        
@@ -143,7 +143,7 @@ int main ()
     char buf [1024];
     SSL_METHOD *meth;  
     int i;
-    pthread_tpid[MAX_T];  
+    pthread_t pid[MAX_T];  
     SSLeay_add_ssl_algorithms();
     meth = SSLv3_client_method();  
     SSL_load_error_strings();
