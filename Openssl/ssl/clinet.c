@@ -73,27 +73,17 @@ int  SSL_CTX_use_PrivateKey_file_pass(SSL_CTX *ctx,char *filename,char *pass)
 
 void*thread_main(void *arg)
 {
-    int          err,buflen,read;
-    int          sd;
-    SSL_CTX             *ctx=(SSL_CTX *)arg;
-    struct            sockaddr_in dest_sin;
-    SOCKET        sock;
-    PHOSTENT   phe;
-    WORD           wVersionRequested;
-    WSADATA            wsaData;
+    int err,buflen,read;
+    int sd;
+    SSL_CTX *ctx=(SSL_CTX *)arg;
+    struct sockaddr_in dest_sin;
+    int sock;
     SSL               *ssl;
     X509             *server_cert;
     char     *str;
     char        buf [1024];
     SSL_METHOD     *meth;
     FILE              *fp;
-    wVersionRequested = MAKEWORD( 2, 2 );
-    err = WSAStartup( wVersionRequested, &wsaData );
-    if ( err != 0 )
-    {
-        printf("WSAStartup err\n");      
-        return -1;
-    }
     sock = socket(AF_INET, SOCK_STREAM, 0);
     dest_sin.sin_family = AF_INET;
     dest_sin.sin_addr.s_addr = inet_addr( "127.0.0.1" );
@@ -142,13 +132,10 @@ again:
 
 int main ()
 {
-    int          err,buflen,read;
-    int          sd;
-    struct            sockaddr_in dest_sin;
-    SOCKETsock;
-    PHOSTENT phe;   
-    WORD wVersionRequested;
-    WSADATA wsaData;   
+    int   err,buflen,read;
+    int   sd;
+    struct  sockaddr_in dest_sin;
+    int sock;
     SSL_CTX *ctx;
     SSL  *ssl;   
     X509 *server_cert;
@@ -190,8 +177,8 @@ int main ()
         err=pthread_create(&(pid[i]),NULL,&thread_main,(void *)ctx);
         if(err!=0)
         {
-                printf("pthread_create err\n");
-                continue;
+            printf("pthread_create err\n");
+            continue;
         }
     }
     for (i=0; i<MAX_T; i++)
