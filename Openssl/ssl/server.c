@@ -115,7 +115,7 @@ void * thread_main(void *arg)
     }
     printf("get : %s\n",buf);
     SSL_free (ssl);
-    closesocket(s);
+    close(s);
 }
 
 pthread_t pthreads_thread_id(void)
@@ -143,17 +143,17 @@ void pthreads_locking_callback(int mode, int type, char *file,int line)
 
 int main ()
 {
-    int                  err;                 
-    int                  i;
-    int        s,AcceptSocket;
+    int err;                 
+    int i;
+    int s,AcceptSocket;
     struct sockaddr_in  service;
-    pthread_tpid;
-    size_t             client_len;
-    SSL_CTX             *ctx;
-    SSL               *ssl;
-    X509             *client_cert;
-    char        *str;
-    char    buf[1024];
+    pthread_t pid;
+    size_t  client_len;
+    SSL_CTX *ctx;
+    SSL  *ssl;
+    X509  *client_cert;
+    char  *str;
+    char  buf[1024];
     SSL_METHOD     *meth;
     SSL_load_error_strings();
     SSLeay_add_ssl_algorithms();
@@ -190,13 +190,6 @@ int main ()
     s_server_verify=SSL_VERIFY_PEER|SSL_VERIFY_FAIL_IF_NO_PEER_CERT|SSL_VERIFY_CLIENT_ONCE;
     SSL_CTX_set_verify(ctx,s_server_verify,verify_callback_server);
     SSL_CTX_set_client_CA_list(ctx,SSL_load_client_CA_file(CAFILE));
-    wVersionRequested = MAKEWORD( 2, 2 );
-    err = WSAStartup( wVersionRequested, &wsaData );
-    if ( err != 0 )
-    {
-        printf("err\n");      
-        return -1;
-    }
     s = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
     if(s<0) 
     {
@@ -236,7 +229,6 @@ int main ()
         FD_SET(s, &fdset);
         select(s+1, &fdset, NULL, NULL, (struct timeval *)&tv);
         if(FD_ISSET(s, &fdset))
-
         {
             AcceptSocket=accept(s, NULL,NULL);
             ssl = SSL_new (ctx);      
