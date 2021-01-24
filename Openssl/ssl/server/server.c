@@ -33,6 +33,7 @@ int main(){
     while (1)
     {
         char data[500];
+        bzero(data, 500);
         int fd;
         char value[] =  "hello this is jifukui\r\n";
         fd = accept(socketfd,&other_addr, &sin_size);
@@ -40,6 +41,7 @@ int main(){
             printf("good for accept\r\n");
         }
         while(data[0]!='c'){
+            bzero(data, 500);
             ret = recv(fd,data,500,0);
             if(ret>0){
                 printf("the receive is %d\r\n",ret);
