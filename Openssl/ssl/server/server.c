@@ -45,7 +45,6 @@ int main(){
             ret = recv(fd,data,500,0);
             if(ret>0){
                 printf("the receive is %d\r\n",ret);
-                // printf("good get data \r\n");
                 printf("good get data is %s\r\n",data);
             }
         }
