@@ -33,14 +33,16 @@ int main(){
     while (1)
     {
         char data[500];
+        int fd;
         char value[] =  "hello this is jifukui\r\n";
-        ret = accept(socketfd,&other_addr, &sin_size);
-        if(ret != -1){
+        fd = accept(socketfd,&other_addr, &sin_size);
+        if(fd != -1){
             printf("good for accept\r\n");
         }
-        ret = recv(ret,data,500,0);
+        ret = recv(fd,data,500,0);
         printf("the receive is %d\r\n",ret);
         if(ret>0){
+            printf("good get data \r\n");
             printf("good get data is %s\r\n",data);
             send(socketfd,value,strlen(value),0);
         }
