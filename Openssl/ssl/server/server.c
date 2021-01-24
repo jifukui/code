@@ -45,6 +45,7 @@ int main(){
             printf("good get data \r\n");
             printf("good get data is %s\r\n",data);
             send(fd,value,strlen(value),0);
+            close(fd);
         }
     }
     return 0;
