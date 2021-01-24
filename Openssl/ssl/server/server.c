@@ -2,6 +2,7 @@
 #include <sys/socket.h>
 #include <stdio.h>
 #include <arpa/inet.h>
+#include <string.h>
 int main(){
     int socketfd ;
     struct sockaddr_in my_addr ;
@@ -37,7 +38,8 @@ int main(){
         if(ret != -1){
             printf("good for accept\r\n");
         }
-        ret = recv(socketfd,data,500,0);
+        ret = recv(ret,data,500,0);
+        printf("the receive is %d\r\n",ret);
         if(ret>0){
             printf("good get data is %s\r\n",data);
             send(socketfd,value,strlen(value),0);
