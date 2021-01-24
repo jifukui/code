@@ -1,13 +1,14 @@
 #include <sys/types.h>
 #include <sys/socket.h>
 #include <stdio.h>
+#include <arpa/inet.h>
 int main(){
     int socketfd ;
-    sockaddr_in my_addr ;
-    sockaddr_in other_addr ;
+    struct sockaddr_in my_addr ;
+    struct sockaddr_in other_addr ;
     int ret;
     int sin_size;
-    sin_size = sizeof(sockaddr_in);
+    sin_size = sizeof(struct sockaddr_in);
     socketfd = socket(AF_INET,SOCK_STREAM,0);
     if(socketfd==-1)
     {
@@ -18,7 +19,7 @@ int main(){
     my_addr.sin_port = htons(4000);
     my_addr.sin_addr.s_addr = inet_addr("0.0.0.0");
     bzero(&(my_addr.sin_zero), 8);
-    ret = bind (sockfd, (struct sockaddr *)&my_addr, sizeof(struct sockaddr));
+    ret = bind (socketfd, (struct sockaddr *)&my_addr, sizeof(struct sockaddr));
     if(ret == -1){
         printf("have error for bind\r\n");
         return 0;
