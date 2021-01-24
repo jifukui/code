@@ -44,7 +44,7 @@ int main(){
         if(ret>0){
             printf("good get data \r\n");
             printf("good get data is %s\r\n",data);
-            send(socketfd,value,strlen(value),0);
+            send(fd,value,strlen(value),0);
         }
     }
     return 0;
