@@ -39,14 +39,16 @@ int main(){
         if(fd != -1){
             printf("good for accept\r\n");
         }
-        ret = recv(fd,data,500,0);
-        printf("the receive is %d\r\n",ret);
-        if(ret>0){
-            printf("good get data \r\n");
-            printf("good get data is %s\r\n",data);
-            send(fd,value,strlen(value),0);
-            close(fd);
+        while(data[0]!='c'){
+            ret = recv(fd,data,500,0);
+            if(ret>0){
+                printf("the receive is %d\r\n",ret);
+                // printf("good get data \r\n");
+                printf("good get data is %s\r\n",data);
+            }
         }
+        close(fd);
+        
     }
     return 0;
 
