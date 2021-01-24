@@ -3,11 +3,11 @@
 #include <stdio.h>
 int main(){
     int socketfd ;
-    struct sockaddr_in my_addr ;
-    struct sockaddr_in other_addr ;
+    sockaddr_in my_addr ;
+    sockaddr_in other_addr ;
     int ret;
     int sin_size;
-    sin_size = sizeof((struct sockaddr_in));
+    sin_size = sizeof(sockaddr_in);
     socketfd = socket(AF_INET,SOCK_STREAM,0);
     if(socketfd==-1)
     {
