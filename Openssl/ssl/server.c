@@ -40,10 +40,9 @@ int  verify_callback_server(int ok, X509_STORE_CTX *ctx)
  
 
 int  SSL_CTX_use_PrivateKey_file_pass(SSL_CTX *ctx,char *filename,char *pass)
-
 {
-    EVP_PKEY     *pkey=NULL;
-    BIO               *key=NULL;
+    EVP_PKEY  *pkey=NULL;
+    BIO  *key=NULL;
     key=BIO_new(BIO_s_file());
     BIO_read_filename(key,filename);
     pkey=PEM_read_bio_PrivateKey(key,NULL,NULL,pass);
@@ -166,7 +165,7 @@ int main ()
 
     if ((!SSL_CTX_load_verify_locations(ctx,CAFILE,NULL)) ||(!SSL_CTX_set_default_verify_paths(ctx)))
     {
-        printf("err\n");
+        printf("err\r\n");
         exit(1);
     }
 
@@ -175,7 +174,7 @@ int main ()
         ERR_print_errors_fp(stderr);
         exit(3);
     }
-    if (SSL_CTX_use_PrivateKey_file_pass(ctx, KEYF, "123456") <= 0)
+    if (SSL_CTX_use_PrivateKey_file_pass(ctx, KEYF, "jifukui") <= 0)
     {
         ERR_print_errors_fp(stderr);
         exit(4);
