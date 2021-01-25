@@ -68,6 +68,7 @@ int main(){
         if(fd != -1){
             printf("good for accept\r\n");
         }
+        SSL_set_fd(ssl,fd);
         ssln = SSL_accept(ssl);
         printf("the ssln state is %d\r\n",ssln);
         if (ssln >= 1) {
