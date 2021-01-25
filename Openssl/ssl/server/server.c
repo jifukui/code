@@ -82,12 +82,12 @@ int main(){
                 printf("have not get data\r\n");
             }
 		} else {
-			ssln = SSL_get_error(hc->ssl, ssln);
+			ssln = SSL_get_error(ssl, ssln);
 			if (ssln != SSL_ERROR_WANT_READ && ssln != SSL_ERROR_WANT_WRITE)
 			{
 				printf("somethings \r\n");
 			}
-			printf("SSL_accept error %d\r\n",jin);
+			printf("SSL_accept error %d\r\n",ssln);
 		}
         /*while(data[0]!='c'){
             bzero(data, 500);
