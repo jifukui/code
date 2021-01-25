@@ -73,9 +73,9 @@ int main(){
         SSL_set_fd(ssl,fd);
         ssln = SSL_accept(ssl);
         printf("the ssln state is %d\r\n",ssln);
-        if(ssln<=0){
+        /*if(ssln<=0){
             ssln =1;
-        }
+        }*/
         if (ssln >= 1) {
 			printf("have accept\r\n");
             ret = SSL_read(ssl,data,length);
