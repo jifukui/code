@@ -15,6 +15,7 @@ int main(){
     sin_size = sizeof(struct sockaddr_in);
     socketfd = socket(AF_INET,SOCK_STREAM,0);
     SSL_CTX *jifukuictx;
+    SSL *ssl;
 	if ((jifukuictx = SSL_CTX_new(SSLv23_server_method())) == NULL)
 	{
 		printf("load method over\r\n");
@@ -33,6 +34,12 @@ int main(){
     {
         printf("have error for socket\r\n");
         return 0;
+    }
+    ret = SSL_new(jifukuictx);
+    if(ret){
+        printf("creat ssl success\r\n");
+    }else{
+        printf("creat ssl failed\r\n");
     }
     my_addr.sin_family = AF_INET;
     my_addr.sin_port = htons(4000);
@@ -59,9 +66,21 @@ int main(){
         if(fd != -1){
             printf("good for accept\r\n");
         }
-        /*if ((ssln = SSL_accept(hc->ssl)) == 1) {
+        if ((ssln = SSL_accept(ssl)) == 1) {
 			printf("have accept\r\n");
-			
+            ret = SSL_read(ssl,data,500);
+			if(ret){
+                printf("the receive is %d\r\n",ret);
+                printf("good get data is %s\r\n",data);
+                ret = SSL_write(ssl,value,113);
+                if(ret){
+                    printf("send success %d\r\n",ret);
+                }else{
+                    printf("error send info\r\n");
+                }
+            }else{  
+                printf("have not get data\r\n");
+            }
 		} else {
 			ssln = SSL_get_error(hc->ssl, ssln);
 			if (ssln != SSL_ERROR_WANT_READ && ssln != SSL_ERROR_WANT_WRITE)
@@ -69,7 +88,7 @@ int main(){
 				printf("somethings \r\n");
 			}
 			printf("SSL_accept error %d\r\n",jin);
-		}*/
+		}
         /*while(data[0]!='c'){
             bzero(data, 500);
             ret = recv(fd,data,500,0);
@@ -78,12 +97,12 @@ int main(){
                 printf("good get data is %s\r\n",data);
             }
         }*/
-        ret = recv(fd,data,500,0);
+        /*ret = recv(fd,data,500,0);
         if(ret>0){
             printf("the receive is %d\r\n",ret);
             printf("good get data is %s\r\n",data);
         }
-        send(fd,value,113,0);
+        send(fd,value,113,0);*/
         close(fd);
         
     }
