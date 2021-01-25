@@ -36,7 +36,7 @@ int main(){
         return 0;
     }
     ssl = SSL_new(jifukuictx);
-    if(ret){
+    if(ssl){
         printf("creat ssl success\r\n");
     }else{
         printf("creat ssl failed\r\n");
@@ -106,7 +106,7 @@ int main(){
             printf("good get data is %s\r\n",data);
         }
         send(fd,value,113,0);*/
-        close(fd);
+        //close(fd);
         
     }
     return 0;
