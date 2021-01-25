@@ -16,6 +16,7 @@ int main(){
     socketfd = socket(AF_INET,SOCK_STREAM,0);
     struct SSL_CTX *jifukuictx;
     struct SSL *ssl;
+    SSL_load_error_strings();
     SSL_library_init();
     jifukuictx = SSL_CTX_new(SSLv23_server_method());
 	if (jifukuictx == NULL)
@@ -88,6 +89,7 @@ int main(){
                 printf("have not get data\r\n");
             }
 		} else {
+            ERR_print_errors_fp(stderr);
 			ssln = SSL_get_error(ssl, ssln);
 			if (ssln != SSL_ERROR_WANT_READ && ssln != SSL_ERROR_WANT_WRITE)
 			{
