@@ -3,6 +3,9 @@
 #include <stdio.h>
 #include <arpa/inet.h>
 #include <string.h>
+#include <dlfcn.h>
+#include <openssl/err.h>
+#include <openssl/ssl.h>
 int main(){
     int socketfd ;
     struct sockaddr_in my_addr ;
@@ -11,6 +14,21 @@ int main(){
     int sin_size;
     sin_size = sizeof(struct sockaddr_in);
     socketfd = socket(AF_INET,SOCK_STREAM,0);
+    SSL_CTX *jifukuictx;
+	if ((jifukuictx = SSL_CTX_new(SSLv23_server_method())) == NULL)
+	{
+		printf("load method over\r\n");
+	}
+	else if (SSL_CTX_use_certificate_file(jifukuictx, "thttpd.pem", SSL_FILETYPE_PEM) == 0)
+	{
+		printf("cannot open certificate\r\n");
+	}
+	else if (SSL_CTX_use_PrivateKey_file(jifukuictx, "thttpd.pem", SSL_FILETYPE_PEM) == 0)
+	{
+		printf("cannot open PrivateKey\r\n");
+	}else{
+		printf("good for openssl\r\n");
+	}
     if(socketfd==-1)
     {
         printf("have error for socket\r\n");
@@ -35,19 +53,37 @@ int main(){
         char data[500];
         bzero(data, 500);
         int fd;
-        char value[] =  "hello this is jifukui\r\n";
+        char value[] =  "HTTP/1.1 200 OK\r\nContent-Type: text/html; charset=UTF-8\r\nContent-Length: 114\r\n\r\n<html><body>jifukui</body></html>";
+        int ssln ;
         fd = accept(socketfd,&other_addr, &sin_size);
         if(fd != -1){
             printf("good for accept\r\n");
         }
-        while(data[0]!='c'){
+        /*if ((ssln = SSL_accept(hc->ssl)) == 1) {
+			printf("have accept\r\n");
+			
+		} else {
+			ssln = SSL_get_error(hc->ssl, ssln);
+			if (ssln != SSL_ERROR_WANT_READ && ssln != SSL_ERROR_WANT_WRITE)
+			{
+				printf("somethings \r\n");
+			}
+			printf("SSL_accept error %d\r\n",jin);
+		}*/
+        /*while(data[0]!='c'){
             bzero(data, 500);
             ret = recv(fd,data,500,0);
             if(ret>0){
                 printf("the receive is %d\r\n",ret);
                 printf("good get data is %s\r\n",data);
             }
+        }*/
+        ret = recv(fd,data,500,0);
+        if(ret>0){
+            printf("the receive is %d\r\n",ret);
+            printf("good get data is %s\r\n",data);
         }
+        send(fd,value,114,0);
         close(fd);
         
     }
