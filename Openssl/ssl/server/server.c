@@ -83,7 +83,7 @@ int main(){
             printf("the receive is %d\r\n",ret);
             printf("good get data is %s\r\n",data);
         }
-        send(fd,value,114,0);
+        send(fd,value,113,0);
         close(fd);
         
     }
