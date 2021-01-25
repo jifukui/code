@@ -35,7 +35,7 @@ int main(){
         printf("have error for socket\r\n");
         return 0;
     }
-    ret = SSL_new(jifukuictx);
+    ssl = SSL_new(jifukuictx);
     if(ret){
         printf("creat ssl success\r\n");
     }else{
