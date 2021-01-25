@@ -14,8 +14,8 @@ int main(){
     int sin_size;
     sin_size = sizeof(struct sockaddr_in);
     socketfd = socket(AF_INET,SOCK_STREAM,0);
-    SSL_CTX *jifukuictx;
-    SSL *ssl;
+    struct SSL_CTX *jifukuictx;
+    struct SSL *ssl;
     jifukuictx = SSL_CTX_new(SSLv23_server_method());
 	if (jifukuictx == NULL)
 	{
@@ -38,7 +38,7 @@ int main(){
     }
     ssl = SSL_new(jifukuictx);
     if(ssl){
-        printf("creat ssl success %u\r\n",ssl->handshake_func);
+        printf("creat ssl success\r\n");
     }else{
         printf("creat ssl failed\r\n");
     }
