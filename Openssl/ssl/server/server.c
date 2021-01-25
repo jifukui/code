@@ -66,12 +66,15 @@ int main(){
         if(fd != -1){
             printf("good for accept\r\n");
         }
-        if ((ssln = SSL_accept(ssl)) == 1) {
+        ssln = SSL_accept(ssl));
+        printf("the ssln state is %d\r\n",ssln);
+        if ((ssln == 1) {
 			printf("have accept\r\n");
             ret = SSL_read(ssl,data,500);
+            printf("the receive is %d\r\n",ret);
 			if(ret){
-                printf("the receive is %d\r\n",ret);
-                printf("good get data is %s\r\n",data);
+                //printf("the receive is %d\r\n",ret);
+                //printf("good get data is %s\r\n",data);
                 ret = SSL_write(ssl,value,113);
                 if(ret){
                     printf("send success %d\r\n",ret);
