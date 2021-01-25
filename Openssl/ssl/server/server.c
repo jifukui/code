@@ -6,6 +6,7 @@
 #include <dlfcn.h>
 #include <openssl/err.h>
 #include <openssl/ssl.h>
+const int length = 5000;
 int main(){
     int socketfd ;
     struct sockaddr_in my_addr ;
@@ -60,8 +61,8 @@ int main(){
     }
     while (1)
     {
-        char data[500];
-        bzero(data, 500);
+        char data[length];
+        bzero(data, length);
         int fd;
         char value[] =  "HTTP/1.1 200 OK\r\nContent-Type: text/html; charset=UTF-8\r\nContent-Length: 33\r\n\r\n<html><body>jifukui</body></html>";
         int ssln ;
@@ -74,7 +75,7 @@ int main(){
         printf("the ssln state is %d\r\n",ssln);
         if (ssln >= 1) {
 			printf("have accept\r\n");
-            ret = SSL_read(ssl,data,500);
+            ret = SSL_read(ssl,data,length);
             printf("the receive is %d\r\n",ret);
 			if(ret){
                 //printf("the receive is %d\r\n",ret);
