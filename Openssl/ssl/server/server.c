@@ -19,7 +19,8 @@ int main(){
     struct SSL *ssl;
     SSL_load_error_strings();
     SSL_library_init();
-    jifukuictx = SSL_CTX_new(SSLv23_server_method());
+    //jifukuictx = SSL_CTX_new(SSLv23_server_method());
+    jifukuictx = SSL_CTX_new(TLSv1_2_server_method());
 	if (jifukuictx == NULL)
 	{
 		printf("load method over\r\n");
