@@ -16,7 +16,8 @@ int main(){
     socketfd = socket(AF_INET,SOCK_STREAM,0);
     SSL_CTX *jifukuictx;
     SSL *ssl;
-	if ((jifukuictx = SSL_CTX_new(SSLv23_server_method())) == NULL)
+    jifukuictx = SSL_CTX_new(SSLv23_server_method());
+	if (jifukuictx == NULL)
 	{
 		printf("load method over\r\n");
 	}
@@ -37,7 +38,7 @@ int main(){
     }
     ssl = SSL_new(jifukuictx);
     if(ssl){
-        printf("creat ssl success\r\n");
+        printf("creat ssl success %u\r\n",ssl->handshake_func);
     }else{
         printf("creat ssl failed\r\n");
     }
