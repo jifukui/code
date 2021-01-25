@@ -53,7 +53,7 @@ int main(){
         char data[500];
         bzero(data, 500);
         int fd;
-        char value[] =  "HTTP/1.1 200 OK\r\nContent-Type: text/html; charset=UTF-8\r\nContent-Length: 114\r\n\r\n<html><body>jifukui</body></html>";
+        char value[] =  "HTTP/1.1 200 OK\r\nContent-Type: text/html; charset=UTF-8\r\nContent-Length: 33\r\n\r\n<html><body>jifukui</body></html>";
         int ssln ;
         fd = accept(socketfd,&other_addr, &sin_size);
         if(fd != -1){
