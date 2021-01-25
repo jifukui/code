@@ -16,6 +16,7 @@ int main(){
     socketfd = socket(AF_INET,SOCK_STREAM,0);
     struct SSL_CTX *jifukuictx;
     struct SSL *ssl;
+    SSL_library_init();
     jifukuictx = SSL_CTX_new(SSLv23_server_method());
 	if (jifukuictx == NULL)
 	{
