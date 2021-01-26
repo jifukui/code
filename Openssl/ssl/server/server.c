@@ -18,18 +18,18 @@ int main(){
     struct SSL_CTX *jifukuictx;
     struct SSL *ssl;
     SSL_load_error_strings();
-    SSL_library_init();
-    //jifukuictx = SSL_CTX_new(SSLv23_server_method());
-    jifukuictx = SSL_CTX_new(TLSv1_2_server_method());
+    //SSL_library_init();
+    jifukuictx = SSL_CTX_new(SSLv23_server_method());
+    //jifukuictx = SSL_CTX_new(TLSv1_2_server_method());
 	if (jifukuictx == NULL)
 	{
 		printf("load method over\r\n");
 	}
-	else if (SSL_CTX_use_certificate_file(jifukuictx, "server-cert.pem", SSL_FILETYPE_PEM) == 0)
+	else if (SSL_CTX_use_certificate_file(jifukuictx, "thttpd.pem", SSL_FILETYPE_PEM) == 0)
 	{
 		printf("cannot open certificate\r\n");
 	}
-	else if (SSL_CTX_use_PrivateKey_file(jifukuictx, "server-key.pem", SSL_FILETYPE_PEM) == 0)
+	else if (SSL_CTX_use_PrivateKey_file(jifukuictx, "thttpd.pem", SSL_FILETYPE_PEM) == 0)
 	{
 		printf("cannot open PrivateKey\r\n");
 	}else{
@@ -70,8 +70,10 @@ int main(){
         fd = accept(socketfd,&other_addr, &sin_size);
         if(fd != -1){
             printf("good for accept\r\n");
+        }else{
+            continue;
         }
-        SSL_set_fd(ssl,fd);
+        //SSL_set_fd(ssl,fd);
         ssln = SSL_accept(ssl);
         printf("the ssln state is %d\r\n",ssln);
         /*if(ssln<=0){
@@ -116,8 +118,7 @@ int main(){
             printf("good get data is %s\r\n",data);
         }
         send(fd,value,113,0);*/
-        close(fd);
-        
+        //close(fd);  
     }
     return 0;
 
