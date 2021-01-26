@@ -40,12 +40,6 @@ int main(){
         printf("have error for socket\r\n");
         return 0;
     }
-    ssl = SSL_new(jifukuictx);
-    if(ssl){
-        printf("creat ssl success\r\n");
-    }else{
-        printf("creat ssl failed\r\n");
-    }
     my_addr.sin_family = AF_INET;
     my_addr.sin_port = htons(4000);
     my_addr.sin_addr.s_addr = inet_addr("0.0.0.0");
@@ -65,13 +59,19 @@ int main(){
         char data[length];
         bzero(data, length);
         int fd;
-        char value[] =  "HTTP/1.1 200 OK\r\nContent-Type: text/html; charset=UTF-8\r\nContent-Length: 33\r\n\r\n<html><body>jifukui</body></html>";
+        char value[] =  "HTTP/1.1 200 OK\r\nContent-Type: text/html;Connection: close ;charset=UTF-8\r\nContent-Length: 33\r\n\r\n<html><body>jifukui</body></html>";
         int ssln ;
         fd = accept(socketfd,&other_addr, &sin_size);
         if(fd != -1){
             printf("good for accept\r\n");
         }else{
             continue;
+        }
+        ssl = SSL_new(jifukuictx);
+        if(ssl){
+            printf("creat ssl success\r\n");
+        }else{
+            printf("creat ssl failed\r\n");
         }
         SSL_set_fd(ssl,fd);
         ssln = SSL_accept(ssl);
@@ -86,7 +86,7 @@ int main(){
 			if(ret){
                 //printf("the receive is %d\r\n",ret);
                 //printf("good get data is %s\r\n",data);
-                ret = SSL_write(ssl,value,113);
+                ret = SSL_write(ssl,value,131);
                 if(ret){
                     printf("send success %d\r\n",ret);
                 }else{
@@ -118,7 +118,8 @@ int main(){
             printf("good get data is %s\r\n",data);
         }
         send(fd,value,113,0);*/
-        //close(fd);  
+        SSL_clear(ssl);
+        close(fd);  
     }
     return 0;
 
