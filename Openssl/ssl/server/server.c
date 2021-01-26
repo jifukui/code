@@ -73,7 +73,7 @@ int main(){
         }else{
             continue;
         }
-        //SSL_set_fd(ssl,fd);
+        SSL_set_fd(ssl,fd);
         ssln = SSL_accept(ssl);
         printf("the ssln state is %d\r\n",ssln);
         /*if(ssln<=0){
