@@ -1,2 +1,2 @@
-person Person.cpp Person.h
+person: Person.cpp Person.h
 	g++ Person.cpp
