@@ -15,10 +15,10 @@ void Person::SetName(string name1){
     name = name1;
 }
 void Person::SetAge(int age1){
-    age = age1
+    age = age1;
 }
 void Person::SetID(int id1){
-    id = id1
+    id = id1;
 }
 Person::Person(){
     cout<<"构造函数"<<endl;
