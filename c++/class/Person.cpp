@@ -20,6 +20,12 @@ void Person::SetAge(int age1){
 void Person::SetID(int id1){
     id = id1
 }
+Person::Person(){
+    cout<<"构造函数"<<endl;
+}
+Person::~Person(){
+    cout<<"析构函数"<<endl;
+}
 int main(){
     Person jifukui;
     jifukui.SetName("jifukui");
