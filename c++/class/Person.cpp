@@ -1,5 +1,5 @@
 #include "Person.h"
-using namespace std;
+
 
 string Person::GetName(){
     return name;
