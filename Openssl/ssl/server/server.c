@@ -76,9 +76,6 @@ int main(){
         SSL_set_fd(ssl,fd);
         ssln = SSL_accept(ssl);
         printf("the ssln state is %d\r\n",ssln);
-        /*if(ssln<=0){
-            ssln =1;
-        }*/
         if (ssln >= 1) {
 			printf("have accept\r\n");
             ret = SSL_read(ssl,data,length);
@@ -104,20 +101,6 @@ int main(){
 			}
 			printf("SSL_accept error %d\r\n",ssln);
 		}
-        /*while(data[0]!='c'){
-            bzero(data, 500);
-            ret = recv(fd,data,500,0);
-            if(ret>0){
-                printf("the receive is %d\r\n",ret);
-                printf("good get data is %s\r\n",data);
-            }
-        }*/
-        /*ret = recv(fd,data,500,0);
-        if(ret>0){
-            printf("the receive is %d\r\n",ret);
-            printf("good get data is %s\r\n",data);
-        }
-        send(fd,value,113,0);*/
         SSL_clear(ssl);
         close(fd);  
     }
