@@ -2,3 +2,4 @@
 需要使用的动态库为 -lssl 和 -lcrypto
 需要使用的头文件为#include<openssl/ssl.h>
 gcc GetVersion.c -lssl -lcrypto
+gcc GetVersion.c -L /usr/local/lib -lssl -lcrypto
