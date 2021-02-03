@@ -11,6 +11,7 @@ int main(){
     printf("start undate \r\n");
     EVP_EncodeUpdate(ectx,out,&outl,in,inl);
     printf("input final\r\n");
+    printf("the encode string is %s and the length is %d\r\n",out,outl);
     EVP_EncodeUpdate(ectx,out,&outl,in1,strlen(in1));
     printf("input final\r\n");
     printf("the encode string is %s and the length is %d\r\n",out,outl);
