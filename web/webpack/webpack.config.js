@@ -1,4 +1,5 @@
 const path=require("path");
+const { webpack } = require("webpack");
 let home = path.resolve(__dirname);
 console.log(`the home path is ${home}`)
 //const ExtractTextPlugin=require('extract-text-webpack-plugin');
@@ -38,6 +39,11 @@ module.exports={
     plugins:[
     ],
     /**服务 */
-    devServer:{},
-    mode: 'production'
+    devServer:{
+        contentBase:"./dist",
+        port:8000,
+        hot:true,
+        hotOnly:true
+    },
+    mode: 'development'
 }
