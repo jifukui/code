@@ -1,0 +1,24 @@
+h1 {
+  color: #ff7f50;
+}
+h3 {
+  color: #800080;
+}
+.Myclass {
+  color: #800080;
+  font-size: 20px;
+}
+#menu {
+  background-color: red;
+  color: #800080;
+  font-size: 20px;
+}
+#header {
+  color: aliceblue;
+}
+#header .navigation {
+  font-size: 12px;
+}
+#header .logo {
+  width: 200px;
+}

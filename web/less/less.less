@@ -1,0 +1,30 @@
+//变量
+@primarycolor:#ff7f50;
+@color:#800080;
+h1{
+    color: @primarycolor;
+}
+h3{
+    color: @color;
+}
+//运算
+@fontSize:10px;
+.Myclass{
+    color: @color;
+    font-size: @fontSize*2;
+}
+//混合
+#menu{
+    background-color: red;
+    .Myclass();
+}
+//嵌套
+#header{
+    color: aliceblue;
+    .navigation{
+        font-size: 12px;
+    }
+    .logo{
+        width: 200px;
+    }
+}
