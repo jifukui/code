@@ -6,7 +6,7 @@ module.exports={
     /**输入文件 */
     entry:{
         utils:path.resolve(home,"src/js","main.js"),
-        
+        es6:path.resolve(home,"src/es6","index.js"),
     },
     /**输出文件 */
     output:{
@@ -15,6 +15,12 @@ module.exports={
     },
     /**模块 */
     module:{
+        rules:[
+            {
+                test:/.js$/,
+                use:"babel-loader"
+            }
+        ]
     },
     /**插件 */
     plugins:[
