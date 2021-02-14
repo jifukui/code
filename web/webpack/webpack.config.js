@@ -1,36 +1,25 @@
 const path=require("path");
+let home = path.resolve(__dirname);
+console.log(`the home path is ${home}`)
 //const ExtractTextPlugin=require('extract-text-webpack-plugin');
 module.exports={
     /**输入文件 */
     entry:{
-        utils:'./src/main.js'
+        utils:path.resolve(home,"src/js","main.js"),
+        
     },
     /**输出文件 */
     output:{
         filename:'[name].js',
-        path:path.resolve(__dirname,"./dist")
+        path:path.resolve(home,"dist")
     },
     /**模块 */
     module:{
-        /*
-        rules:[
-            {
-                test: /\.css$/,
-                use:[
-                    'style-loader',
-                    {
-                        loader:"css-loader"
-                    }
-                ]
-            }
-        ]*/
     },
     /**插件 */
     plugins:[
-        /*new ExtractTextPlugin({
-            filename:'[name]_[contenthash:8].css'
-        })*/
     ],
     /**服务 */
-    devServer:{}
+    devServer:{},
+    mode: 'production'
 }
