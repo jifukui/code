@@ -1,3 +1,4 @@
 babel需要配置文件
 babel.config.json适合于编译node_modules
 .babelrc.json适合于只是适用于部分文件
+对于less有错误可能是由于less-loader的版本不对

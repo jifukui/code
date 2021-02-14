@@ -25,6 +25,9 @@ module.exports={
             },{
                 test:/.less$/,
                 use:["style-loader","css-loader","less-loader"]
+            },{
+                test:/.(png|gif|jpg|jpeg)$/i,
+                use:["file-loader"]
             }
         ]
     },
