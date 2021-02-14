@@ -28,6 +28,9 @@ module.exports={
             },{
                 test:/.(png|gif|jpg|jpeg)$/i,
                 use:["file-loader"]
+            },{
+                test:/.(woff)$/i,
+                use:["file-loader"]
             }
         ]
     },
