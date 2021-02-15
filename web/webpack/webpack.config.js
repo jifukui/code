@@ -28,7 +28,19 @@ module.exports={
                 use:[
                     // "style-loader",
                     minicssplugin.loader,
-                    "css-loader"
+                    "css-loader",
+                    // {
+                    //     loader:"postcss-loader",
+                    //     options:{
+                    //         plugins:()=>{
+                    //             require("autoprefixer")({
+                    //                 browers:[
+                    //                     'last 2 version',
+                    //                 ]
+                    //             })
+                    //         }
+                    //     }
+                    // }
                 ]
             },{
                 test:/.less$/,
@@ -37,7 +49,8 @@ module.exports={
                     
                     minicssplugin.loader,
                     "css-loader",
-                    "less-loader"
+                    "less-loader",
+                    "postcss-loader"
                 ]
             },{
                 test:/.(png|gif|jpg|jpeg)$/i,
