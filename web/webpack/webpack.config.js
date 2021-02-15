@@ -1,9 +1,9 @@
 const path=require("path");
 const { webpack } = require("webpack");
 const minicssplugin = require("mini-css-extract-plugin");
-const { loader } = require("mini-css-extract-plugin");
-let home = path.resolve(__dirname);
-console.log(`the home path is ${home}`)
+const {CleanWebpackPlugin} = require("clean-webpack-plugin");
+const home = path.resolve(__dirname);
+
 //const ExtractTextPlugin=require('extract-text-webpack-plugin');
 module.exports={
     /**输入文件 */
@@ -25,8 +25,8 @@ module.exports={
             },{
                 test:/.css$/,
                 use:[
-                    "style-loader",
-                    // minicssplugin.loader,
+                    // "style-loader",
+                    minicssplugin.loader,
                     "css-loader"
                 ]
             },{
@@ -56,7 +56,8 @@ module.exports={
     plugins:[
         new minicssplugin({
             filename:"[name]_[contenthash:8].css"
-        })
+        }),
+        new CleanWebpackPlugin(),
     ],
     /**服务 */
     devServer:{

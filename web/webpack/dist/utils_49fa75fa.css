@@ -1,0 +1,18 @@
+*{
+    margin: 0;
+    padding: 0;
+    color: red;
+}
+
+@font-face {
+  font-family: "jifukui";
+  src: url(iconfont_b61dd6fc.woff);
+}
+button {
+  width: 100px;
+  height: 30px;
+  color: #808080;
+  font-family: "jifukui";
+  font-size: 20px;
+}
+
