@@ -2,6 +2,7 @@ const path=require("path");
 const { webpack } = require("webpack");
 const minicssplugin = require("mini-css-extract-plugin");
 const {CleanWebpackPlugin} = require("clean-webpack-plugin");
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const home = path.resolve(__dirname);
 
 //const ExtractTextPlugin=require('extract-text-webpack-plugin');
@@ -58,6 +59,14 @@ module.exports={
             filename:"[name]_[contenthash:8].css"
         }),
         new CleanWebpackPlugin(),
+        new OptimizeCssAssetsPlugin({
+            assetNameRegExp: /\.css$/g,
+            cssProcessor: require('cssnano'),
+            cssProcessorPluginOptions: {
+              preset: ['default', { discardComments: { removeAll: true } }],
+            },
+            canPrint: true
+          })
     ],
     /**服务 */
     devServer:{
