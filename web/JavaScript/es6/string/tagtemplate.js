@@ -2,6 +2,7 @@ const print=console.log;
 {
     function tag(arr,v1,v2)
     {
+        print("the first");
         let {length:len}=arr;
         print(len);
         let i;
@@ -9,6 +10,7 @@ const print=console.log;
         {
             print(arr[i]);
         }
+        print("the v1 and v2")
         print(v1);
         print(v2);
     }

@@ -29,12 +29,14 @@
     "optimize-css-assets-webpack-plugin": "^5.0.4",
     "postcss": "^8.2.6",
     "postcss-loader": "^5.0.0",
+    "px2rem-loader": "^0.1.9",
     "style-loader": "^1.0.0",
     "webpack": "^4.46.0",
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.8.0"
   },
   "dependencies": {
+    "lib-flexible": "^0.3.2",
     "lodash": "^4.17.15"
   }
 }

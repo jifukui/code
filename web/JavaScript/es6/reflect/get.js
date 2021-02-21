@@ -4,7 +4,10 @@ const print=console.log;
     let key={
         name:"guandian",
         age:12,
-        title:"sb"
+        title:"sb",
+        get name(){
+            return `${this.age} + Hello,World`
+        }
     }
     print(Reflect.get(key,"name"));
     print(Reflect.get(key,"sex"));
