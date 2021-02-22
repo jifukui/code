@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>script的数量对于性能的影响</title>
+        <script >
+            var start = Date.now();
+        </script>
+        <script type="text/javascript" src="./frupdate.js"></script>
+        <!--script type="text/javascript" src="./jquery-3.3.1.js"></script-->
+        <!--script type="text/javascript" src="./jquery.form.js"></script-->
+    </head>
+    <body>
+        <h3>数量少的情况下</h3>
+    </body>
+    <script>
+        document.addEventListener("DOMContentLoaded",function(){
+            var end = Date.now();
+            console.log(`use time is ${(end-start)}`)
+        })
+    </script>
+</html>

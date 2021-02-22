@@ -1,7 +1,7 @@
 const fs = require("fs");
 const stream = require("stream");
-const file = fs.createWriteStream("all.yuv");
-const yuv = fs.createReadStream("frame8.yuv");
+const file = fs.createWriteStream("all1.yuv");
+const yuv = fs.createReadStream("frame7.yuv");
 const height = 180;
 const wight = 320;
 yuv.on("readable",()=>{
@@ -18,7 +18,6 @@ yuv.on("readable",()=>{
 });
 yuv.on("end",()=>{
     console.log("读取文件结束");
-    //yuv.close();
 });
 function uyvy2rgb(val){
     let data = Buffer.alloc(6);
@@ -35,7 +34,6 @@ function uyvy2rgb(val){
     rgb[4] = 1164*(y1-16)-391*(u-128)-813*(v-128) ;
     rgb[5] = 1164*(y1-16)+2018*(u-128);
     for(let i =0;i<6;i++){
-        //console.log(`rgb is ${rgb[i]}`)
         if(rgb[i]>255000){
             rgb[i]=255000
         }
@@ -44,7 +42,6 @@ function uyvy2rgb(val){
         }
         rgb[i]/=1000;
         data[i] = rgb[i];
-        //console.log(`data is ${data[i]} and rgb is ${rgb[i]}`)
     }
     return data;
 }

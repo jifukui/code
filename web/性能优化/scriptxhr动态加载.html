@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>script的数量对于性能的影响</title>
+        <script >
+            var start = Date.now();
+        </script>
+    </head>
+    <body>
+        <h3>xhr动态加载的情况下</h3>
+    </body>
+    <script>
+        var xhr = new XMLHttpRequest();
+        xhr.open("get","frupdate.js",true);
+        xhr.onreadystatechange=function(ev){
+            console.log(`the status is ${xhr.readyState}`);
+            if(xhr.readyState ==4){
+                var script = document.createElement("script");
+                script.type="text/javascript";
+                script.text = xhr.responseText;
+                document.body.appendChild(script);
+            }
+        }
+        
+        
+        
+        document.addEventListener("DOMContentLoaded",function(){
+            var end = Date.now();
+            console.log(`use time is ${(end-start)}`)
+        })
+    </script>
+</html>
