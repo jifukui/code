@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>观察者模式</title>
+    </head>
+    <body>
+        <h3>观察者模式开发实例</h3>
+    </body>
+    <script>
+        function Watcher(){
+            var watcher = {}
+            Watcher.prototype.subscript=function(type,func){
+                if(typeof type !== "string"){
+                    console.log("error of type type");
+                    throw new Error("错误的type类型");
+                }
+                if(typeof func!=="function"){
+                    console.log(`error of func type`);
+                    throw new Error("错误的func类型");
+                }
+                if(!watcher[type]){
+                    watcher[type]=[];
+                }
+                watcher[type].push(func);
+            } 
+            Watcher.prototype.cancle = function(type,func){
+                let obj = watcher[type];
+                if(obj==null){
+                    console.log(`error of type`);
+                    throw new Error("没有此类型事件");
+                }
+                for(let i = 0;i<obj.length;i++ ){
+                    if(obj[i]===func){
+                        obj.splice(i,1);
+                        break;
+                    }
+                }
+            }
+            Watcher.prototype.fire=function(type,news){
+                let obj = watcher[type];
+                if(obj==null){
+                    console.log(`error of type`);
+                    throw new Error("没有此类型事件");
+                }
+                for(let i = 0;i<obj.length;i++ ){
+                    obj[i](news);
+                }
+            }
+        };
+        var person1 = new Watcher();
+        function display(str){
+            console.log(`I have get the message ${str}`);
+        }
+        function display1(str){
+            console.log(`I have get the message1 ${str}`);
+        }
+        try{
+            person1.subscript("jifukui",display);
+            person1.subscript("jifukui",display1);
+            person1.fire("jifukui","good everyone");
+            // person1.cancle("hhh",display);
+            person1.cancle("jifukui",display);
+            person1.fire("jifukui","good everyone");
+        }catch(err){
+            console.log(`have get the error is ${err}`);
+        }
+    </script>
+</html>
