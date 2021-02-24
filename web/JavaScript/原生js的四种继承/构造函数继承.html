@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>原型链继承</title>
+    </head>
+    <body>
+
+    </body>
+    <script>
+        function Animal(type,name){
+            this.type = type||"animal",
+            this.name = name||"hello I am a animal"
+            this.info = {"age":4,"sex":"woman"};
+            this.sayname=function(){
+                console.log("Hello my name is "+this.name)
+            }
+            this.saytype=function(){
+                console.log("Hello my name is "+this.type)
+            }
+        }
+        
+        function Dog(type,name){
+            Animal.call(this);
+            this.name = name;
+            this.type = type;
+        }
+        var dog = new Dog("dog","diandian");
+        var dog1 = new Dog("dog","diandian11111");
+        dog.saytype();
+        dog.sayname();
+        Dog.prototype.sayhello=function(){
+            console.log("Hello good time")
+        }
+        dog.sayhello();
+        Animal.sayhi = function(){
+            console.log("hi good luck")
+        }
+        //dog.sayhi();
+    </script>
+</html>

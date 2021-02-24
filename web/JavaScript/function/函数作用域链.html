@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>函数作用域链</title>
+    </head>
+    <body>
+        <h3>函数作用域链</h3>
+    </body>
+    <script>
+        function add(x,y){
+            return testadd(x,y);
+        }
+        function testadd(x,y){
+            let sum = 0;
+            sum =x+y;
+            return sum;
+        }
+        var total = add(8,12);
+    </script>
+</html>

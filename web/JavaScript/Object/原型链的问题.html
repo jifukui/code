@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>作用域链的问题</title>
+    </head>
+    <body>
+
+    </body>
+    <script>
+        function Test(){
+            this.name ="testdata"   
+        }
+        Test.prototype.Getname=function(){
+            return this.name;
+        }
+        var test  = new Test();
+        test.age = 9;
+        console.log(`the age is ${test.Getname()}`)
+    </script>
+</html>
