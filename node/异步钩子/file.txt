@@ -1,0 +1,39 @@
+init asyncId is 2 and type is PROMISE triggerAsyncId is 1 resource is [object PromiseWrap] 
+init asyncId is 3 and type is Timeout triggerAsyncId is 1 resource is [object Object] 
+init asyncId is 4 and type is PROMISE triggerAsyncId is 2 resource is [object PromiseWrap] 
+init asyncId is 5 and type is PROMISE triggerAsyncId is 4 resource is [object PromiseWrap] 
+init asyncId is 6 and type is PROMISE triggerAsyncId is 5 resource is [object PromiseWrap] 
+before asyncId is 3 
+promiseResolve asyncId is 2 
+after asyncId is 3 
+before asyncId is 4 
+init asyncId is 7 and type is TTYWRAP triggerAsyncId is 4 resource is [object TTY] 
+init asyncId is 8 and type is SIGNALWRAP triggerAsyncId is 4 resource is [object Signal] 
+init asyncId is 9 and type is TickObject triggerAsyncId is 4 resource is [object Object] 
+promiseResolve asyncId is 4 
+after asyncId is 4 
+before asyncId is 5 
+promiseResolve asyncId is 5 
+after asyncId is 5 
+before asyncId is 6 
+init asyncId is 10 and type is TickObject triggerAsyncId is 6 resource is [object Object] 
+init asyncId is 11 and type is PROMISE triggerAsyncId is 6 resource is [object PromiseWrap] 
+promiseResolve asyncId is 11 
+init asyncId is 12 and type is PROMISE triggerAsyncId is 11 resource is [object PromiseWrap] 
+promiseResolve asyncId is 6 
+after asyncId is 6 
+before asyncId is 12 
+promiseResolve asyncId is 12 
+after asyncId is 12 
+init asyncId is 13 and type is PROMISE triggerAsyncId is 12 resource is [object PromiseWrap] 
+before asyncId is 13 
+promiseResolve asyncId is 6 
+promiseResolve asyncId is 13 
+after asyncId is 13 
+before asyncId is 9 
+after asyncId is 9 
+before asyncId is 10 
+after asyncId is 10 
+destroy asyncId is 3 
+destroy asyncId is 9 
+destroy asyncId is 10 

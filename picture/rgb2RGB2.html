@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>对于引入的文件进行处理</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <h1>原图</h1>
+        <img id="img1" src="./osd.png" onload="draw()">
+        <h1>绘制1</h1>
+    </body>
+    <script>
+        var origin;
+        var width = 0;
+        var height = 0 ;
+        var img;
+        var data;
+        function draw()
+        {
+            console.log("load");
+            origin = document.getElementById("img1");
+            width = origin.width;
+            height = origin.height;
+            console.log(`the width is ${width}`);
+            console.log(`the height is ${height}`);
+            var dom1 = document.createElement("canvas");
+            dom1.width = width;
+            dom1.height = height;
+            var ctx1 = dom1.getContext("2d");
+            img = document.getElementById("img1");
+            ctx1.drawImage(img,0,0);
+            document.body.appendChild(dom1);
+            data = ctx1.getImageData(0,0,width,height)
+            // var c=document.getElementById("jifukui");
+            // var ctx=c.getContext("2d");
+            // var img=document.getElementById("img1");
+            // console.log(img)
+            // ctx.drawImage(img,0,0);
+        }
+        function translat(width=480,height=100){
+            origindata=[]
+            data = [];
+            let temp =0;
+            let end =a.data.length;
+            for(let i =height ;i>0;i--){
+                let flag = width*(i-1)*4;
+                let end =width*(i)*4;
+                console.log(`the start ${flag} end ${end}`)
+                origindata.push(...a.data.slice(flag,end));
+            }
+            for(let i=0;i<origindata.length;i+=4){
+                let mod = i%32;
+                if(mod==0&&i!=0){  
+                    data.push(temp); 
+                    temp = 0;
+                }
+                if(origindata[i]||origindata[i+1]||origindata[i+2]){
+                    temp|=(7-1<<(mod/4));
+                }
+            }
+            data.push(temp);
+            str="" 
+            for(let i=0;i<data.length;i++){
+                let temp="0"+data[i].toString(16);
+                if(temp.length==2){
+                    str+=temp;
+                }else{
+                    str+=temp.slice(1);
+                }
+            } 
+        }
+    </script>
+</html>

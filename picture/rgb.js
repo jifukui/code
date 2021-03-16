@@ -1,10 +1,11 @@
 const fs = require("fs");
 const stream = require("stream");
-const file = fs.createWriteStream("uyvy2rgb_red.yuv");
-const color = [0x5a,0x51,0xef,0x51];
+const file = fs.createWriteStream("rgb_dark.yuv");
+const color = [254,254,254];
 const height = 180;
 const wight = 320;
-uyvy2rgb(color)
+rgb(color)
+//uyvy2rgb(color)
 //rgb2uyvy(color);
 function rgb(color){
     let val = Buffer.alloc(3);

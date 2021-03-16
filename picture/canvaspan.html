@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Canvas写字板</title>
+        <meta charset="utf-8">
+        <script src="./jquery.js"></script>
+        <style>
+            canvas{
+                border: 1px solid red;
+            }
+        </style>
+    </head>
+    <body>
+        <canvas width="600px" height="600px" id="canvas">
+
+        </canvas>
+        <img src="osd.png" id="img">
+    </body>
+    <script>
+        var model = document.getElementById("canvas");
+        var ctx = model.getContext("2d");
+        // 绘制画布背景
+        drawLine(ctx);
+
+        function drawLine(ctx) {
+            // ctx.beginPath();
+            // // 规定线的颜色
+            // ctx.strokeStyle = "red";
+            // // 规定边框线的宽度
+            // ctx.lineWidth = 6;
+            // // 外边框线的轨迹
+            // ctx.moveTo(0, 0);
+            // ctx.lineTo(0, 600);
+            // ctx.lineTo(600, 600);
+            // ctx.lineTo(600, 0);
+            // ctx.lineTo(0, 0);
+            // ctx.stroke();
+            // // 画布上竖线
+            // ctx.lineWidth = 3;
+            // ctx.moveTo(300, 0);
+            // ctx.lineTo(300, 600);
+            // ctx.stroke();
+            // // 画布上横线
+            // ctx.moveTo(0, 300);
+            // ctx.lineTo(600, 300);
+            // ctx.stroke();
+            // // 画布上斜线
+            // ctx.moveTo(0, 0);
+            // ctx.lineTo(600, 600);
+            // ctx.stroke();
+            // // 画布上斜线
+            // ctx.moveTo(0, 600);
+            // ctx.lineTo(600, 0);
+            // ctx.stroke();
+            // ctx.closePath();
+        }
+        write(ctx);
+        var flag = false;
+        var pointX;
+        var pointY;
+
+        function write(ctx) {
+            ctx.strokeStyle = "#333";
+            ctx.lineWidth = 10;
+            $(window).on("mousedown", function(e) {
+                ctx.beginPath();
+                pointX = e.offsetX;
+                pointY = e.offsetY;
+                flag = true;
+                ctx.moveTo(pointX, pointY);
+            });
+            $(window).on("mousemove", function(e) {
+                if (flag) {
+                    ctx.lineTo(e.offsetX, e.offsetY);
+                    ctx.stroke();
+                }
+            });
+            $(window).on("mouseup", function() {
+                ctx.closePath();
+                flag = false;
+            });
+        }
+            $("#clear").on("click", function(ctx) {
+                var model = document.getElementById("model");
+                var ctx = model.getContext("2d");
+                ctx.clearRect(0, 0, 600, 600);
+                drawLine(ctx);
+                write(ctx)
+            });
+    </script>
+</html>

@@ -3,7 +3,8 @@
 <head>
 <meta charset="utf-8">
 <title>Vue 测试实例 - 动态组件</title>
-<script src="https://cdn.bootcss.com/vue/2.2.2/vue.min.js"></script>
+<script src="./vue.js"></script>
+<script src="./vue-router.js"></script>
 </head>
 <body>
 <div id="app">
@@ -15,8 +16,14 @@
 </div>
  
 <script>
- 
+
 // 创建根实例
+var Foo = { template: '<div>foo</div>' }
+var Bar = { template: '<div>bar</div>' }
+var routes = [
+  { path: '/foo', component: Foo },
+  { path: '/bar', component: Bar }
+]
 var vm = new Vue({  
         el: '#app',  
         data: {  
@@ -59,8 +66,12 @@ var vm = new Vue({
             third: { //第三个子组件  
                 template: "<div>这里是子组件3</div>"  
             }  
-        }  
-    });  
+        },
+        router  
+    }); 
+    var router = new VueRouter({
+        routes
+    }) ;
 </script>
 </body>
 </html>
