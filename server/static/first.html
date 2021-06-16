@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>jifukui</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <div>
+            <img src="./1.jpg" id="src">
+        </div>
+        <div>
+            <canvas id="canvas"></canvas>
+        </div>
+        <div>
+            <canvas id="dim"></canvas>
+        </div>
+        <div>
+            <canvas id="dim1"></canvas>
+        </div>
+        <div>
+            <canvas id="dim2"></canvas>
+        </div>
+    </body>
+    <script async src="./opencv.js" onload="test()" id="data"></script>
+    <script async src="./tesseract.min.js"></script>
+    <script>
+        var a = document.getElementById("data");
+        async function test(){
+            console.log(Date.now())
+            if(cv.Mat){
+                console.log("true")
+            }else{
+                console.log("false")
+                setTimeout(test,100)
+                return;
+            }
+            let mat = cv.imread("src");
+            cv.imshow("canvas",mat);
+            let dim = new cv.Mat();
+            cv.cvtColor(mat,dim,cv.COLOR_BGR2GRAY);
+            cv.imshow("dim",dim)
+            let dim1 = new cv.Mat();
+            cv.threshold(dim,dim1,230,255,cv.THRESH_BINARY)
+            cv.imshow("dim1",dim1);
+            // data = dim1;
+            let pixel = 117*51;
+            let dim2 = new cv.Mat() ;
+            cv.threshold(dim,dim2,230,255,cv.THRESH_BINARY)
+            // ji = dim2;
+            for (let i = 0; i < pixel; i++) 
+            {
+                // dim2.data[i]=dim1.data[i]
+                if ((i) % 117 === 0) 
+                {
+                    dim2.data[i] = 255
+                }else {  
+                    let min = i-118;
+                    let max = i+118;
+                    if(min<0||max>=pixel){
+                        dim2.data[i] = 255
+                    }else{
+                        let counter = 0; 
+                        if (dim1.data[i] == 0) {
+                            // console.log(`the block is ${i}`)
+                            if (dim1.data[min] == 255) { //上点
+                                counter += 1;
+                            }
+                            if(dim1.data[min+1]==255){
+                                counter += 1;
+                            }
+                            if(dim1.data[min+2]==255){
+                                counter += 1;
+                            }
+                            if (dim1.data[max-2] == 255) { //下点
+                                counter += 1;
+                            }
+                            if(dim1.data[max-1]==255){
+                                counter += 1;
+                            }
+                            if(dim1.data[max]==255){ 
+                                counter += 1;
+                            }
+                            if (dim1.data[i - 1] == 255) { //左点
+                                counter += 1;
+                            }
+                            if (dim1.data[i + 1] == 255) { //右点
+                                counter += 1;
+                            }
+                            if (counter >= 2) {
+                                dim2.data[i] = 255  
+                            }
+                        }
+                    }
+                }
+            }
+            cv.imshow("dim2",dim2);
+            let jidim = document.getElementById("dim2");
+            Tesseract.recognize(jidim,"eng").then(data=>{
+                console.log("the text "+data.data.text)
+            })
+        }
+    </script>
+</html>

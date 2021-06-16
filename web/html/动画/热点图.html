@@ -1,0 +1,99 @@
+<!Doctype html>
+<html>
+<head>
+    <title>动画的简单使用</title>
+    <meta charset="utf-8">
+    <style>
+        div{
+            /*margin: 0 auto;*/
+            position: relative;
+        }
+        img{
+            display: block;
+            width: 100%;
+            /*border-radius: 50%;*/
+            border-color: red;
+            border-width: 2px;
+            border-style: solid;
+
+        }
+        .dot,.pause1,.pause2,.pause3{
+            position: absolute;
+            /*border: 5px solid blue;*/
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            border-radius: 50%;
+            width: 8px;
+            height: 8px;
+            box-shadow: 0 0 12px #009dfd;
+
+            background-color: blue;
+        }
+        .beijing{
+            position: absolute;
+            top: 590px;
+            left: 1117px;
+        }
+        .xining{
+            position: absolute;
+            top: 714px;
+            left: 731px;
+        }
+        .xian{
+            position: absolute;
+            top: 791px;
+            left: 928px;
+        }
+        @keyframes jifukui {
+            75%{
+                height: 40px;
+                width: 40px;
+            }
+            100%{
+                height: 8px;
+                width: 8px;
+            }
+        }
+        [class^="pause"]{
+            /*background-color: red;*/
+            background-color: transparent;
+            animation-name: jifukui;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+        }
+        .pause2{
+            animation-delay: .4s;
+        }
+        .pause3{
+            animation-delay: .8s;
+        }
+        .child{
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <img src="map.jpg" >
+    <div class="beijing">
+        <div class="dot"></div>
+        <div class="pause1"></div>
+        <div class="pause2"></div>
+        <div class="pause3"></div>
+    </div>
+    <div class="xian">
+        <div class="dot"></div>
+        <div class="pause1"></div>
+        <div class="pause2"></div>
+        <div class="pause3"></div>
+    </div>
+    <div class="xining">
+        <div class="dot"></div>
+        <div class="pause1"></div>
+        <div class="pause2"></div>
+        <div class="pause3"></div>
+    </div>
+</div>
+</body>
+</html>

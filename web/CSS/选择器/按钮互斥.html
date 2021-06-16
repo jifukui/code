@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>按钮元素的样式互斥写法</title>
+    <meta charset="utf-8">
+    <style>
+        .button {
+            box-shadow: 5px;
+            border: 1px solid red;
+            border-radius: 15px;
+        }
+
+        .button:focus {
+            background-color: aqua;
+        }
+
+        .button:not(:focus) {
+            background-color: blueviolet;
+        }
+
+        [data-ji] {
+            background-color: red !important;
+        }
+    </style>
+</head>
+
+<body>
+    <button class="button" data-ji>按钮1</button>
+    <button class="button">按钮2</button>
+    <button class="button">按钮3</button>
+    <button class="button">按钮4</button>
+    <button class="button">按钮5</button>
+    <button class="button">按钮6</button>
+</body>
+
+</html>

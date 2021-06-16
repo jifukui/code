@@ -1,0 +1,16 @@
+<!Doctype html>
+<html>
+    <head>
+        <title>颜色框的使用</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <input type="color" onchange="jifukui()">
+    </body>
+    <script>
+        function jifukui(){
+            let dom = document.getElementsByTagName("input")[0];
+            console.log(`the value is ${dom.value}`)
+        }
+    </script>
+</html>

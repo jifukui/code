@@ -5,3 +5,4 @@ console.dir(test1);
 test1.say();
 console.log(`the test 2 is `)
 console.dir(test2);
+console.log(require.cache)

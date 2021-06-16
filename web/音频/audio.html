@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>音频处理</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <div> 音频
+            <audio src="audio.mp3" type="audio/mp3" controls="controls">音频源</audio>
+        </div>
+        <div>
+            <audio id="audio" controls="controls">音频数据</audio>
+        </div>
+    </body>
+    <script>
+        var aduio = new window.AudioContext();
+        var dom1 = document.getElementsByTagName("audio")[0];
+        var dom2 = document.getElementById("audio");
+    </script>
+</html>

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>演示</title>
+        <meta charset="utf-8">
+        <style>
+            .boot{
+                height: 540px;
+                width: 960px;
+                border: 1px solid blue;
+                position: relative;
+                user-select: none;
+                overflow: hidden;
+            }
+            .item{
+                width: 480px;
+                height: 270px;
+                background-color: brown;
+                border: 1px solid red;
+                margin: 0;
+                padding: 0;
+                position: absolute;
+                /* display: inline-block; */
+                text-align: center;
+                font-size: 3rem;
+                line-height: 270px;
+                overflow: hidden;
+                resize: both;
+            }
+            .tool{
+                width: 12px;
+                height: 12px;
+                background-color: transparent;
+                border: 2px solid yellow;
+                margin: 0;
+                padding: 0;
+                z-index: 100;
+                top:500;
+                left: 258;
+            }
+            .item1{
+                top:0px;
+                left: 0px;
+                z-index: 4;
+            }
+            .item2{
+                top:0px;
+                left: 480px;
+                z-index: 3;
+            }
+            .item3{
+                top:270px;
+                left: 0px;
+                z-index: 2;
+            }
+            .item4{
+                top:270px;
+                left: 480px;
+                z-index: 1;
+            }
+        </style>
+    </head>
+    <body onmouseup="kui()" >
+        <div class="boot" onmousedown="ji()" onmousemove="jifukui()">
+            <div class="item 1 item1" onresize="test()">1
+                <!-- <div class="tool"><div></div> -->
+            </div>
+            <div class="item 2 item2" onresize="test()">2</div>
+            <div class="item 3 item3" onresize="test()">3</div>
+            <div class="item 4 item4">4
+                <!-- <div class="tool"><div> -->
+            </div>
+        </div>
+    </body>
+    <script>
+        var dom = document.getElementsByClassName("item");
+        var statx,starty,endx,endy;
+        var flag = 0;
+        var timer = 0 ;
+        class Position{
+            static Maxwidth = 960;
+            static Maxheight = 540;
+            static id = 0;
+            static active = true
+            static init = [
+            {
+                    top : 0,
+                    left : 0,
+                    width : Position.Maxwidth/2,
+                    height : Position.Maxheight/2,
+                    index:4
+                },{
+                    top : 0,
+                    left : 480,
+                    width : Position.Maxwidth/2,
+                    height : Position.Maxheight/2,
+                    index:3
+                },{
+                    top : 270,
+                    left : 0,
+                    width : Position.Maxwidth/2,
+                    height : Position.Maxheight/2,
+                    index:2
+                },{
+                    top : 270,
+                    left : 480,
+                    width : Position.Maxwidth/2,
+                    height : Position.Maxheight/2,
+                    index:1
+                }
+            ]
+            constructor(dom){
+                this.rect=Position.init;
+                this.dom = dom;
+                this.pro = [4,3,2,1]
+            }
+            Computer(flag,x,y){
+                // console.log(`computer`)
+                if(!Position.active){
+                    reutrn;
+                }
+                let id = parseInt(flag) -1;
+                let level = this.pro[id];
+                if(Position.id!==id){
+                    for(let i = 0 ;i<this.dom.length;i++){
+                        if(this.pro[i]>level){
+                            this.pro[i] = this.pro[i]-1;
+                            this.dom[i].style.zIndex=""+this.pro[i]
+                        }
+                        // this.dom[i].style.zIndex="1"
+                    }
+                    this.pro[id]= 4
+                    Position.id = id
+                }
+                let dom = this.dom[id];
+                let rect = this.rect[id];
+                let change = false;
+                dom.style.zIndex="99"
+                // console.log(`change ${id}`)
+                if(dom.style.width&&dom.style.width!==`${rect.width}px`){
+                    // console.log("q");
+                    // console.log(dom.style.width)
+                    // console.log(rect.width)
+                    rect.width = parseInt(dom.style.width)>Position.Maxwidth?Position.Maxwidth:parseInt(dom.style.width)
+                    // return ;
+                    change = true;
+                }
+                if(dom.style.height&&dom.style.height!==`${rect.height}px`){
+                    // console.log("q1");
+                    // console.log(dom.style.height)
+                    // console.log(rect.height)
+                    rect.height = parseInt(dom.style.height)>Position.Maxheight?Position.Maxheight:parseInt(dom.style.height)
+                    // return ;
+                    change = true
+                }
+                if(change){
+                    dom.style.width =rect.width>Position.width?Position.width+'px':rect.width+"px";
+                    dom.style.height =rect.height>Position.height?Position.height+'px':rect.height+"px";
+                    // console.log(`dom.style.width ${dom.style.width}`)
+                    // console.log(`dom.style.height ${dom.style.height}`)
+                    return 
+                }
+                // console.log(`rect.top+y ${rect.top+y} rect.left+x ${rect.left+x} flag ${flag}`)
+                rect.top = (rect.top+y+rect.height)<Position.Maxheight?rect.top+y:Position.Maxheight-rect.height;
+                rect.left = (rect.left+x+rect.width)<Position.Maxwidth?rect.left+x:Position.Maxwidth-rect.width;
+                // console.log(`rect.top ${rect.top}  rect.left ${rect.left}`)
+                if(rect.top<0) rect.top=0;
+                if(rect.left<0) rect.left =0;
+                this.Render(id)
+            }
+            Render(flag){
+                let dom = this.dom[flag];
+                dom.style.top =`${this.rect[flag].top}px`
+                dom.style.left =`${this.rect[flag].left}px`
+            }
+        }
+        var Ji = new Position(dom);
+        function ji(){
+            var e = event||window.event;
+            statx=e.screenX;
+            staty=e.screenY;
+            flag = e.target.innerHTML;
+            // console.log(`statx ${statx}`)
+            // console.log(`staty ${staty}`)
+            flag = parseInt(flag);
+        }
+        function kui(){
+            if(flag){
+                var e = event||window.event;
+                // console.dir(e)
+                endx=e.screenX;
+                endy=e.screenY;
+                let x = parseInt((endx-statx)/1);
+                let y = parseInt((endy-staty)/1);
+                // flag = flag-1;
+                Ji.Computer(flag,x,y);
+            }
+            let rect = Ji.rect[flag-1];
+            let rest = [];
+            rest.push(0)//o
+            rest.push(flag-1);
+            rest.push(...Ji.pro);
+            // console.log(parseInt(rect.x*4/256))
+            rest.push(parseInt(rect.top*4/256))
+            rest.push(parseInt(rect.top*4%256))
+            rest.push(parseInt(rect.left*4/256))
+            rest.push(parseInt(rect.left*4%256))
+            rest.push(parseInt(rect.width*4/256))
+            rest.push(parseInt(rect.width*4%256))
+            rest.push(parseInt(rect.height*4/256))
+            rest.push(parseInt(rect.height*4%256))
+            rest.push(0)
+            rest = rest.map(val=>{
+                return ToHex(val);
+            })
+            console.log(`#DBG-INNER 5,EB5F07${ToHex(rest.length-1)}${rest.join("")}`)
+            flag =false
+        }
+        function kui1(){
+            clearInterval(timer);
+            timer = false;
+        }
+        function test(){
+            // console.log(`have c`)
+        }
+        function jifukui(){
+            if(flag){
+                var e = event||window.event;
+                // console.dir(e)
+                endx=e.screenX;
+                endy=e.screenY;
+                let x = parseInt((endx-statx)/1);
+                let y = parseInt((endy-staty)/1);
+                // flag = flag-1;
+                // console.log(`endx ${endx}`)
+                // console.log(`endy ${endy}`)
+                // console.log(`statx ${x}`)
+                // console.log(`staty ${y}`)
+                statx = endx
+                staty = endy
+                Ji.Computer(flag,x,y);
+            }
+        }
+        function ToHex(val){
+            val+=256;
+            return val.toString(16).slice(1);
+        }
+        // function To2Hex(val){
+        //     val+=65536;
+        //     return val.toString(16).slice(1);
+        // }
+    </script>
+</html>

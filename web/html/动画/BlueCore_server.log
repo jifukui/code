@@ -1,0 +1,509 @@
+Sep  3 00:52:23 localhost  00:52:23 ubuntu Blue_Core 1295 - - Error:send command is require blueriver_api 3.0.0.0
+Sep  3 00:52:23 localhost  00:52:23 ubuntu Blue_Core 1295 - - Error:received is "{\"status\":\"SUCCESS\",\"request_id\":null,\"result\":null,\"error\":null}"
+Sep  3 00:52:23 localhost  00:52:23 ubuntu Blue_Core 1295 - - Error:send command is layout multiv1597479234160 create size 800 600
+Sep  3 00:52:23 localhost  00:52:23 ubuntu Blue_Core 1295 - - Error:received is "\n{\"status\":\"SUCCESS\",\"request_id\":null,\"result\":null,\"error\":null}"
+Sep  3 00:52:23 localhost  00:52:23 ubuntu Blue_Core 1295 - - Error:send command is layout multiv1597546532837 create size 1920 1080
+Sep  3 00:52:23 localhost  00:52:23 ubuntu Blue_Core 1295 - - Error:received is "\n{\"status\":\"SUCCESS\",\"request_id\":null,\"result\":null,\"error\":null}"
+Sep  3 00:53:51 localhost  00:53:51 ubuntu Blue_Core 1295 - - Error:send command is leave 001ec0910e4c:HDMI
+Sep  3 00:53:51 localhost  00:53:51 ubuntu Blue_Core 1295 - - Error:received is "\n{\"status\":\"SUCCESS\",\"request_id\":2,\"result\":{\"devices\":[],\"error\":[{\"device_id\":\"001ec0910e4c\",\"reason\":\"DEVICE_TYPE\",\"message\":\"Operation cannot be performed on this device type\"}]},\"error\":null}"
+Sep  3 00:53:51 localhost  00:53:51 ubuntu Blue_Core 1295 - - Error:send command is leave 001ec0909b21:HDMI
+Sep  3 00:53:51 localhost  00:53:51 ubuntu Blue_Core 1295 - - Error:received is "\n{\"status\":\"SUCCESS\",\"request_id\":4,\"result\":{\"devices\":[],\"error\":[{\"device_id\":\"001ec0909b21\",\"reason\":\"DEVICE_TYPE\",\"message\":\"Operation cannot be performed on this device type\"}]},\"error\":null}"
+Sep  3 00:53:52 localhost  00:53:52 ubuntu Blue_Core 1295 - - Error:send command is leave 001ec09084b0:HDMI
+Sep  3 00:53:52 localhost  00:53:52 ubuntu Blue_Core 1295 - - Error:received is "\n{\"status\":\"SUCCESS\",\"request_id\":6,\"result\":{\"devices\":[],\"error\":[{\"device_id\":\"001ec09084b0\",\"reason\":\"DEVICE_TYPE\",\"message\":\"Operation cannot be performed on this device type\"}]},\"error\":null}"
+Sep  3 00:53:54 localhost  00:53:54 ubuntu Blue_Core 1295 - - Error:send command is leave 001ec090d6c4:HDMI
+Sep  3 00:53:54 localhost  00:53:54 ubuntu Blue_Core 1295 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":10,\"result\":null,\"error\":null}"
+Sep  3 00:53:54 localhost  00:53:54 ubuntu Blue_Core 1295 - - Error:the device 001ec090d6c4 have Set form DataBase
+Sep  3 00:53:54 localhost  00:53:54 ubuntu Blue_Core 1295 - - Error:send command is set 001ec090d6c4 property configuration.locate_mode false 
+Sep  3 00:53:54 localhost  00:53:54 ubuntu Blue_Core 1295 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":15,\"result\":null,\"error\":null}"
+Sep  3 00:53:54 localhost  00:53:54 ubuntu Blue_Core 1295 - - Error:send command is set 001ec090d6c4 property nodes[STEREO_AUDIO_OUTPUT:0].inputs[main:0].configuration.source.value 2 
+Sep  3 00:53:54 localhost  00:53:54 ubuntu Blue_Core 1295 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":16,\"result\":null,\"error\":null}"
+Sep  3 00:53:54 localhost  00:53:54 ubuntu Blue_Core 1295 - - Error:send command is set 001ec090d6c4 property nodes[HDMI_ENCODER:0].inputs[audio:0].configuration.source.value 7 
+Sep  3 00:53:54 localhost  00:53:54 ubuntu Blue_Core 1295 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":17,\"result\":null,\"error\":null}"
+Sep  3 00:53:54 localhost  00:53:54 ubuntu Blue_Core 1295 - - Error:send command is set 001ec090d6c4 property subscriptions[HDMI_AUDIO:0].configuration.mute_msec 600 
+Sep  3 00:53:54 localhost  00:53:54 ubuntu Blue_Core 1295 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":18,\"result\":null,\"error\":null}"
+Sep  3 00:53:54 localhost  00:53:54 ubuntu Blue_Core 1295 - - Error:send command is set 001ec090d6c4 property nodes[HDMI_ENCODER:0].configuration.hdcp_output_mode FOLLOW_SOURCE 
+Sep  3 00:53:54 localhost  00:53:54 ubuntu Blue_Core 1295 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":19,\"result\":null,\"error\":null}"
+Sep  3 00:53:54 localhost  00:53:54 ubuntu Blue_Core 1295 - - Error:send command is set 001ec090d6c4 ip mode dhcp
+Sep  3 00:53:54 localhost  00:53:54 ubuntu Blue_Core 1295 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":20,\"result\":null,\"error\":null}"
+Sep  3 00:53:54 localhost  00:53:54 ubuntu Blue_Core 1295 - - Error:the device 001ec09084b0 have Set form DataBase
+Sep  3 00:53:54 localhost  00:53:54 ubuntu Blue_Core 1295 - - Error:send command is set 001ec09084b0 property configuration.locate_mode false 
+Sep  3 00:53:54 localhost  00:53:54 ubuntu Blue_Core 1295 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":21,\"result\":null,\"error\":null}"
+Sep  3 00:53:54 localhost  00:53:54 ubuntu Blue_Core 1295 - - Error:send command is set 001ec09084b0 property nodes[HDMI_DECODER:0].configuration.hdcp_support_enable  true 
+Sep  3 00:53:54 localhost  00:53:54 ubuntu Blue_Core 1295 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":22,\"result\":null,\"error\":null}"
+Sep  3 00:53:54 localhost  00:53:54 ubuntu Blue_Core 1295 - - Error:send command is set 001ec09084b0 property nodes[HDMI_DECODER:0].configuration.hdcp_22_support_disable  false 
+Sep  3 00:53:54 localhost  00:53:54 ubuntu Blue_Core 1295 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":23,\"result\":null,\"error\":null}"
+Sep  3 00:53:54 localhost  00:53:54 ubuntu Blue_Core 1295 - - Error:send command is set 001ec09084b0 edid 00ffffffffffff0031270002010000000b1e0103814627780ad57ca357499c2511484bffff8081c081009500814081809040b300a940023a801871382d40582c4500c48e2100001e283c80a070b023403020360006442100001a000000fc004c6947756f204465766963650a000000fd0032551f5e11000a202020202020018902031a41471113051484101f230a06048305000065030c0010008c0ad08a20e02d10103e960058c221000018011d8018711c1620582c2500c48e2100009e011d80d0721c1620102c2580c48e2100009e011d007251d01e206e285500c48e2100001e011d00bc52d01e20b8285540c48e2100001e0000000000000000000000c0 
+Sep  3 00:53:54 localhost  00:53:54 ubuntu Blue_Core 1295 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":24,\"result\":null,\"error\":null}"
+Sep  3 00:53:54 localhost  00:53:54 ubuntu Blue_Core 1295 - - Error:send command is set 001ec09084b0 property nodes[STEREO_AUDIO_INPUT_OUTPUT:0].configuration.direction INPUT
+Sep  3 00:53:54 localhost  00:53:54 ubuntu Blue_Core 1295 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":25,\"result\":null,\"error\":null}"
+Sep  3 00:53:54 localhost  00:53:54 ubuntu Blue_Core 1295 - - Error:send command is start 001ec09084b0:HDMI:0 
+Sep  3 00:53:54 localhost  00:53:54 ubuntu Blue_Core 1295 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":26,\"result\":null,\"error\":null}"
+Sep  3 00:53:54 localhost  00:53:54 ubuntu Blue_Core 1295 - - Error:send command is start 001ec09084b0:HDMI:1 
+Sep  3 00:53:54 localhost  00:53:54 ubuntu Blue_Core 1295 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":27,\"result\":null,\"error\":null}"
+Sep  3 00:53:54 localhost  00:53:54 ubuntu Blue_Core 1295 - - Error:send command is stop 001ec09084b0:THUMBNAIL:0 
+Sep  3 00:53:54 localhost  00:53:54 ubuntu Blue_Core 1295 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":28,\"result\":null,\"error\":null}"
+Sep  3 00:53:54 localhost  00:53:54 ubuntu Blue_Core 1295 - - Error:send command is start 001ec09084b0:HDMI_AUDIO:0 
+Sep  3 00:53:54 localhost  00:53:54 ubuntu Blue_Core 1295 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":29,\"result\":null,\"error\":null}"
+Sep  3 00:53:54 localhost  00:53:54 ubuntu Blue_Core 1295 - - Error:send command is start 001ec09084b0:STEREO_AUDIO:0 
+Sep  3 00:53:54 localhost  00:53:54 ubuntu Blue_Core 1295 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":30,\"result\":null,\"error\":null}"
+Sep  3 00:53:54 localhost  00:53:54 ubuntu Blue_Core 1295 - - Error:send command is set 001ec09084b0 ip mode manual address 192.168.20.51 mask 255.255.255.0 gateway 192.168.20.1
+Sep  3 00:53:54 localhost  00:53:54 ubuntu Blue_Core 1295 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":31,\"result\":null,\"error\":null}"
+Sep  3 00:53:55 localhost  00:53:55 ubuntu Blue_Core 1295 - - Error:send command is leave 801f12531993:HDMI
+Sep  3 00:53:55 localhost  00:53:55 ubuntu Blue_Core 1295 - - Error:received is "\n{\"status\":\"SUCCESS\",\"request_id\":33,\"result\":{\"devices\":[],\"error\":[{\"device_id\":\"801f12531993\",\"reason\":\"DEVICE_TYPE\",\"message\":\"Operation cannot be performed on this device type\"}]},\"error\":null}"
+Sep  3 00:53:55 localhost  00:53:55 ubuntu Blue_Core 1295 - - Error:the device 801f12531993 have Set form DataBase
+Sep  3 00:53:55 localhost  00:53:55 ubuntu Blue_Core 1295 - - Error:send command is join 801f12531993:HDMI:0 001ec090d6c4:0 genlock 
+Sep  3 00:53:55 localhost  00:53:55 ubuntu Blue_Core 1295 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":36,\"result\":null,\"error\":null}"
+Sep  3 00:53:55 localhost  00:53:55 ubuntu Blue_Core 1295 - - Error:send command is set 801f12531993 property configuration.locate_mode true 
+Sep  3 00:53:55 localhost  00:53:55 ubuntu Blue_Core 1295 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":37,\"result\":null,\"error\":null}"
+Sep  3 00:53:55 localhost  00:53:55 ubuntu Blue_Core 1295 - - Error:send command is set 801f12531993 property nodes[HDMI_DECODER:0].configuration.hdcp_support_enable  true 
+Sep  3 00:53:55 localhost  00:53:55 ubuntu Blue_Core 1295 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":38,\"result\":null,\"error\":null}"
+Sep  3 00:53:55 localhost  00:53:55 ubuntu Blue_Core 1295 - - Error:send command is set 801f12531993 property nodes[HDMI_DECODER:0].configuration.hdcp_22_support_disable  false 
+Sep  3 00:53:55 localhost  00:53:55 ubuntu Blue_Core 1295 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":39,\"result\":null,\"error\":null}"
+Sep  3 00:53:55 localhost  00:53:55 ubuntu Blue_Core 1295 - - Error:send command is set 801f12531993 edid 00ffffffffffff0031270002010000000b1e0103814627780ad57ca357499c2511484bffff8081c081009500814081809040b300a940023a801871382d40582c4500c48e2100001e283c80a070b023403020360006442100001a000000fc004c6947756f204465766963650a000000fd0032551f5e11000a202020202020018902031a41471113051484101f230a06048305000065030c0010008c0ad08a20e02d10103e960058c221000018011d8018711c1620582c2500c48e2100009e011d80d0721c1620102c2580c48e2100009e011d007251d01e206e285500c48e2100001e011d00bc52d01e20b8285540c48e2100001e0000000000000000000000c0 
+Sep  3 00:53:55 localhost  00:53:55 ubuntu Blue_Core 1295 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":40,\"result\":null,\"error\":null}"
+Sep  3 00:53:55 localhost  00:53:55 ubuntu Blue_Core 1295 - - Error:send command is set 801f12531993 property nodes[STEREO_AUDIO_INPUT_OUTPUT:0].configuration.direction INPUT
+Sep  3 00:53:55 localhost  00:53:55 ubuntu Blue_Core 1295 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":41,\"result\":null,\"error\":null}"
+Sep  3 00:53:55 localhost  00:53:55 ubuntu Blue_Core 1295 - - Error:send command is start 801f12531993:HDMI:0 
+Sep  3 00:53:55 localhost  00:53:55 ubuntu Blue_Core 1295 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":42,\"result\":null,\"error\":null}"
+Sep  3 00:53:55 localhost  00:53:55 ubuntu Blue_Core 1295 - - Error:send command is start 801f12531993:HDMI:1 
+Sep  3 00:53:55 localhost  00:53:55 ubuntu Blue_Core 1295 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":43,\"result\":null,\"error\":null}"
+Sep  3 00:53:55 localhost  00:53:55 ubuntu Blue_Core 1295 - - Error:send command is stop 801f12531993:THUMBNAIL:0 
+Sep  3 00:53:55 localhost  00:53:55 ubuntu Blue_Core 1295 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":44,\"result\":null,\"error\":null}"
+Sep  3 00:53:55 localhost  00:53:55 ubuntu Blue_Core 1295 - - Error:send command is start 801f12531993:HDMI_AUDIO:0 
+Sep  3 00:53:55 localhost  00:53:55 ubuntu Blue_Core 1295 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":45,\"result\":null,\"error\":null}"
+Sep  3 00:53:55 localhost  00:53:55 ubuntu Blue_Core 1295 - - Error:send command is start 801f12531993:STEREO_AUDIO:0 
+Sep  3 00:53:55 localhost  00:53:55 ubuntu Blue_Core 1295 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":46,\"result\":null,\"error\":null}"
+Sep  3 00:53:55 localhost  00:53:55 ubuntu Blue_Core 1295 - - Error:send command is set 801f12531993 ip mode dhcp
+Sep  3 00:53:55 localhost  00:53:55 ubuntu Blue_Core 1295 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":47,\"result\":null,\"error\":null}"
+Sep  3 00:53:55 localhost  00:53:55 ubuntu Blue_Core 1295 - - Error:send command is leave 001ec0906ace:HDMI
+Sep  3 00:53:55 localhost  00:53:55 ubuntu Blue_Core 1295 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":53,\"result\":null,\"error\":null}"
+Sep  3 00:53:56 localhost  00:53:56 ubuntu Blue_Core 1295 - - Error:the device 001ec0909b21 have Set form DataBase
+Sep  3 00:53:56 localhost  00:53:56 ubuntu Blue_Core 1295 - - Error:send command is set 001ec0909b21 property configuration.locate_mode false 
+Sep  3 00:53:56 localhost  00:53:56 ubuntu Blue_Core 1295 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":59,\"result\":null,\"error\":null}"
+Sep  3 00:53:56 localhost  00:53:56 ubuntu Blue_Core 1295 - - Error:send command is set 001ec0909b21 property nodes[HDMI_DECODER:0].configuration.hdcp_support_enable  true 
+Sep  3 00:53:56 localhost  00:53:56 ubuntu Blue_Core 1295 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":60,\"result\":null,\"error\":null}"
+Sep  3 00:53:56 localhost  00:53:56 ubuntu Blue_Core 1295 - - Error:send command is set 001ec0909b21 property nodes[HDMI_DECODER:0].configuration.hdcp_22_support_disable  false 
+Sep  3 00:53:56 localhost  00:53:56 ubuntu Blue_Core 1295 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":61,\"result\":null,\"error\":null}"
+Sep  3 00:53:56 localhost  00:53:56 ubuntu Blue_Core 1295 - - Error:send command is set 001ec0909b21 edid 00ffffffffffff0031270002010000000b1e0103814627780ad57ca357499c2511484bffff8081c081009500814081809040b300a940023a801871382d40582c4500c48e2100001e283c80a070b023403020360006442100001a000000fc004c6947756f204465766963650a000000fd0032551f5e11000a202020202020018902031a41471113051484101f230a06048305000065030c0010008c0ad08a20e02d10103e960058c221000018011d8018711c1620582c2500c48e2100009e011d80d0721c1620102c2580c48e2100009e011d007251d01e206e285500c48e2100001e011d00bc52d01e20b8285540c48e2100001e0000000000000000000000c0 
+Sep  3 00:53:56 localhost  00:53:56 ubuntu Blue_Core 1295 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":62,\"result\":null,\"error\":null}"
+Sep  3 00:53:56 localhost  00:53:56 ubuntu Blue_Core 1295 - - Error:send command is set 001ec0909b21 property nodes[STEREO_AUDIO_INPUT_OUTPUT:0].configuration.direction INPUT
+Sep  3 00:53:56 localhost  00:53:56 ubuntu Blue_Core 1295 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":63,\"result\":null,\"error\":null}"
+Sep  3 00:53:56 localhost  00:53:56 ubuntu Blue_Core 1295 - - Error:send command is start 001ec0909b21:HDMI:0 
+Sep  3 00:53:56 localhost  00:53:56 ubuntu Blue_Core 1295 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":64,\"result\":null,\"error\":null}"
+Sep  3 00:53:56 localhost  00:53:56 ubuntu Blue_Core 1295 - - Error:send command is start 001ec0909b21:HDMI:1 
+Sep  3 00:53:56 localhost  00:53:56 ubuntu Blue_Core 1295 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":65,\"result\":null,\"error\":null}"
+Sep  3 00:53:56 localhost  00:53:56 ubuntu Blue_Core 1295 - - Error:send command is stop 001ec0909b21:THUMBNAIL:0 
+Sep  3 00:53:56 localhost  00:53:56 ubuntu Blue_Core 1295 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":66,\"result\":null,\"error\":null}"
+Sep  3 00:53:56 localhost  00:53:56 ubuntu Blue_Core 1295 - - Error:send command is start 001ec0909b21:HDMI_AUDIO:0 
+Sep  3 00:53:56 localhost  00:53:56 ubuntu Blue_Core 1295 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":67,\"result\":null,\"error\":null}"
+Sep  3 00:53:56 localhost  00:53:56 ubuntu Blue_Core 1295 - - Error:send command is start 001ec0909b21:STEREO_AUDIO:0 
+Sep  3 00:53:56 localhost  00:53:56 ubuntu Blue_Core 1295 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":68,\"result\":null,\"error\":null}"
+Sep  3 00:53:56 localhost  00:53:56 ubuntu Blue_Core 1295 - - Error:send command is set 001ec0909b21 ip mode dhcp
+Sep  3 00:53:56 localhost  00:53:56 ubuntu Blue_Core 1295 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":69,\"result\":null,\"error\":null}"
+Sep  3 00:53:56 localhost  00:53:56 ubuntu Blue_Core 1295 - - Error:the device 001ec0910e4c have Set form DataBase
+Sep  3 00:53:56 localhost  00:53:56 ubuntu Blue_Core 1295 - - Error:send command is join 001ec0910e4c:STEREO_AUDIO:0 001ec090d6c4:0 
+Sep  3 00:53:56 localhost  00:53:56 ubuntu Blue_Core 1295 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":73,\"result\":null,\"error\":null}"
+Sep  3 00:53:56 localhost  00:53:56 ubuntu Blue_Core 1295 - - Error:send command is join 001ec0910e4c:HDMI_AUDIO:0 001ec090d6c4:0  
+Sep  3 00:53:56 localhost  00:53:56 ubuntu Blue_Core 1295 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":74,\"result\":null,\"error\":null}"
+Sep  3 00:53:56 localhost  00:53:56 ubuntu Blue_Core 1295 - - Error:send command is set 001ec0910e4c property configuration.locate_mode false 
+Sep  3 00:53:56 localhost  00:53:56 ubuntu Blue_Core 1295 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":75,\"result\":null,\"error\":null}"
+Sep  3 00:53:56 localhost  00:53:56 ubuntu Blue_Core 1295 - - Error:send command is set 001ec0910e4c property nodes[HDMI_DECODER:0].configuration.hdcp_support_enable  true 
+Sep  3 00:53:56 localhost  00:53:56 ubuntu Blue_Core 1295 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":76,\"result\":null,\"error\":null}"
+Sep  3 00:53:56 localhost  00:53:56 ubuntu Blue_Core 1295 - - Error:send command is set 001ec0910e4c property nodes[HDMI_DECODER:0].configuration.hdcp_22_support_disable  false 
+Sep  3 00:53:56 localhost  00:53:56 ubuntu Blue_Core 1295 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":77,\"result\":null,\"error\":null}"
+Sep  3 00:53:56 localhost  00:53:56 ubuntu Blue_Core 1295 - - Error:send command is set 001ec0910e4c edid 00ffffffffffff0031270002010000000b1e0103814627780ad57ca357499c2511484bffff8081c081009500814081809040b300a940023a801871382d40582c4500c48e2100001e283c80a070b023403020360006442100001a000000fc004c6947756f204465766963650a000000fd0032551f5e11000a202020202020018902031a41471113051484101f230a06048305000065030c0010008c0ad08a20e02d10103e960058c221000018011d8018711c1620582c2500c48e2100009e011d80d0721c1620102c2580c48e2100009e011d007251d01e206e285500c48e2100001e011d00bc52d01e20b8285540c48e2100001e0000000000000000000000c0 
+Sep  3 00:53:56 localhost  00:53:56 ubuntu Blue_Core 1295 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":78,\"result\":null,\"error\":null}"
+Sep  3 00:53:56 localhost  00:53:56 ubuntu Blue_Core 1295 - - Error:send command is set 001ec0910e4c property nodes[STEREO_AUDIO_INPUT_OUTPUT:0].configuration.direction INPUT
+Sep  3 00:53:56 localhost  00:53:56 ubuntu Blue_Core 1295 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":79,\"result\":null,\"error\":null}"
+Sep  3 00:53:56 localhost  00:53:56 ubuntu Blue_Core 1295 - - Error:send command is start 001ec0910e4c:HDMI:0 
+Sep  3 00:53:56 localhost  00:53:56 ubuntu Blue_Core 1295 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":80,\"result\":null,\"error\":null}"
+Sep  3 00:53:56 localhost  00:53:56 ubuntu Blue_Core 1295 - - Error:send command is start 001ec0910e4c:HDMI:1 
+Sep  3 00:53:56 localhost  00:53:56 ubuntu Blue_Core 1295 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":81,\"result\":null,\"error\":null}"
+Sep  3 00:53:56 localhost  00:53:56 ubuntu Blue_Core 1295 - - Error:send command is stop 001ec0910e4c:THUMBNAIL:0 
+Sep  3 00:53:56 localhost  00:53:56 ubuntu Blue_Core 1295 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":82,\"result\":null,\"error\":null}"
+Sep  3 00:53:56 localhost  00:53:56 ubuntu Blue_Core 1295 - - Error:send command is start 001ec0910e4c:HDMI_AUDIO:0 
+Sep  3 00:53:56 localhost  00:53:56 ubuntu Blue_Core 1295 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":83,\"result\":null,\"error\":null}"
+Sep  3 00:53:56 localhost  00:53:56 ubuntu Blue_Core 1295 - - Error:send command is start 001ec0910e4c:STEREO_AUDIO:0 
+Sep  3 00:53:56 localhost  00:53:56 ubuntu Blue_Core 1295 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":84,\"result\":null,\"error\":null}"
+Sep  3 00:53:56 localhost  00:53:56 ubuntu Blue_Core 1295 - - Error:send command is set 001ec0910e4c ip mode dhcp
+Sep  3 00:53:56 localhost  00:53:56 ubuntu Blue_Core 1295 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":85,\"result\":null,\"error\":null}"
+Sep  3 00:53:56 localhost  00:53:56 ubuntu Blue_Core 1295 - - Error:send command is leave 001ec090dd4c:HDMI
+Sep  3 00:53:56 localhost  00:53:56 ubuntu Blue_Core 1295 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":89,\"result\":null,\"error\":null}"
+Sep  3 00:53:56 localhost  00:53:56 ubuntu Blue_Core 1295 - - Error:send command is leave 001ec090674a:HDMI
+Sep  3 00:53:56 localhost  00:53:56 ubuntu Blue_Core 1295 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":96,\"result\":null,\"error\":null}"
+Sep  3 00:53:56 localhost  00:53:56 ubuntu Blue_Core 1295 - - Error:the device 001ec090674a have Set form DataBase
+Sep  3 00:53:56 localhost  00:53:56 ubuntu Blue_Core 1295 - - Error:send command is set 001ec090674a property configuration.locate_mode false 
+Sep  3 00:53:56 localhost  00:53:56 ubuntu Blue_Core 1295 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":101,\"result\":null,\"error\":null}"
+Sep  3 00:53:56 localhost  00:53:56 ubuntu Blue_Core 1295 - - Error:send command is join 001ec0910e4c:STEREO_AUDIO:0 001ec090674a:0 
+Sep  3 00:53:56 localhost  00:53:56 ubuntu Blue_Core 1295 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":102,\"result\":null,\"error\":null}"
+Sep  3 00:53:56 localhost  00:53:56 ubuntu Blue_Core 1295 - - Error:send command is set 001ec090674a property nodes[STEREO_AUDIO_OUTPUT:0].inputs[main:0].configuration.source.value 2 
+Sep  3 00:53:56 localhost  00:53:56 ubuntu Blue_Core 1295 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":103,\"result\":null,\"error\":null}"
+Sep  3 00:53:56 localhost  00:53:56 ubuntu Blue_Core 1295 - - Error:send command is join 001ec0910e4c:HDMI_AUDIO:0 001ec090674a:0  
+Sep  3 00:53:56 localhost  00:53:56 ubuntu Blue_Core 1295 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":104,\"result\":null,\"error\":null}"
+Sep  3 00:53:56 localhost  00:53:56 ubuntu Blue_Core 1295 - - Error:send command is set 001ec090674a property nodes[HDMI_ENCODER:0].inputs[audio:0].configuration.source.value 7 
+Sep  3 00:53:56 localhost  00:53:56 ubuntu Blue_Core 1295 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":105,\"result\":null,\"error\":null}"
+Sep  3 00:53:56 localhost  00:53:56 ubuntu Blue_Core 1295 - - Error:send command is join 801f12531993:HDMI:0 001ec090674a:0 genlock 
+Sep  3 00:53:56 localhost  00:53:56 ubuntu Blue_Core 1295 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":106,\"result\":null,\"error\":null}"
+Sep  3 00:53:56 localhost  00:53:56 ubuntu Blue_Core 1295 - - Error:send command is set 001ec090674a property subscriptions[HDMI_AUDIO:0].configuration.mute_msec 600 
+Sep  3 00:53:56 localhost  00:53:56 ubuntu Blue_Core 1295 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":107,\"result\":null,\"error\":null}"
+Sep  3 00:53:56 localhost  00:53:56 ubuntu Blue_Core 1295 - - Error:send command is set 001ec090674a property nodes[HDMI_ENCODER:0].configuration.hdcp_output_mode FOLLOW_SINK_2 
+Sep  3 00:53:56 localhost  00:53:56 ubuntu Blue_Core 1295 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":108,\"result\":null,\"error\":null}"
+Sep  3 00:53:56 localhost  00:53:56 ubuntu Blue_Core 1295 - - Error:send command is set 001ec090674a ip mode dhcp
+Sep  3 00:53:56 localhost  00:53:56 ubuntu Blue_Core 1295 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":109,\"result\":null,\"error\":null}"
+Sep  3 00:53:58 localhost  00:53:58 ubuntu Blue_Core 1295 - - Error:the device 001ec0906ace have Set form DataBase
+Sep  3 00:53:58 localhost  00:53:58 ubuntu Blue_Core 1295 - - Error:send command is set 001ec0906ace property configuration.locate_mode false 
+Sep  3 00:53:58 localhost  00:53:58 ubuntu Blue_Core 1295 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":123,\"result\":null,\"error\":null}"
+Sep  3 00:53:58 localhost  00:53:58 ubuntu Blue_Core 1295 - - Error:send command is join 001ec0910e4c:STEREO_AUDIO:0 001ec0906ace:0 
+Sep  3 00:53:58 localhost  00:53:58 ubuntu Blue_Core 1295 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":124,\"result\":null,\"error\":null}"
+Sep  3 00:53:58 localhost  00:53:58 ubuntu Blue_Core 1295 - - Error:send command is set 001ec0906ace property nodes[STEREO_AUDIO_OUTPUT:0].inputs[main:0].configuration.source.value 2 
+Sep  3 00:53:58 localhost  00:53:58 ubuntu Blue_Core 1295 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":125,\"result\":null,\"error\":null}"
+Sep  3 00:53:58 localhost  00:53:58 ubuntu Blue_Core 1295 - - Error:send command is join 001ec0910e4c:HDMI_AUDIO:0 001ec0906ace:0  
+Sep  3 00:53:58 localhost  00:53:58 ubuntu Blue_Core 1295 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":126,\"result\":null,\"error\":null}"
+Sep  3 00:53:58 localhost  00:53:58 ubuntu Blue_Core 1295 - - Error:send command is set 001ec0906ace property nodes[HDMI_ENCODER:0].inputs[audio:0].configuration.source.value 7 
+Sep  3 00:53:58 localhost  00:53:58 ubuntu Blue_Core 1295 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":127,\"result\":null,\"error\":null}"
+Sep  3 00:53:58 localhost  00:53:58 ubuntu Blue_Core 1295 - - Error:send command is join 801f12531993:HDMI:0 001ec0906ace:0 genlock 
+Sep  3 00:53:58 localhost  00:53:58 ubuntu Blue_Core 1295 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":128,\"result\":null,\"error\":null}"
+Sep  3 00:53:58 localhost  00:53:58 ubuntu Blue_Core 1295 - - Error:send command is set 001ec0906ace property subscriptions[HDMI_AUDIO:0].configuration.mute_msec 600 
+Sep  3 00:53:58 localhost  00:53:58 ubuntu Blue_Core 1295 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":129,\"result\":null,\"error\":null}"
+Sep  3 00:53:58 localhost  00:53:58 ubuntu Blue_Core 1295 - - Error:send command is set 001ec0906ace property nodes[HDMI_ENCODER:0].configuration.hdcp_output_mode FOLLOW_SOURCE 
+Sep  3 00:53:58 localhost  00:53:58 ubuntu Blue_Core 1295 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":130,\"result\":null,\"error\":null}"
+Sep  3 00:53:58 localhost  00:53:58 ubuntu Blue_Core 1295 - - Error:send command is set 001ec0906ace ip mode dhcp
+Sep  3 00:53:58 localhost  00:53:58 ubuntu Blue_Core 1295 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":131,\"result\":null,\"error\":null}"
+Sep  3 00:53:58 localhost  00:53:58 ubuntu Blue_Core 1295 - - Error:the device 001ec090dd4c have Set form DataBase
+Sep  3 00:53:58 localhost  00:53:58 ubuntu Blue_Core 1295 - - Error:send command is set 001ec090dd4c property configuration.locate_mode false 
+Sep  3 00:53:58 localhost  00:53:58 ubuntu Blue_Core 1295 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":134,\"result\":null,\"error\":null}"
+Sep  3 00:53:58 localhost  00:53:58 ubuntu Blue_Core 1295 - - Error:send command is join 001ec0910e4c:STEREO_AUDIO:0 001ec090dd4c:0 
+Sep  3 00:53:58 localhost  00:53:58 ubuntu Blue_Core 1295 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":135,\"result\":null,\"error\":null}"
+Sep  3 00:53:58 localhost  00:53:58 ubuntu Blue_Core 1295 - - Error:send command is set 001ec090dd4c property nodes[STEREO_AUDIO_OUTPUT:0].inputs[main:0].configuration.source.value 8 
+Sep  3 00:53:58 localhost  00:53:58 ubuntu Blue_Core 1295 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":136,\"result\":null,\"error\":null}"
+Sep  3 00:53:58 localhost  00:53:58 ubuntu Blue_Core 1295 - - Error:send command is join 001ec0910e4c:HDMI_AUDIO:0 001ec090dd4c:0  
+Sep  3 00:53:58 localhost  00:53:58 ubuntu Blue_Core 1295 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":137,\"result\":null,\"error\":null}"
+Sep  3 00:53:58 localhost  00:53:58 ubuntu Blue_Core 1295 - - Error:send command is set 001ec090dd4c property nodes[HDMI_ENCODER:0].inputs[audio:0].configuration.source.value 8 
+Sep  3 00:53:58 localhost  00:53:58 ubuntu Blue_Core 1295 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":138,\"result\":null,\"error\":null}"
+Sep  3 00:53:58 localhost  00:53:58 ubuntu Blue_Core 1295 - - Error:send command is join 801f12531993:HDMI:0 001ec090dd4c:0 genlock 
+Sep  3 00:53:58 localhost  00:53:58 ubuntu Blue_Core 1295 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":139,\"result\":null,\"error\":null}"
+Sep  3 00:53:58 localhost  00:53:58 ubuntu Blue_Core 1295 - - Error:send command is set 001ec090dd4c property subscriptions[HDMI_AUDIO:0].configuration.mute_msec 600 
+Sep  3 00:53:58 localhost  00:53:58 ubuntu Blue_Core 1295 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":140,\"result\":null,\"error\":null}"
+Sep  3 00:53:58 localhost  00:53:58 ubuntu Blue_Core 1295 - - Error:send command is set 001ec090dd4c property nodes[HDMI_ENCODER:0].configuration.hdcp_output_mode FOLLOW_SOURCE 
+Sep  3 00:53:58 localhost  00:53:58 ubuntu Blue_Core 1295 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":141,\"result\":null,\"error\":null}"
+Sep  3 00:53:58 localhost  00:53:58 ubuntu Blue_Core 1295 - - Error:send command is set 001ec090dd4c ip mode dhcp
+Sep  3 00:53:58 localhost  00:53:58 ubuntu Blue_Core 1295 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":142,\"result\":null,\"error\":null}"
+Sep  3 01:47:00 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:send command is require blueriver_api 3.0.0.0
+Sep  3 01:47:00 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:received is "{\"status\":\"SUCCESS\",\"request_id\":null,\"result\":null,\"error\":null}"
+Sep  3 01:47:00 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:send command is layout multiv1597479234160 create size 800 600
+Sep  3 01:47:00 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:received is "\n{\"status\":\"SUCCESS\",\"request_id\":null,\"result\":null,\"error\":null}"
+Sep  3 01:47:00 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:send command is layout multiv1597546532837 create size 1920 1080
+Sep  3 01:47:00 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:received is "\n{\"status\":\"SUCCESS\",\"request_id\":null,\"result\":null,\"error\":null}"
+Sep  3 01:47:00 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:send command is leave 001ec0910e4c:HDMI
+Sep  3 01:47:00 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:received is "\n{\"status\":\"SUCCESS\",\"request_id\":258,\"result\":{\"devices\":[],\"error\":[{\"device_id\":\"001ec0910e4c\",\"reason\":\"DEVICE_TYPE\",\"message\":\"Operation cannot be performed on this device type\"}]},\"error\":null}"
+Sep  3 01:47:00 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:send command is leave 001ec0909b21:HDMI
+Sep  3 01:47:00 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:received is "\n{\"status\":\"SUCCESS\",\"request_id\":259,\"result\":{\"devices\":[],\"error\":[{\"device_id\":\"001ec0909b21\",\"reason\":\"DEVICE_TYPE\",\"message\":\"Operation cannot be performed on this device type\"}]},\"error\":null}"
+Sep  3 01:47:00 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:send command is leave 001ec09084b0:HDMI
+Sep  3 01:47:00 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:received is "\n{\"status\":\"SUCCESS\",\"request_id\":260,\"result\":{\"devices\":[],\"error\":[{\"device_id\":\"001ec09084b0\",\"reason\":\"DEVICE_TYPE\",\"message\":\"Operation cannot be performed on this device type\"}]},\"error\":null}"
+Sep  3 01:47:00 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:send command is leave 001ec090d6c4:HDMI
+Sep  3 01:47:00 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":261,\"result\":null,\"error\":null}"
+Sep  3 01:47:00 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:send command is leave 801f12531993:HDMI
+Sep  3 01:47:00 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:received is "\n{\"status\":\"SUCCESS\",\"request_id\":262,\"result\":{\"devices\":[],\"error\":[{\"device_id\":\"801f12531993\",\"reason\":\"DEVICE_TYPE\",\"message\":\"Operation cannot be performed on this device type\"}]},\"error\":null}"
+Sep  3 01:47:00 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:send command is leave 001ec0906ace:HDMI
+Sep  3 01:47:00 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":263,\"result\":null,\"error\":null}"
+Sep  3 01:47:00 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:send command is leave 001ec090dd4c:HDMI
+Sep  3 01:47:00 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":264,\"result\":null,\"error\":null}"
+Sep  3 01:47:00 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:send command is leave 001ec090674a:HDMI
+Sep  3 01:47:00 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":265,\"result\":null,\"error\":null}"
+Sep  3 01:47:00 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:the device 001ec09084b0 have Set form DataBase
+Sep  3 01:47:00 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:the device 001ec090d6c4 have Set form DataBase
+Sep  3 01:47:00 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:send command is set 001ec09084b0 property configuration.locate_mode false 
+Sep  3 01:47:00 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":283,\"result\":null,\"error\":null}"
+Sep  3 01:47:00 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:send command is set 001ec09084b0 property nodes[HDMI_DECODER:0].configuration.hdcp_support_enable  true 
+Sep  3 01:47:00 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":284,\"result\":null,\"error\":null}"
+Sep  3 01:47:00 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:send command is set 001ec09084b0 property nodes[HDMI_DECODER:0].configuration.hdcp_22_support_disable  false 
+Sep  3 01:47:00 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":285,\"result\":null,\"error\":null}"
+Sep  3 01:47:00 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:send command is set 001ec09084b0 edid 00ffffffffffff0031270002010000000b1e0103814627780ad57ca357499c2511484bffff8081c081009500814081809040b300a940023a801871382d40582c4500c48e2100001e283c80a070b023403020360006442100001a000000fc004c6947756f204465766963650a000000fd0032551f5e11000a202020202020018902031a41471113051484101f230a06048305000065030c0010008c0ad08a20e02d10103e960058c221000018011d8018711c1620582c2500c48e2100009e011d80d0721c1620102c2580c48e2100009e011d007251d01e206e285500c48e2100001e011d00bc52d01e20b8285540c48e2100001e0000000000000000000000c0 
+Sep  3 01:47:00 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":286,\"result\":null,\"error\":null}"
+Sep  3 01:47:00 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:send command is set 001ec09084b0 property nodes[STEREO_AUDIO_INPUT_OUTPUT:0].configuration.direction INPUT
+Sep  3 01:47:00 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":287,\"result\":null,\"error\":null}"
+Sep  3 01:47:00 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:send command is start 001ec09084b0:HDMI:0 
+Sep  3 01:47:00 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":288,\"result\":null,\"error\":null}"
+Sep  3 01:47:00 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:send command is start 001ec09084b0:HDMI:1 
+Sep  3 01:47:00 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":289,\"result\":null,\"error\":null}"
+Sep  3 01:47:00 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:send command is stop 001ec09084b0:THUMBNAIL:0 
+Sep  3 01:47:00 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":290,\"result\":null,\"error\":null}"
+Sep  3 01:47:00 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:send command is start 001ec09084b0:HDMI_AUDIO:0 
+Sep  3 01:47:00 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":291,\"result\":null,\"error\":null}"
+Sep  3 01:47:00 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:send command is start 001ec09084b0:STEREO_AUDIO:0 
+Sep  3 01:47:00 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":292,\"result\":null,\"error\":null}"
+Sep  3 01:47:00 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:send command is set 001ec09084b0 ip mode manual address 192.168.20.51 mask 255.255.255.0 gateway 192.168.20.1
+Sep  3 01:47:00 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":293,\"result\":null,\"error\":null}"
+Sep  3 01:47:00 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:the device 801f12531993 have Set form DataBase
+Sep  3 01:47:00 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:send command is set 001ec090d6c4 property configuration.locate_mode false 
+Sep  3 01:47:00 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":294,\"result\":null,\"error\":null}"
+Sep  3 01:47:00 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:send command is set 001ec090d6c4 property nodes[STEREO_AUDIO_OUTPUT:0].inputs[main:0].configuration.source.value 2 
+Sep  3 01:47:00 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":295,\"result\":null,\"error\":null}"
+Sep  3 01:47:00 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:send command is set 001ec090d6c4 property nodes[HDMI_ENCODER:0].inputs[audio:0].configuration.source.value 7 
+Sep  3 01:47:00 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":296,\"result\":null,\"error\":null}"
+Sep  3 01:47:00 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:send command is set 001ec090d6c4 property subscriptions[HDMI_AUDIO:0].configuration.mute_msec 600 
+Sep  3 01:47:00 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":297,\"result\":null,\"error\":null}"
+Sep  3 01:47:00 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:send command is set 001ec090d6c4 property nodes[HDMI_ENCODER:0].configuration.hdcp_output_mode FOLLOW_SOURCE 
+Sep  3 01:47:00 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":298,\"result\":null,\"error\":null}"
+Sep  3 01:47:00 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:send command is set 001ec090d6c4 ip mode dhcp
+Sep  3 01:47:00 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":299,\"result\":null,\"error\":null}"
+Sep  3 01:47:00 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:send command is join 801f12531993:HDMI:0 001ec090d6c4:0 genlock 
+Sep  3 01:47:00 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":300,\"result\":null,\"error\":null}"
+Sep  3 01:47:00 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:send command is set 801f12531993 property configuration.locate_mode true 
+Sep  3 01:47:00 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":301,\"result\":null,\"error\":null}"
+Sep  3 01:47:00 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:send command is set 801f12531993 property nodes[HDMI_DECODER:0].configuration.hdcp_support_enable  true 
+Sep  3 01:47:00 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":302,\"result\":null,\"error\":null}"
+Sep  3 01:47:00 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:send command is set 801f12531993 property nodes[HDMI_DECODER:0].configuration.hdcp_22_support_disable  false 
+Sep  3 01:47:00 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":303,\"result\":null,\"error\":null}"
+Sep  3 01:47:00 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:send command is set 801f12531993 edid 00ffffffffffff0031270002010000000b1e0103814627780ad57ca357499c2511484bffff8081c081009500814081809040b300a940023a801871382d40582c4500c48e2100001e283c80a070b023403020360006442100001a000000fc004c6947756f204465766963650a000000fd0032551f5e11000a202020202020018902031a41471113051484101f230a06048305000065030c0010008c0ad08a20e02d10103e960058c221000018011d8018711c1620582c2500c48e2100009e011d80d0721c1620102c2580c48e2100009e011d007251d01e206e285500c48e2100001e011d00bc52d01e20b8285540c48e2100001e0000000000000000000000c0 
+Sep  3 01:47:00 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":304,\"result\":null,\"error\":null}"
+Sep  3 01:47:00 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:send command is set 801f12531993 property nodes[STEREO_AUDIO_INPUT_OUTPUT:0].configuration.direction INPUT
+Sep  3 01:47:00 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":305,\"result\":null,\"error\":null}"
+Sep  3 01:47:00 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:send command is start 801f12531993:HDMI:0 
+Sep  3 01:47:00 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":306,\"result\":null,\"error\":null}"
+Sep  3 01:47:00 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:send command is start 801f12531993:HDMI:1 
+Sep  3 01:47:00 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":307,\"result\":null,\"error\":null}"
+Sep  3 01:47:00 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:send command is stop 801f12531993:THUMBNAIL:0 
+Sep  3 01:47:00 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":308,\"result\":null,\"error\":null}"
+Sep  3 01:47:00 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:send command is start 801f12531993:HDMI_AUDIO:0 
+Sep  3 01:47:00 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":309,\"result\":null,\"error\":null}"
+Sep  3 01:47:00 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:send command is start 801f12531993:STEREO_AUDIO:0 
+Sep  3 01:47:00 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":310,\"result\":null,\"error\":null}"
+Sep  3 01:47:00 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:send command is set 801f12531993 ip mode dhcp
+Sep  3 01:47:00 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":311,\"result\":null,\"error\":null}"
+Sep  3 01:47:00 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:the device 001ec0906ace have Set form DataBase
+Sep  3 01:47:01 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:send command is set 001ec0906ace property configuration.locate_mode false 
+Sep  3 01:47:01 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":312,\"result\":null,\"error\":null}"
+Sep  3 01:47:01 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:send command is set 001ec0906ace property nodes[STEREO_AUDIO_OUTPUT:0].inputs[main:0].configuration.source.value 2 
+Sep  3 01:47:01 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":313,\"result\":null,\"error\":null}"
+Sep  3 01:47:01 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:send command is set 001ec0906ace property nodes[HDMI_ENCODER:0].inputs[audio:0].configuration.source.value 7 
+Sep  3 01:47:01 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":314,\"result\":null,\"error\":null}"
+Sep  3 01:47:01 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:send command is join 801f12531993:HDMI:0 001ec0906ace:0 genlock 
+Sep  3 01:47:01 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":315,\"result\":null,\"error\":null}"
+Sep  3 01:47:01 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:send command is set 001ec0906ace property subscriptions[HDMI_AUDIO:0].configuration.mute_msec 600 
+Sep  3 01:47:01 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":316,\"result\":null,\"error\":null}"
+Sep  3 01:47:01 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:send command is set 001ec0906ace property nodes[HDMI_ENCODER:0].configuration.hdcp_output_mode FOLLOW_SOURCE 
+Sep  3 01:47:01 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":317,\"result\":null,\"error\":null}"
+Sep  3 01:47:01 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:send command is set 001ec0906ace ip mode dhcp
+Sep  3 01:47:01 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":318,\"result\":null,\"error\":null}"
+Sep  3 01:47:01 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:the device 001ec0909b21 have Set form DataBase
+Sep  3 01:47:01 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:send command is set 001ec0909b21 property configuration.locate_mode false 
+Sep  3 01:47:01 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":319,\"result\":null,\"error\":null}"
+Sep  3 01:47:01 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:send command is set 001ec0909b21 property nodes[HDMI_DECODER:0].configuration.hdcp_support_enable  true 
+Sep  3 01:47:01 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":320,\"result\":null,\"error\":null}"
+Sep  3 01:47:01 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:send command is set 001ec0909b21 property nodes[HDMI_DECODER:0].configuration.hdcp_22_support_disable  false 
+Sep  3 01:47:01 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":321,\"result\":null,\"error\":null}"
+Sep  3 01:47:01 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:send command is set 001ec0909b21 edid 00ffffffffffff0031270002010000000b1e0103814627780ad57ca357499c2511484bffff8081c081009500814081809040b300a940023a801871382d40582c4500c48e2100001e283c80a070b023403020360006442100001a000000fc004c6947756f204465766963650a000000fd0032551f5e11000a202020202020018902031a41471113051484101f230a06048305000065030c0010008c0ad08a20e02d10103e960058c221000018011d8018711c1620582c2500c48e2100009e011d80d0721c1620102c2580c48e2100009e011d007251d01e206e285500c48e2100001e011d00bc52d01e20b8285540c48e2100001e0000000000000000000000c0 
+Sep  3 01:47:01 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":322,\"result\":null,\"error\":null}"
+Sep  3 01:47:01 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:send command is set 001ec0909b21 property nodes[STEREO_AUDIO_INPUT_OUTPUT:0].configuration.direction INPUT
+Sep  3 01:47:01 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":323,\"result\":null,\"error\":null}"
+Sep  3 01:47:01 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:send command is start 001ec0909b21:HDMI:0 
+Sep  3 01:47:01 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":324,\"result\":null,\"error\":null}"
+Sep  3 01:47:01 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:send command is start 001ec0909b21:HDMI:1 
+Sep  3 01:47:01 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":325,\"result\":null,\"error\":null}"
+Sep  3 01:47:01 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:send command is stop 001ec0909b21:THUMBNAIL:0 
+Sep  3 01:47:01 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":326,\"result\":null,\"error\":null}"
+Sep  3 01:47:01 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:send command is start 001ec0909b21:HDMI_AUDIO:0 
+Sep  3 01:47:01 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":327,\"result\":null,\"error\":null}"
+Sep  3 01:47:01 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:send command is start 001ec0909b21:STEREO_AUDIO:0 
+Sep  3 01:47:01 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":328,\"result\":null,\"error\":null}"
+Sep  3 01:47:01 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:send command is set 001ec0909b21 ip mode dhcp
+Sep  3 01:47:01 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":329,\"result\":null,\"error\":null}"
+Sep  3 01:47:01 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:the device 001ec0910e4c have Set form DataBase
+Sep  3 01:47:01 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:send command is join 001ec0910e4c:STEREO_AUDIO:0 001ec090d6c4:0 
+Sep  3 01:47:01 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":330,\"result\":null,\"error\":null}"
+Sep  3 01:47:01 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:send command is join 001ec0910e4c:HDMI_AUDIO:0 001ec090d6c4:0  
+Sep  3 01:47:01 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":331,\"result\":null,\"error\":null}"
+Sep  3 01:47:01 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:send command is join 001ec0910e4c:STEREO_AUDIO:0 001ec0906ace:0 
+Sep  3 01:47:01 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":332,\"result\":null,\"error\":null}"
+Sep  3 01:47:01 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:send command is join 001ec0910e4c:HDMI_AUDIO:0 001ec0906ace:0  
+Sep  3 01:47:01 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":333,\"result\":null,\"error\":null}"
+Sep  3 01:47:01 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:send command is set 001ec0910e4c property configuration.locate_mode false 
+Sep  3 01:47:01 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":334,\"result\":null,\"error\":null}"
+Sep  3 01:47:01 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:send command is set 001ec0910e4c property nodes[HDMI_DECODER:0].configuration.hdcp_support_enable  true 
+Sep  3 01:47:01 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":335,\"result\":null,\"error\":null}"
+Sep  3 01:47:01 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:send command is set 001ec0910e4c property nodes[HDMI_DECODER:0].configuration.hdcp_22_support_disable  false 
+Sep  3 01:47:01 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":336,\"result\":null,\"error\":null}"
+Sep  3 01:47:01 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:send command is set 001ec0910e4c edid 00ffffffffffff0031270002010000000b1e0103814627780ad57ca357499c2511484bffff8081c081009500814081809040b300a940023a801871382d40582c4500c48e2100001e283c80a070b023403020360006442100001a000000fc004c6947756f204465766963650a000000fd0032551f5e11000a202020202020018902031a41471113051484101f230a06048305000065030c0010008c0ad08a20e02d10103e960058c221000018011d8018711c1620582c2500c48e2100009e011d80d0721c1620102c2580c48e2100009e011d007251d01e206e285500c48e2100001e011d00bc52d01e20b8285540c48e2100001e0000000000000000000000c0 
+Sep  3 01:47:01 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":337,\"result\":null,\"error\":null}"
+Sep  3 01:47:01 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:send command is set 001ec0910e4c property nodes[STEREO_AUDIO_INPUT_OUTPUT:0].configuration.direction INPUT
+Sep  3 01:47:01 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":338,\"result\":null,\"error\":null}"
+Sep  3 01:47:01 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:send command is start 001ec0910e4c:HDMI:0 
+Sep  3 01:47:01 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":339,\"result\":null,\"error\":null}"
+Sep  3 01:47:01 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:send command is start 001ec0910e4c:HDMI:1 
+Sep  3 01:47:01 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":340,\"result\":null,\"error\":null}"
+Sep  3 01:47:01 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:send command is stop 001ec0910e4c:THUMBNAIL:0 
+Sep  3 01:47:01 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":341,\"result\":null,\"error\":null}"
+Sep  3 01:47:01 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:send command is start 001ec0910e4c:HDMI_AUDIO:0 
+Sep  3 01:47:01 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":342,\"result\":null,\"error\":null}"
+Sep  3 01:47:01 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:send command is start 001ec0910e4c:STEREO_AUDIO:0 
+Sep  3 01:47:01 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":343,\"result\":null,\"error\":null}"
+Sep  3 01:47:01 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:send command is set 001ec0910e4c ip mode dhcp
+Sep  3 01:47:01 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":344,\"result\":null,\"error\":null}"
+Sep  3 01:47:01 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:the device 001ec090dd4c have Set form DataBase
+Sep  3 01:47:01 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:send command is set 001ec090dd4c property configuration.locate_mode false 
+Sep  3 01:47:01 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":345,\"result\":null,\"error\":null}"
+Sep  3 01:47:01 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:send command is join 001ec0910e4c:STEREO_AUDIO:0 001ec090dd4c:0 
+Sep  3 01:47:01 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":346,\"result\":null,\"error\":null}"
+Sep  3 01:47:01 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:send command is set 001ec090dd4c property nodes[STEREO_AUDIO_OUTPUT:0].inputs[main:0].configuration.source.value 8 
+Sep  3 01:47:01 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":347,\"result\":null,\"error\":null}"
+Sep  3 01:47:01 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:send command is join 001ec0910e4c:HDMI_AUDIO:0 001ec090dd4c:0  
+Sep  3 01:47:01 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":348,\"result\":null,\"error\":null}"
+Sep  3 01:47:01 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:send command is set 001ec090dd4c property nodes[HDMI_ENCODER:0].inputs[audio:0].configuration.source.value 8 
+Sep  3 01:47:01 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":349,\"result\":null,\"error\":null}"
+Sep  3 01:47:01 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:the device 001ec090674a have Set form DataBase
+Sep  3 01:47:01 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:send command is join 801f12531993:HDMI:0 001ec090dd4c:0 genlock 
+Sep  3 01:47:01 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":350,\"result\":null,\"error\":null}"
+Sep  3 01:47:01 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:send command is set 001ec090dd4c property subscriptions[HDMI_AUDIO:0].configuration.mute_msec 600 
+Sep  3 01:47:01 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":351,\"result\":null,\"error\":null}"
+Sep  3 01:47:01 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:send command is set 001ec090dd4c property nodes[HDMI_ENCODER:0].configuration.hdcp_output_mode FOLLOW_SOURCE 
+Sep  3 01:47:01 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":352,\"result\":null,\"error\":null}"
+Sep  3 01:47:01 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:send command is set 001ec090dd4c ip mode dhcp
+Sep  3 01:47:01 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":353,\"result\":null,\"error\":null}"
+Sep  3 01:47:01 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:send command is set 001ec090674a property configuration.locate_mode false 
+Sep  3 01:47:01 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":354,\"result\":null,\"error\":null}"
+Sep  3 01:47:01 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:send command is join 001ec0910e4c:STEREO_AUDIO:0 001ec090674a:0 
+Sep  3 01:47:01 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":355,\"result\":null,\"error\":null}"
+Sep  3 01:47:01 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:send command is set 001ec090674a property nodes[STEREO_AUDIO_OUTPUT:0].inputs[main:0].configuration.source.value 2 
+Sep  3 01:47:01 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":356,\"result\":null,\"error\":null}"
+Sep  3 01:47:01 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:send command is join 001ec0910e4c:HDMI_AUDIO:0 001ec090674a:0  
+Sep  3 01:47:01 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":357,\"result\":null,\"error\":null}"
+Sep  3 01:47:01 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:send command is set 001ec090674a property nodes[HDMI_ENCODER:0].inputs[audio:0].configuration.source.value 7 
+Sep  3 01:47:01 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":358,\"result\":null,\"error\":null}"
+Sep  3 01:47:01 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:send command is join 801f12531993:HDMI:0 001ec090674a:0 genlock 
+Sep  3 01:47:01 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":359,\"result\":null,\"error\":null}"
+Sep  3 01:47:01 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:send command is set 001ec090674a property subscriptions[HDMI_AUDIO:0].configuration.mute_msec 600 
+Sep  3 01:47:01 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":360,\"result\":null,\"error\":null}"
+Sep  3 01:47:01 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:send command is set 001ec090674a property nodes[HDMI_ENCODER:0].configuration.hdcp_output_mode FOLLOW_SINK_2 
+Sep  3 01:47:01 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":361,\"result\":null,\"error\":null}"
+Sep  3 01:47:01 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:send command is set 001ec090674a ip mode dhcp
+Sep  3 01:47:01 192.168.20.29  10:18:30 guandian Blue_Core 19656 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":362,\"result\":null,\"error\":null}"
+Sep  3 01:47:21 localhost  01:47:21 ubuntu Blue_Core 1295 - - Error:the user user have login at 1599097641047
+Sep  3 01:47:43 localhost  01:47:43 ubuntu Blue_Core 1295 - - Error:send command is reboot 001ec0909b21
+Sep  3 01:47:43 localhost  01:47:43 ubuntu Blue_Core 1295 - - Error:received is "\n{\"status\":\"SUCCESS\",\"request_id\":null,\"result\":{\"reboot\":[{\"device_id\":\"001ec0909b21\"}],\"error\":[]},\"error\":null}"
+Sep  3 01:47:57 localhost  01:47:57 ubuntu Blue_Core 1295 - - Error:send command is leave 001ec0909b21:HDMI
+Sep  3 01:47:57 localhost  01:47:57 ubuntu Blue_Core 1295 - - Error:received is "\n{\"status\":\"SUCCESS\",\"request_id\":406,\"result\":{\"devices\":[],\"error\":[{\"device_id\":\"001ec0909b21\",\"reason\":\"DEVICE_TYPE\",\"message\":\"Operation cannot be performed on this device type\"}]},\"error\":null}"
+Sep  3 01:47:57 192.168.20.29  10:19:27 guandian Blue_Core 19656 - - Error:send command is leave 001ec0909b21:HDMI
+Sep  3 01:47:57 192.168.20.29  10:19:27 guandian Blue_Core 19656 - - Error:received is "\n{\"status\":\"SUCCESS\",\"request_id\":407,\"result\":{\"devices\":[],\"error\":[{\"device_id\":\"001ec0909b21\",\"reason\":\"DEVICE_TYPE\",\"message\":\"Operation cannot be performed on this device type\"}]},\"error\":null}"
+Sep  3 01:47:57 localhost  01:47:57 ubuntu Blue_Core 1295 - - Error:the device 001ec0909b21 have Set form DataBase
+Sep  3 01:47:57 localhost  01:47:57 ubuntu Blue_Core 1295 - - Error:send command is set 001ec0909b21 property configuration.locate_mode false 
+Sep  3 01:47:57 localhost  01:47:57 ubuntu Blue_Core 1295 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":411,\"result\":null,\"error\":null}"
+Sep  3 01:47:57 localhost  01:47:57 ubuntu Blue_Core 1295 - - Error:send command is set 001ec0909b21 property nodes[HDMI_DECODER:0].configuration.hdcp_support_enable  true 
+Sep  3 01:47:57 localhost  01:47:57 ubuntu Blue_Core 1295 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":412,\"result\":null,\"error\":null}"
+Sep  3 01:47:57 localhost  01:47:57 ubuntu Blue_Core 1295 - - Error:send command is set 001ec0909b21 property nodes[HDMI_DECODER:0].configuration.hdcp_22_support_disable  false 
+Sep  3 01:47:57 localhost  01:47:57 ubuntu Blue_Core 1295 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":413,\"result\":null,\"error\":null}"
+Sep  3 01:47:57 localhost  01:47:57 ubuntu Blue_Core 1295 - - Error:send command is set 001ec0909b21 edid 00ffffffffffff0031270002010000000b1e0103814627780ad57ca357499c2511484bffff8081c081009500814081809040b300a940023a801871382d40582c4500c48e2100001e283c80a070b023403020360006442100001a000000fc004c6947756f204465766963650a000000fd0032551f5e11000a202020202020018902031a41471113051484101f230a06048305000065030c0010008c0ad08a20e02d10103e960058c221000018011d8018711c1620582c2500c48e2100009e011d80d0721c1620102c2580c48e2100009e011d007251d01e206e285500c48e2100001e011d00bc52d01e20b8285540c48e2100001e0000000000000000000000c0 
+Sep  3 01:47:57 localhost  01:47:57 ubuntu Blue_Core 1295 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":414,\"result\":null,\"error\":null}"
+Sep  3 01:47:57 localhost  01:47:57 ubuntu Blue_Core 1295 - - Error:send command is set 001ec0909b21 property nodes[STEREO_AUDIO_INPUT_OUTPUT:0].configuration.direction INPUT
+Sep  3 01:47:57 localhost  01:47:57 ubuntu Blue_Core 1295 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":415,\"result\":null,\"error\":null}"
+Sep  3 01:47:57 localhost  01:47:57 ubuntu Blue_Core 1295 - - Error:send command is start 001ec0909b21:HDMI:0 
+Sep  3 01:47:57 localhost  01:47:57 ubuntu Blue_Core 1295 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":416,\"result\":null,\"error\":null}"
+Sep  3 01:47:57 localhost  01:47:57 ubuntu Blue_Core 1295 - - Error:send command is start 001ec0909b21:HDMI:1 
+Sep  3 01:47:57 localhost  01:47:57 ubuntu Blue_Core 1295 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":417,\"result\":null,\"error\":null}"
+Sep  3 01:47:57 localhost  01:47:57 ubuntu Blue_Core 1295 - - Error:send command is stop 001ec0909b21:THUMBNAIL:0 
+Sep  3 01:47:57 localhost  01:47:57 ubuntu Blue_Core 1295 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":418,\"result\":null,\"error\":null}"
+Sep  3 01:47:57 localhost  01:47:57 ubuntu Blue_Core 1295 - - Error:send command is start 001ec0909b21:HDMI_AUDIO:0 
+Sep  3 01:47:57 localhost  01:47:57 ubuntu Blue_Core 1295 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":419,\"result\":null,\"error\":null}"
+Sep  3 01:47:57 localhost  01:47:57 ubuntu Blue_Core 1295 - - Error:send command is start 001ec0909b21:STEREO_AUDIO:0 
+Sep  3 01:47:57 localhost  01:47:57 ubuntu Blue_Core 1295 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":420,\"result\":null,\"error\":null}"
+Sep  3 01:47:57 localhost  01:47:57 ubuntu Blue_Core 1295 - - Error:send command is set 001ec0909b21 ip mode dhcp
+Sep  3 01:47:57 localhost  01:47:57 ubuntu Blue_Core 1295 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":421,\"result\":null,\"error\":null}"
+Sep  3 01:47:57 192.168.20.29  10:19:27 guandian Blue_Core 19656 - - Error:the device 001ec0909b21 have Set form DataBase
+Sep  3 01:47:57 192.168.20.29  10:19:27 guandian Blue_Core 19656 - - Error:send command is set 001ec0909b21 property configuration.locate_mode false 
+Sep  3 01:47:57 192.168.20.29  10:19:27 guandian Blue_Core 19656 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":422,\"result\":null,\"error\":null}"
+Sep  3 01:47:57 192.168.20.29  10:19:27 guandian Blue_Core 19656 - - Error:send command is set 001ec0909b21 property nodes[HDMI_DECODER:0].configuration.hdcp_support_enable  true 
+Sep  3 01:47:57 192.168.20.29  10:19:27 guandian Blue_Core 19656 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":423,\"result\":null,\"error\":null}"
+Sep  3 01:47:57 192.168.20.29  10:19:27 guandian Blue_Core 19656 - - Error:send command is set 001ec0909b21 property nodes[HDMI_DECODER:0].configuration.hdcp_22_support_disable  false 
+Sep  3 01:47:57 192.168.20.29  10:19:27 guandian Blue_Core 19656 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":424,\"result\":null,\"error\":null}"
+Sep  3 01:47:57 192.168.20.29  10:19:27 guandian Blue_Core 19656 - - Error:send command is set 001ec0909b21 edid 00ffffffffffff0031270002010000000b1e0103814627780ad57ca357499c2511484bffff8081c081009500814081809040b300a940023a801871382d40582c4500c48e2100001e283c80a070b023403020360006442100001a000000fc004c6947756f204465766963650a000000fd0032551f5e11000a202020202020018902031a41471113051484101f230a06048305000065030c0010008c0ad08a20e02d10103e960058c221000018011d8018711c1620582c2500c48e2100009e011d80d0721c1620102c2580c48e2100009e011d007251d01e206e285500c48e2100001e011d00bc52d01e20b8285540c48e2100001e0000000000000000000000c0 
+Sep  3 01:47:57 192.168.20.29  10:19:27 guandian Blue_Core 19656 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":425,\"result\":null,\"error\":null}"
+Sep  3 01:47:57 192.168.20.29  10:19:27 guandian Blue_Core 19656 - - Error:send command is set 001ec0909b21 property nodes[STEREO_AUDIO_INPUT_OUTPUT:0].configuration.direction INPUT
+Sep  3 01:47:57 192.168.20.29  10:19:27 guandian Blue_Core 19656 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":426,\"result\":null,\"error\":null}"
+Sep  3 01:47:57 192.168.20.29  10:19:27 guandian Blue_Core 19656 - - Error:send command is start 001ec0909b21:HDMI:0 
+Sep  3 01:47:57 192.168.20.29  10:19:27 guandian Blue_Core 19656 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":427,\"result\":null,\"error\":null}"
+Sep  3 01:47:57 192.168.20.29  10:19:27 guandian Blue_Core 19656 - - Error:send command is start 001ec0909b21:HDMI:1 
+Sep  3 01:47:57 192.168.20.29  10:19:27 guandian Blue_Core 19656 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":428,\"result\":null,\"error\":null}"
+Sep  3 01:47:57 192.168.20.29  10:19:27 guandian Blue_Core 19656 - - Error:send command is stop 001ec0909b21:THUMBNAIL:0 
+Sep  3 01:47:57 192.168.20.29  10:19:27 guandian Blue_Core 19656 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":429,\"result\":null,\"error\":null}"
+Sep  3 01:47:57 192.168.20.29  10:19:27 guandian Blue_Core 19656 - - Error:send command is start 001ec0909b21:HDMI_AUDIO:0 
+Sep  3 01:47:57 192.168.20.29  10:19:27 guandian Blue_Core 19656 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":430,\"result\":null,\"error\":null}"
+Sep  3 01:47:57 192.168.20.29  10:19:27 guandian Blue_Core 19656 - - Error:send command is start 001ec0909b21:STEREO_AUDIO:0 
+Sep  3 01:47:57 192.168.20.29  10:19:27 guandian Blue_Core 19656 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":431,\"result\":null,\"error\":null}"
+Sep  3 01:47:57 192.168.20.29  10:19:27 guandian Blue_Core 19656 - - Error:send command is set 001ec0909b21 ip mode dhcp
+Sep  3 01:47:57 192.168.20.29  10:19:27 guandian Blue_Core 19656 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":432,\"result\":null,\"error\":null}"
+Sep  3 01:48:19 localhost  01:48:19 ubuntu Blue_Core 1295 - - Error:send command is factory 001ec09084b0
+Sep  3 01:48:19 localhost  01:48:19 ubuntu Blue_Core 1295 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":435,\"result\":null,\"error\":null}"
+Sep  3 01:48:19 localhost  01:48:19 ubuntu Blue_Core 1295 - - Error:send command is reboot 001ec09084b0
+Sep  3 01:48:19 localhost  01:48:19 ubuntu Blue_Core 1295 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":436,\"result\":null,\"error\":null}"
+Sep  3 01:49:13 localhost  01:49:13 ubuntu Blue_Core 1295 - - Error:send command is factory 001ec09084b0
+Sep  3 01:49:13 localhost  01:49:13 ubuntu Blue_Core 1295 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":447,\"result\":null,\"error\":null}"
+Sep  3 01:49:13 localhost  01:49:13 ubuntu Blue_Core 1295 - - Error:send command is reboot 001ec09084b0
+Sep  3 01:49:13 localhost  01:49:13 ubuntu Blue_Core 1295 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":448,\"result\":null,\"error\":null}"
+Sep  3 01:49:22 localhost  01:49:22 ubuntu Blue_Core 1295 - - Error:send command is leave 001ec09084b0:HDMI
+Sep  3 01:49:22 localhost  01:49:22 ubuntu Blue_Core 1295 - - Error:received is "\n{\"status\":\"SUCCESS\",\"request_id\":451,\"result\":{\"devices\":[],\"error\":[{\"device_id\":\"001ec09084b0\",\"reason\":\"DEVICE_TYPE\",\"message\":\"Operation cannot be performed on this device type\"}]},\"error\":null}"
+Sep  3 01:49:22 192.168.20.29  10:20:51 guandian Blue_Core 19656 - - Error:send command is leave 001ec09084b0:HDMI
+Sep  3 01:49:22 192.168.20.29  10:20:51 guandian Blue_Core 19656 - - Error:received is "\n{\"status\":\"SUCCESS\",\"request_id\":452,\"result\":{\"devices\":[],\"error\":[{\"device_id\":\"001ec09084b0\",\"reason\":\"DEVICE_TYPE\",\"message\":\"Operation cannot be performed on this device type\"}]},\"error\":null}"
+Sep  3 01:49:22 192.168.20.29  10:20:52 guandian Blue_Core 19656 - - Error:send command is set 001ec09084b0 edid undefined
+Sep  3 01:49:22 192.168.20.29  10:20:52 guandian Blue_Core 19656 - - Error:received is "\n{\"status\":\"ERROR\",\"request_id\":null,\"result\":null,\"error\":{\"reason\":\"ILLEGAL_ARGUMENT\",\"message\":\"Invalid EDID data in command 'set edid'\"}}"
+Sep  3 01:57:11 localhost  01:57:11 ubuntu Blue_Core 1295 - - Error:send command is set 801f12531993 edid 00FFFFFFFFFFFF0031270002010000000B1E0103814627780AD57CA357499C2511484BFFFF8081C081009500814081809040B300A940023A801871382D40582C4500C48E2100001E283C80A070B023403020360006442100001A000000FC004C6947756F204465766963650A000000FD0032551F5E11000A202020202020018902031A41471113051484101F230A06048305000065030C0010008C0AD08A20E02D10103E960058C221000018011D8018711C1620582C2500C48E2100009E011D80D0721C1620102C2580C48E2100009E011D007251D01E206E285500C48E2100001E011D00BC52D01E20B8285540C48E2100001E0000000000000000000000C0 
+Sep  3 01:57:11 localhost  01:57:11 ubuntu Blue_Core 1295 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":491,\"result\":null,\"error\":null}"
+Sep  3 01:57:11 localhost  01:57:11 ubuntu Blue_Core 1295 - - Error:send command is set 001ec09084b0 edid 00FFFFFFFFFFFF0031270002010000000B1E0103814627780AD57CA357499C2511484BFFFF8081C081009500814081809040B300A940023A801871382D40582C4500C48E2100001E283C80A070B023403020360006442100001A000000FC004C6947756F204465766963650A000000FD0032551F5E11000A202020202020018902031A41471113051484101F230A06048305000065030C0010008C0AD08A20E02D10103E960058C221000018011D8018711C1620582C2500C48E2100009E011D80D0721C1620102C2580C48E2100009E011D007251D01E206E285500C48E2100001E011D00BC52D01E20B8285540C48E2100001E0000000000000000000000C0 
+Sep  3 01:57:11 localhost  01:57:11 ubuntu Blue_Core 1295 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":492,\"result\":null,\"error\":null}"
+Sep  3 01:57:11 localhost  01:57:11 ubuntu Blue_Core 1295 - - Error:send command is set 001ec0909b21 edid 00FFFFFFFFFFFF0031270002010000000B1E0103814627780AD57CA357499C2511484BFFFF8081C081009500814081809040B300A940023A801871382D40582C4500C48E2100001E283C80A070B023403020360006442100001A000000FC004C6947756F204465766963650A000000FD0032551F5E11000A202020202020018902031A41471113051484101F230A06048305000065030C0010008C0AD08A20E02D10103E960058C221000018011D8018711C1620582C2500C48E2100009E011D80D0721C1620102C2580C48E2100009E011D007251D01E206E285500C48E2100001E011D00BC52D01E20B8285540C48E2100001E0000000000000000000000C0 
+Sep  3 01:57:11 localhost  01:57:11 ubuntu Blue_Core 1295 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":493,\"result\":null,\"error\":null}"
+Sep  3 01:57:11 localhost  01:57:11 ubuntu Blue_Core 1295 - - Error:send command is set 001ec0910e4c edid 00FFFFFFFFFFFF0031270002010000000B1E0103814627780AD57CA357499C2511484BFFFF8081C081009500814081809040B300A940023A801871382D40582C4500C48E2100001E283C80A070B023403020360006442100001A000000FC004C6947756F204465766963650A000000FD0032551F5E11000A202020202020018902031A41471113051484101F230A06048305000065030C0010008C0AD08A20E02D10103E960058C221000018011D8018711C1620582C2500C48E2100009E011D80D0721C1620102C2580C48E2100009E011D007251D01E206E285500C48E2100001E011D00BC52D01E20B8285540C48E2100001E0000000000000000000000C0 
+Sep  3 01:57:11 localhost  01:57:11 ubuntu Blue_Core 1295 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":494,\"result\":null,\"error\":null}"
+Sep  3 01:59:11 localhost  01:59:11 ubuntu Blue_Core 1295 - - Error:send command is factory 001ec09084b0
+Sep  3 01:59:11 localhost  01:59:11 ubuntu Blue_Core 1295 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":505,\"result\":null,\"error\":null}"
+Sep  3 01:59:11 localhost  01:59:11 ubuntu Blue_Core 1295 - - Error:send command is reboot 001ec09084b0
+Sep  3 01:59:11 localhost  01:59:11 ubuntu Blue_Core 1295 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":506,\"result\":null,\"error\":null}"
+Sep  3 01:59:20 192.168.20.29  10:30:50 guandian Blue_Core 19656 - - Error:send command is leave 001ec09084b0:HDMI
+Sep  3 01:59:20 192.168.20.29  10:30:50 guandian Blue_Core 19656 - - Error:received is "\n{\"status\":\"SUCCESS\",\"request_id\":509,\"result\":{\"devices\":[],\"error\":[{\"device_id\":\"001ec09084b0\",\"reason\":\"DEVICE_TYPE\",\"message\":\"Operation cannot be performed on this device type\"}]},\"error\":null}"
+Sep  3 01:59:20 localhost  01:59:20 ubuntu Blue_Core 1295 - - Error:send command is leave 001ec09084b0:HDMI
+Sep  3 01:59:20 localhost  01:59:20 ubuntu Blue_Core 1295 - - Error:received is "\n{\"status\":\"SUCCESS\",\"request_id\":510,\"result\":{\"devices\":[],\"error\":[{\"device_id\":\"001ec09084b0\",\"reason\":\"DEVICE_TYPE\",\"message\":\"Operation cannot be performed on this device type\"}]},\"error\":null}"
+Sep  3 01:59:20 192.168.20.29  10:30:50 guandian Blue_Core 19656 - - Error:the device 001ec09084b0 have Set form DataBase
+Sep  3 01:59:20 192.168.20.29  10:30:50 guandian Blue_Core 19656 - - Error:send command is set 001ec09084b0 property configuration.locate_mode false 
+Sep  3 01:59:20 192.168.20.29  10:30:50 guandian Blue_Core 19656 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":514,\"result\":null,\"error\":null}"
+Sep  3 01:59:20 192.168.20.29  10:30:50 guandian Blue_Core 19656 - - Error:send command is set 001ec09084b0 property nodes[HDMI_DECODER:0].configuration.hdcp_support_enable  true 
+Sep  3 01:59:20 192.168.20.29  10:30:50 guandian Blue_Core 19656 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":515,\"result\":null,\"error\":null}"
+Sep  3 01:59:20 192.168.20.29  10:30:50 guandian Blue_Core 19656 - - Error:send command is set 001ec09084b0 property nodes[HDMI_DECODER:0].configuration.hdcp_22_support_disable  false 
+Sep  3 01:59:20 192.168.20.29  10:30:50 guandian Blue_Core 19656 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":516,\"result\":null,\"error\":null}"
+Sep  3 01:59:20 192.168.20.29  10:30:50 guandian Blue_Core 19656 - - Error:send command is set 001ec09084b0 edid 00ffffffffffff000614000156524c420816010380341d780a01c1a057479827124c4c21080081400101010101010101010101010101023a801871382d40582c460040846300001e08e80030f2705a80b0588a00ba892100001e000000fc00426c756552697665720a202020000000fd0018550e853c000a202020202020017c02034073580102030405111213141f2021220607905d5e5f6263646061230d0707830f00006d030c001000383c20406801020367d85dc401788003e40f0000c0011d00bc52d01e20b828554040846300001e023a80d072382d40102c458040846300001e023a801871382d40582c450040846300001e000000000000000000f2 
+Sep  3 01:59:20 192.168.20.29  10:30:50 guandian Blue_Core 19656 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":517,\"result\":null,\"error\":null}"
+Sep  3 01:59:20 192.168.20.29  10:30:50 guandian Blue_Core 19656 - - Error:send command is set 001ec09084b0 property nodes[STEREO_AUDIO_INPUT_OUTPUT:0].configuration.direction INPUT
+Sep  3 01:59:20 192.168.20.29  10:30:50 guandian Blue_Core 19656 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":518,\"result\":null,\"error\":null}"
+Sep  3 01:59:20 192.168.20.29  10:30:50 guandian Blue_Core 19656 - - Error:send command is start 001ec09084b0:HDMI:0 
+Sep  3 01:59:20 192.168.20.29  10:30:50 guandian Blue_Core 19656 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":519,\"result\":null,\"error\":null}"
+Sep  3 01:59:20 192.168.20.29  10:30:50 guandian Blue_Core 19656 - - Error:send command is start 001ec09084b0:HDMI:1 
+Sep  3 01:59:20 192.168.20.29  10:30:50 guandian Blue_Core 19656 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":520,\"result\":null,\"error\":null}"
+Sep  3 01:59:20 192.168.20.29  10:30:50 guandian Blue_Core 19656 - - Error:send command is stop 001ec09084b0:THUMBNAIL:0 
+Sep  3 01:59:20 192.168.20.29  10:30:50 guandian Blue_Core 19656 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":521,\"result\":null,\"error\":null}"
+Sep  3 01:59:20 192.168.20.29  10:30:50 guandian Blue_Core 19656 - - Error:send command is start 001ec09084b0:HDMI_AUDIO:0 
+Sep  3 01:59:20 192.168.20.29  10:30:50 guandian Blue_Core 19656 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":522,\"result\":null,\"error\":null}"
+Sep  3 01:59:20 192.168.20.29  10:30:50 guandian Blue_Core 19656 - - Error:send command is start 001ec09084b0:STEREO_AUDIO:0 
+Sep  3 01:59:20 192.168.20.29  10:30:50 guandian Blue_Core 19656 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":523,\"result\":null,\"error\":null}"
+Sep  3 01:59:20 192.168.20.29  10:30:50 guandian Blue_Core 19656 - - Error:send command is set 001ec09084b0 ip mode dhcp
+Sep  3 01:59:20 192.168.20.29  10:30:50 guandian Blue_Core 19656 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":524,\"result\":null,\"error\":null}"
+Sep  3 01:59:38 localhost  01:59:38 ubuntu Blue_Core 1295 - - Error:the device 001ec09084b0 have Set form DataBase
+Sep  3 01:59:38 localhost  01:59:38 ubuntu Blue_Core 1295 - - Error:send command is set 001ec09084b0 property configuration.locate_mode false 
+Sep  3 01:59:38 localhost  01:59:38 ubuntu Blue_Core 1295 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":534,\"result\":null,\"error\":null}"
+Sep  3 01:59:38 localhost  01:59:38 ubuntu Blue_Core 1295 - - Error:send command is set 001ec09084b0 property nodes[HDMI_DECODER:0].configuration.hdcp_support_enable  true 
+Sep  3 01:59:38 localhost  01:59:38 ubuntu Blue_Core 1295 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":535,\"result\":null,\"error\":null}"
+Sep  3 01:59:38 localhost  01:59:38 ubuntu Blue_Core 1295 - - Error:send command is set 001ec09084b0 property nodes[HDMI_DECODER:0].configuration.hdcp_22_support_disable  false 
+Sep  3 01:59:38 localhost  01:59:38 ubuntu Blue_Core 1295 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":536,\"result\":null,\"error\":null}"
+Sep  3 01:59:38 localhost  01:59:38 ubuntu Blue_Core 1295 - - Error:send command is set 001ec09084b0 edid 00ffffffffffff000614000156524c420816010380341d780a01c1a057479827124c4c21080081400101010101010101010101010101023a801871382d40582c460040846300001e08e80030f2705a80b0588a00ba892100001e000000fc00426c756552697665720a202020000000fd0018550e853c000a202020202020017c02034073580102030405111213141f2021220607905d5e5f6263646061230d0707830f00006d030c001000383c20406801020367d85dc401788003e40f0000c0011d00bc52d01e20b828554040846300001e023a80d072382d40102c458040846300001e023a801871382d40582c450040846300001e000000000000000000f2 
+Sep  3 01:59:38 localhost  01:59:38 ubuntu Blue_Core 1295 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":537,\"result\":null,\"error\":null}"
+Sep  3 01:59:38 localhost  01:59:38 ubuntu Blue_Core 1295 - - Error:send command is set 001ec09084b0 property nodes[STEREO_AUDIO_INPUT_OUTPUT:0].configuration.direction INPUT
+Sep  3 01:59:38 localhost  01:59:38 ubuntu Blue_Core 1295 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":538,\"result\":null,\"error\":null}"
+Sep  3 01:59:38 localhost  01:59:38 ubuntu Blue_Core 1295 - - Error:send command is start 001ec09084b0:HDMI:0 
+Sep  3 01:59:38 localhost  01:59:38 ubuntu Blue_Core 1295 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":539,\"result\":null,\"error\":null}"
+Sep  3 01:59:38 localhost  01:59:38 ubuntu Blue_Core 1295 - - Error:send command is start 001ec09084b0:HDMI:1 
+Sep  3 01:59:38 localhost  01:59:38 ubuntu Blue_Core 1295 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":540,\"result\":null,\"error\":null}"
+Sep  3 01:59:38 localhost  01:59:38 ubuntu Blue_Core 1295 - - Error:send command is stop 001ec09084b0:THUMBNAIL:0 
+Sep  3 01:59:38 localhost  01:59:38 ubuntu Blue_Core 1295 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":541,\"result\":null,\"error\":null}"
+Sep  3 01:59:38 localhost  01:59:38 ubuntu Blue_Core 1295 - - Error:send command is start 001ec09084b0:HDMI_AUDIO:0 
+Sep  3 01:59:38 localhost  01:59:38 ubuntu Blue_Core 1295 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":542,\"result\":null,\"error\":null}"
+Sep  3 01:59:38 localhost  01:59:38 ubuntu Blue_Core 1295 - - Error:send command is start 001ec09084b0:STEREO_AUDIO:0 
+Sep  3 01:59:38 localhost  01:59:38 ubuntu Blue_Core 1295 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":543,\"result\":null,\"error\":null}"
+Sep  3 01:59:38 localhost  01:59:38 ubuntu Blue_Core 1295 - - Error:send command is set 001ec09084b0 ip mode dhcp
+Sep  3 01:59:38 localhost  01:59:38 ubuntu Blue_Core 1295 - - Error:received is "\n{\"status\":\"PROCESSING\",\"request_id\":544,\"result\":null,\"error\":null}"

@@ -1,0 +1,6 @@
+mode hdcp_thumbnail
+//stop 801f12531993:thumbnail:0 free
+set 801f12531993  thumbnail ssrc 1024 fps 0.5
+start 801f12531993:thumbnail:0 
+
+001ec0910e4c

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>拖拽</title>
+        <meta charset="utf-8">
+        <style>
+            .boot{
+                height: 540px;
+                width: 1024px;
+                border: 1px solid blue;
+                z-index: 0;
+                position: relative;
+            }
+            .line{
+                z-index: 7;
+                position: absolute;
+                background-color: red;
+            }
+            .h,.h1{
+                width: 50%;
+                height: 2px;
+                top: 50%;
+            }
+            .v,.v1{
+                height: 50%;
+                width: 2px;
+                left: 50%;
+            }
+            .h1{
+                left: 50%;
+            }
+            .v1{
+                top: 50%;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="boot" onmousedown="ji()" onmousemove="change()" onmouseup="up()">
+            <div class="item" ></div>
+            <div class="line h"></div>
+            <div class="line h1"></div>
+            <div class="line v"></div>
+            <div class="line v1"></div>
+        </div>
+    </body>
+    <script>
+        var flag=0,x,y;
+        var dom =document.getElementsByClassName("line")
+        function ji(){
+            console.log("hekko ");
+            var e = event||window.event;
+            if(e.target=="boot.line.h"){
+                flag = 1
+            }else if(e.target=="boot.line.h1"){
+                flag = 2
+            }else if(e.target=="boot.line.v"){
+                flag = 3
+            }else if(e.target=="boot.line.v1"){
+                flag = 4
+            }
+            console.dir(e)
+        }
+        function change(){
+            if(flag){
+                console.log(`have change`)
+                var e = event||window.event;
+            }
+        }
+        function up(){
+            if(flag){
+                flag=!flag;
+                
+            }
+        }
+    </script>
+</html>

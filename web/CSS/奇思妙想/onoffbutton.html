@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>封装的on/offbutton</title>
+    <meta charset="utf-8">
+    <style>
+
+    </style>
+</head>
+
+<body onload="jifukui()">
+    <div id="jifukui"></div>
+    <script>
+        function jifukui(id = "jifukui") {
+            var dom = document.getElementById(id);
+            if (dom) {
+                let str = "<div><div style='float:left;border-right:5px solid #fff;background-color:#666;width:30px'>ON</div><div style='background-color:#666;width:30px;float:left'>OFF</div></div>"
+                dom.innerHTML = str
+            }
+            console.log(`hello this is jifukui`)
+        }
+    </script>
+</body>
+
+</html>

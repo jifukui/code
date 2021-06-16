@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>D3绘制矩形图</title>
+        <meta charset="utf-8">
+    </head>
+    <body onload="jifukui()">
+        <button onclick="sort(true)">排序</button>
+        <button onclick="sort(false)">逆序</button>
+        <button onclick="add()">增加</button>
+    </body>
+    <script src="./d3.js"></script>
+    <script>
+        var data = [12,98,43,21,42,45,23];
+        var padding = {
+                left:20,
+                right:20,
+                top:20,
+                bottom:20
+            };
+        var rectstep = 35;
+        var rectwidth = 30;
+        var svg
+        function jifukui(){
+            svg = d3.select("body").append("svg")
+                    .attr("width","90%")
+                    .attr("height",540);
+            
+            var rect = svg.selectAll("rect")
+                        .data(data)
+                        .enter()
+                        .append("rect")
+                        .attr("fill","steelblue")
+                        .attr("x",function(d,i){
+                            return padding.left + i*rectstep;
+                        })
+                        .attr("y",function(d){
+                            return 540 - padding.bottom - d;
+                        })
+                        .attr("width",rectwidth)
+                        .attr("height",function(d){
+                            return d
+                        })
+            var text = svg.selectAll("text")
+                        .data(data)
+                        .enter()
+                        .append("text")
+                        .attr("fill","red")
+                        .attr("font-size","14px")
+                        .attr("text-anchor","middle")
+                        .attr("x",function(d,i){
+                            return padding.left + i*rectstep
+                        })
+                        .attr("y",function(d){
+                            return 540 - padding.bottom - d;
+                        })
+                        .attr("dx",rectwidth/2)
+                        .attr("dy","1em")
+                        .text(function(d){
+                            return d
+                        })
+        }
+        function draw(){
+            let update = svg.selectAll("rect").data(data)
+            let enter = update.enter();
+            let exit = update.exit();
+            update.attr("fill","steelblue")
+                .attr("x",function(d,i){
+                    return padding.left + i*rectstep;
+                })
+                .attr("y",function(d){
+                    return 540 - padding.bottom - d;
+                })
+                .attr("width",rectwidth)
+                .attr("height",function(d){
+                    return d
+                })
+            enter.append("rect")
+                .attr("fill","steelblue")
+                .attr("x",function(d,i){
+                    return padding.left + i*rectstep;
+                })
+                .attr("y",function(d){
+                    return 540 - padding.bottom - d;
+                })
+                .attr("width",rectwidth)
+                .attr("height",function(d){
+                    return d
+                })
+            exit.remove();
+            let text  = svg.selectAll("text").data(data);
+            text.attr("fill","red")
+                .attr("font-size","14px")
+                .attr("text-anchor","middle")
+                .attr("x",function(d,i){
+                    return padding.left + i*rectstep
+                })
+                .attr("y",function(d){
+                    return 540 - padding.bottom - d;
+                })
+                .attr("dx",rectwidth/2)
+                .attr("dy","1em")
+                .text(function(d){
+                    return d
+                })
+            let tenter = text.enter();
+            tenter.append("text")
+                        .attr("fill","red")
+                        .attr("font-size","14px")
+                        .attr("text-anchor","middle")
+                        .attr("x",function(d,i){
+                            return padding.left + i*rectstep
+                        })
+                        .attr("y",function(d){
+                            return 540 - padding.bottom - d;
+                        })
+                        .attr("dx",rectwidth/2)
+                        .attr("dy","1em")
+                        .text(function(d){
+                            return d
+                        })
+            let texit = text.exit(); 
+            texit.remove();
+        }
+        function sort(flag){
+            if(flag){
+                data = data.sort();
+            }else{
+                data = data.sort(d3.descending);
+            }
+            draw()
+        }
+        function add(){
+            data.push(Math.floor(Math.random()*100));
+            draw();
+        }
+    </script>
+</html>

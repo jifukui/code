@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ch">
+
+<head>
+    <title>3D骰子</title>
+    <meta charset="utf-8">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            perspective: 800;
+        }
+
+        body {
+            background-color: rgb(179, 179, 192);
+        }
+
+        .root {
+            width: 400px;
+            height: 400px;
+            margin: auto;
+            /* background-color: aqua; */
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            position: absolute;
+            transform-style: preserve-3d;
+            animation: jifukui 56s infinite linear;
+        }
+
+        [class ^="plane"] {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background-color: azure;
+            top: 50%;
+            left: 25%;
+            font-size: 100px;
+            text-align: center;
+            line-height: 200px;
+        }
+
+        .plane1 {
+            background-color: red;
+            /* transform: translate3d(); */
+        }
+
+        .plane2 {
+            background-color: orange;
+            transform: translate3d(0, 0, -200px) rotate3d(0, 1, 0, 90deg);
+            transform-origin: right;
+        }
+
+        .plane3 {
+            background-color: yellow;
+            transform: translate3d(200px, 0, -200px) rotate3d(0, 1, 0, 180deg);
+            transform-origin: left;
+        }
+
+        .plane4 {
+            background-color: green;
+            transform: translate3d(0, 0, -200px) rotate3d(0, 1, 0, -90deg);
+            transform-origin: left;
+        }
+
+        .plane5 {
+            background-color: cyan;
+            transform: translate3d(0, 200px, 0) rotate3d(1, 0, 0, -90deg);
+            transform-origin: top;
+        }
+
+        .plane6 {
+            background-color: blue;
+            transform: translate3d(0, 0px, -200px) rotate3d(1, 0, 0, 90deg);
+            transform-origin: top;
+        }
+
+        @keyframes jifukui {
+            7% {
+                transform: rotate3d(1, 0, 0, 0deg);
+            }
+
+            14% {
+                transform: rotate3d(1, 0, 0, 360deg);
+            }
+
+            21% {
+                transform: rotate3d(0, 1, 0, 0deg);
+            }
+
+            28% {
+                transform: rotate3d(0, 1, 0, 360deg);
+            }
+
+            35% {
+                transform: rotate3d(0, 0, 1, 0deg);
+            }
+
+            42% {
+                transform: rotate3d(0, 0, 1, 360deg);
+            }
+
+            49% {
+                transform: rotate3d(1, 1, 0, 0deg);
+            }
+
+            56% {
+                transform: rotate3d(1, 1, 0, 360deg);
+            }
+
+            63% {
+                transform: rotate3d(1, 0, 1, 0deg);
+            }
+
+            70% {
+                transform: rotate3d(1, 0, 1, 360deg);
+            }
+
+            77% {
+                transform: rotate3d(0, 1, 1, 0deg);
+            }
+
+            84% {
+                transform: rotate3d(0, 1, 1, 360deg);
+            }
+
+            91% {
+                transform: rotate3d(1, 1, 1, 0deg);
+            }
+
+            100% {
+                transform: rotate3d(1, 1, 1, 360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="root">
+        <div class="plane1">1</div>
+        <div class="plane2">2</div>
+        <div class="plane3">3</div>
+        <div class="plane4">4</div>
+        <div class="plane5">5</div>
+        <div class="plane6">6</div>
+    </div>
+</body>
+
+</html>

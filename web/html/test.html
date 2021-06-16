@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>测试样例1</title>
+        <meta charset="utf-8">
+        <style>
+            .boot{
+                height: 540px;
+                width: 1024px;
+                border: 1px solid blue;
+                position: relative;
+                user-select: none;
+            }
+            .item{
+                width: 512px;
+                height: 270px;
+                background-color: brown;
+                border: 1px solid red;
+                margin: 0;
+                padding: 0;
+                position: absolute;
+                text-align: center;
+                font-size: 3rem;
+                line-height: 270px;
+            }
+            .item > span{
+                position: absolute;
+                font-size: 1rem;
+                top:0px;
+                left: 0px;
+            }
+            .item > :first-child{
+                position: absolute;
+                font-size: 1rem;
+                top:-15px;
+                left: 0px;
+            }
+            .item1{
+                top:0px;
+                left: 0px;
+            }
+            .item2{
+                top:0px;
+                left: 512px;
+            }
+            .item3{
+                top:270px;
+                left: 0px;
+            }
+            .item4{
+                top:270px;
+                left: 512px;
+            }
+        </style>
+    </head>
+    <body onmousemove="jifukui()">
+        <div class="boot" onmousedown="ji()" onmouseup="kui()">
+            <div class="item 1 item1" >1
+                <span>width:512px</span>
+                <span>height:270px</span>
+            </div>
+            <div class="item 2 item2" >2
+                <span>width:512px</span>
+                <span>height:270px</span>
+            </div>
+            <div class="item 3 item3" >3
+                <span>width:512px</span>
+                <span>height:270px</span>
+            </div>
+            <div class="item 4 item4" >4
+                <span>width:512px</span>
+                <span>height:270px</span>
+            </div>
+        </div>
+    </body>
+    <script>
+        var dom = document.getElementsByClassName("item");
+        var statx,starty,endx,endy;
+        var flag = 0;
+        class Position{
+            static Maxwidth = 1024;
+            static Maxheight = 540;
+            static id = 0;
+            static active = true
+            static init = [
+            {
+                    top : 0,
+                    left : 0,
+                    width : Position.Maxwidth/2,
+                    height : Position.Maxheight/2,
+                },{
+                    top : 0,
+                    left : 512,
+                    width : Position.Maxwidth/2,
+                    height : Position.Maxheight/2,
+                },{
+                    top : 270,
+                    left : 0,
+                    width : Position.Maxwidth/2,
+                    height : Position.Maxheight/2,
+                },{
+                    top : 270,
+                    left : 512,
+                    width : Position.Maxwidth/2,
+                    height : Position.Maxheight/2,
+                }
+            ]
+            constructor(dom){
+                this.rect=Position.init;
+                this.dom = dom;
+                this.change = [false,false,false,false]
+            }
+            Computer(flag,x,y){
+                if(!Position.active){
+                    reutrn;
+                }
+                let offsetx ;
+                let offsety ;
+                if(flag%2){
+                    offsetx = this.rect[flag].width-x;
+                    
+                }else{
+                    offsetx = this.rect[flag].width+x;
+                }
+                if(parseInt(flag/2)){
+                    offsety = this.rect[flag].height-y;
+                }else{
+                    offsety = this.rect[flag].height+y;
+                }
+                console.log(`the offset is ${offsetx}`)
+                if(offsetx>0&&offsetx<Position.Maxwidth){
+                    
+                    switch(flag%2){
+                        case 0:{
+                            this.rect[flag].width = this.rect[flag+1].left = offsetx;
+                            this.rect[flag+1].width = Position.Maxwidth -offsetx;
+                            this.change[flag] = this.change[flag+1] = true
+                            break ;
+                        }
+                        case 1:{
+                            this.rect[flag].width = offsetx;
+                            this.rect[flag-1].width = this.rect[flag].left = Position.Maxwidth -offsetx;
+                            this.change[flag] = this.change[flag-1] = true
+                            break ;
+                        }
+                    }
+                }
+                if(offsety>0&&offsety<Position.Maxheight){
+                    switch(parseInt(flag/2)){
+                        case 0:{
+                            flag = 0;
+                            this.rect[flag].height = this.rect[flag+2].top = offsety;
+                            this.rect[flag+2].height = Position.Maxheight -offsety;
+                            this.change[flag] = this.change[flag+2] = true
+                            flag = 1
+                            this.rect[flag].height = this.rect[flag+2].top = offsety;
+                            this.rect[flag+2].height = Position.Maxheight -offsety;
+                            this.change[flag] = this.change[flag+2] = true
+                            break ;
+                        }
+                        case 1:{
+                            flag = 2;
+                            this.rect[flag].height = offsety;
+                            this.rect[flag-2].height = this.rect[flag].top = Position.Maxheight -offsety;
+                            this.change[flag] = this.change[flag-2] = true;
+                            flag = 3;
+                            this.rect[flag].height = offsety;
+                            this.rect[flag-2].height = this.rect[flag].top = Position.Maxheight -offsety;
+                            this.change[flag] = this.change[flag-2] = true
+                            break ;
+                        }
+                    }
+                }
+                this.Render()
+            }
+            Render(){
+                console.log(`Render`)
+                for(let i=0;i<this.rect.length;i++){
+                    if(!this.change[i]){
+                        continue;
+                    }
+                    this.change[i] = false;
+                    let dom = this.dom[i].style;
+                    let text = this.dom[i].children;
+                    let rect = this.rect[i];
+                    for(let n in rect){
+                        dom[n]=`${rect[n]}px`
+                    }
+                    dom["line-height"]=`${rect.height}px`;
+                    text[0].innerText=`width:${rect.width*4}`
+                    text[1].innerText=`height:${rect.height*4}`
+                }
+            }
+        }
+        var Ji = new Position(dom);
+        function ji(){
+            var e = event||window.event;
+            statx=e.screenX;
+            staty=e.screenY;
+            flag = e.target.innerHTML;
+            // console.log("have down");
+            // console.log(flag)
+        }
+        function kui(){
+            // console.log("have up")
+            // console.log(`flag  is ${flag}`)
+            if(flag){
+                // console.log("have up")
+                var e = event||window.event;
+                console.dir(e)
+                endx=e.screenX;
+                endy=e.screenY;
+                let x = parseInt((endx-statx)/4);
+                let y = parseInt((endy-staty)/4);
+                // console.log(`${x}  ${y} ${flag}`)
+                flag = parseInt(flag)-1;
+                Ji.Computer(flag,x,y);
+            }
+            flag =false
+        }
+        function jifukui(){
+            console.log("hjdh")
+        }
+        function jifukui1(){
+            console.log("1hjdh")
+        }
+        document.getElementById('body').addEventListener('mousemove',jifukui1,false);
+    </script>
+</html>

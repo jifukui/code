@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Javascript的class的相关集成</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+
+    </body>
+    <script>
+        //这里使用的属性是共有属性所有的后代成员都可以访问并修改此属性
+        class cla1{
+            name = "cla1";
+            constructor(info){
+                this.info = info
+            }
+        }
+        let data1 = new cla1("jifukui");
+        console.log(data1.name);
+        console.log(data1.info);
+        //这里使用静态的属性
+        class cla2{
+            static num = 0;
+            constructor(info){
+                this.info = info;
+                this.uid = cla2.num++;
+            }
+        }
+        let data2 = new cla2("jifukui");
+        console.log(data2.name);
+        console.log(data2.uid);
+        let data3 = new cla2("jifukui");
+        console.log(data3.name);
+        console.log(data3.uid);
+        //保护属性
+        class cla3{
+            _type ="jifukui";
+            constructor(name){
+                this.name = name;
+            }
+            get type(){
+                return this._type;
+            }
+            set type(value){
+                console.log(`I have get to set value is ${value}`)
+                // this._type = value
+                return ;
+            }
+        }
+        let data4 = new cla3("test");
+        console.log(data4._type);
+        console.log(data4.type);
+        console.log(data4.name);
+        data4.type="jifukuitest";
+        console.log(data4.type);
+        data4._type="jifukuitest";
+        console.log(data4.type);
+        //使用symbol完成私有属性
+        // const _host = Symbol("jifukui")
+        class cla4{
+            static _host = Symbol("jifukui");
+            // [cla4._host]="hello this is jifukui tetst"
+            constructor(name){
+                // this[cla4._host] = "hello this is jifukui"
+                this.name = name;
+            }
+            set host(value){
+                console.log(`I have set value ${value}`);
+                // this[_host] =value;
+                this[cla4._host] = value
+            }
+            get host(){
+                // return this[_host];
+                return this[cla4._host];
+            }
+        }
+        class cla5 extends cla4{
+            constructor(name){
+                super(name);
+            }
+        }
+        let data5 = new cla5("test");
+        console.log(data5.name);
+        console.log(data5.host);
+        
+        //私有属性
+        class cla6{
+            static _host = Symbol("jifukui");
+            #url= "hello good time"
+            constructor(name){
+                // this[cla4._host] = "hello this is jifukui"
+                this.name = name;
+            }
+            set host(value){
+                console.log(`I have set value ${value}`);
+                // this[_host] =value;
+                this[cla6._host] = value
+            }
+            get host(){
+                // return this[_host];
+                return this[cla6._host];
+            }
+        }
+        // class cla7 extends cla6{
+        //     constructor(name){
+        //         super(name);
+        //     }
+        // }
+        let data6 = new cla6("test");
+        console.log(data6.name);
+        console.log(data6.#url);
+    </script>
+</html>

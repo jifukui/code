@@ -1,0 +1,171 @@
+<!Doctype html>
+<html>
+
+<head>
+    <title>北京市利国电子技术有限公司视频测试</title>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <div class="title">
+    </div>
+    <canvas class="jifukui" width="400" height="400" onclick="draw()"></canvas>
+</body>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        height: 100vh;
+        width: 100vw;
+    }
+
+    .title {
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, 0);
+        z-index: 1;
+        opacity: 0.8;
+        background-color: darkgray;
+        width: 200px;
+        height: 30px;
+        font-size: large;
+    }
+
+    .jifukui {
+        /* height: 100%; */
+        /* width: 100%; */
+        /* width: 140px; */
+        /* animation: jifukui;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear; */
+    }
+</style>
+<script>
+    var dom;
+    var gl;
+    var a_position;
+    var g_points = [];
+    var position = 'attribute vec4 a_position;\
+        void main(){\
+        gl_Position = a_position;\
+        gl_PointSize =10.0;\
+    }'
+    var frame = 'void main(){\
+        gl_FragColor = vec4(1.0,0.0,0.0,1.0);\
+    }'
+    addEventListener("load", () => {
+        timer = Date.now();
+        var dom1 = document.getElementsByClassName("jifukui")[0];
+        gl = dom1.getContext('webgl');
+
+        if (!gl) {
+            console.log("not support webgl");
+            return;
+        }
+        if (!initShaders(gl, position, frame)) {
+            console.log("donot support shaders")
+            return;
+        }
+        a_position = gl.getAttribLocation(gl.program, 'a_position');
+        if (a_position < 0) {
+            return;
+        }
+        gl.vertexAttrib3f(a_position, 0.0, 0.0, 0.0);
+        gl.clearColor(0.0, 0.0, 0.0, 1.0)
+        gl.clear(gl.COLOR_BUFFER_BIT)
+        gl.drawArrays(gl.POINTS, 0, 1);
+    })
+    function draw() {
+        // console.log("i have click")
+        var info = window.event;
+        var rect = info.target.getBoundingClientRect();
+        let x = info.clientX;
+        let y = info.clientY;
+        x = ((x - rect.left) - rect.height / 2) / (rect.height / 2);
+        y = (rect.width / 2 - (y - rect.top)) / (rect.width / 2);
+        g_points.push({ x, y })
+        gl.clear(gl.COLOR_BUFFER_BIT)
+        for (let i = 0; i < g_points.length; i++) {
+            let val = g_points[i]
+            gl.vertexAttrib2f(a_position, val.x, val.y);
+            gl.drawArrays(gl.POINTS, 0, 1);
+        }
+    }
+    function initShaders(gl, vshader, fshader) {
+        var program = createProgram(gl, vshader, fshader);
+        if (!program) {
+            console.log('Failed to create program');
+            return false;
+        }
+
+        gl.useProgram(program);
+        gl.program = program;
+
+        return true;
+    }
+    function createProgram(gl, vshader, fshader) {
+        // Create shader object
+        var vertexShader = loadShader(gl, gl.VERTEX_SHADER, vshader);
+        var fragmentShader = loadShader(gl, gl.FRAGMENT_SHADER, fshader);
+        if (!vertexShader || !fragmentShader) {
+            return null;
+        }
+
+        // Create a program object
+        var program = gl.createProgram();
+        if (!program) {
+            return null;
+        }
+
+        // Attach the shader objects
+        gl.attachShader(program, vertexShader);
+        gl.attachShader(program, fragmentShader);
+
+        // Link the program object
+        gl.linkProgram(program);
+
+        // Check the result of linking
+        var linked = gl.getProgramParameter(program, gl.LINK_STATUS);
+        if (!linked) {
+            var error = gl.getProgramInfoLog(program);
+            console.log('Failed to link program: ' + error);
+            gl.deleteProgram(program);
+            gl.deleteShader(fragmentShader);
+            gl.deleteShader(vertexShader);
+            return null;
+        }
+        return program;
+    }
+    function loadShader(gl, type, source) {
+        // Create shader object
+        var shader = gl.createShader(type);
+        if (shader == null) {
+            console.log('unable to create shader');
+            return null;
+        }
+
+        // Set the shader program
+        gl.shaderSource(shader, source);
+
+        // Compile the shader
+        gl.compileShader(shader);
+
+        // Check the result of compilation
+        var compiled = gl.getShaderParameter(shader, gl.COMPILE_STATUS);
+        if (!compiled) {
+            var error = gl.getShaderInfoLog(shader);
+            console.log('Failed to compile shader: ' + error);
+            gl.deleteShader(shader);
+            return null;
+        }
+
+        return shader;
+    }
+
+</script>
+
+</html>

@@ -1,0 +1,30 @@
+<!Doctype html>
+<html>
+    <head>
+        <title>rotate的简单使用</title>
+        <meta charset="utf-8">
+        <style>
+            img{
+                position: absolute;
+                top:50%;
+                left: 50%;
+                /*transform: translate(-50%,-50%);*/
+                border-radius: 50%;
+                border-color: red;
+                border-width: 2px;
+                border-style: solid;
+                width: 150px;
+                height: 150px;
+                transition: all 2s;
+            }
+            img:hover{
+                transform: rotate(360deg);
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <img src="7f1d5b54.bmp" >
+        </div>
+    </body>
+</html>

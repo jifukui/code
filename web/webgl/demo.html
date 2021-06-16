@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>WebGL</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <canvas id="canvas" width="300px" height="300px"></canvas>
+    </body>
+    <script>
+        var dom = document.getElementById("canvas");
+        gl = dom.getContext("webgl");
+        if(gl){
+            gl.clearColor(255.0,0.0,0.0,1.0);
+            gl.clear(gl.COLOR_BUFFER_BIT);
+        }else{
+            console.log("not support canvas")
+        }
+        function LoadShader(gl,type,source){
+            const shader = gl.createShader(type);
+            gl.shaderSource(shader,source);
+            gl.compileShader(shader);
+            if(!gl.getShaderParameter(shader,gl.COMPILE_STATUS)){
+                gl.deleteShader(shader)
+                return null
+            }
+            return shader;
+        }
+    </script>
+</html>

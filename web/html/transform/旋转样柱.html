@@ -1,0 +1,170 @@
+<!Doctype html>
+<html>
+
+<head>
+    <title>北京市利国电子技术有限公司视频测试</title>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <div class="title">
+    </div>
+    <div class="jifukui">
+        <div class="pattern1"></div>
+        <div class="pattern2"></div>
+        <div class="pattern3"></div>
+        <div class="pattern4"></div>
+        <div class="pattern5"></div>
+        <div class="pattern6"></div>
+        <div class="pattern7"></div>
+    </div>
+</body>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        height: 100vh;
+        background-image: url("./logo.png");
+        background-repeat: no-repeat;
+        background-size: 100vw 100vh;
+        z-index: 2;
+        opacity: 0.4;
+    }
+
+    .title {
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, 0);
+        z-index: 1;
+        opacity: 0.5;
+        background-color: darkgray;
+        width: 200px;
+        height: 30px;
+        font-size: large;
+    }
+
+    .jifukui {
+        height: 100%;
+        width: 50%;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        margin: auto;
+        animation: jifukui1;
+        animation-duration: 20s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+    }
+
+    .jifukui div {
+        height: 100%;
+        width: 20px;
+        position: absolute;
+        left: calc(50% - 10px);
+        animation: jifukui;
+        animation-duration: 7s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+    }
+
+    .pattern1 {
+        background-image: linear-gradient(#fff, #000);
+    }
+
+    .pattern2 {
+        background-image: linear-gradient(#f00, #00f);
+        animation-delay: 1s !important;
+    }
+
+    .pattern3 {
+        background-image: linear-gradient(#f00, #0f0);
+        animation-delay: 2s !important;
+    }
+
+    .pattern4 {
+        background-image: linear-gradient(#ff0, #0ff);
+        animation-delay: 3s !important;
+    }
+
+    .pattern5 {
+        background-image: linear-gradient(#f0f, #0ff);
+        animation-delay: 4s !important;
+    }
+
+    .pattern6 {
+        background-image: linear-gradient(#50f, #06f);
+        animation-delay: 5s !important;
+    }
+
+    .pattern7 {
+        background-image: linear-gradient(#f0f, #06f);
+        animation-delay: 6s !important;
+    }
+
+    @keyframes jifukui {
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
+    @keyframes jifukui1 {
+        10% {
+            background-color: rgb(158, 71, 151);
+        }
+
+        20% {
+            background-color: rgb(26, 146, 146);
+        }
+
+        30% {
+            background-color: rgb(255, 255, 255);
+        }
+
+        40% {
+            background-color: rgb(207, 117, 117);
+        }
+
+        50% {
+            background-color: rgb(71, 158, 129);
+        }
+
+        60% {
+            background-color: rgb(124, 107, 51);
+        }
+
+        70% {
+            background-color: rgb(110, 138, 59);
+        }
+
+        80% {
+            background-color: rgb(9, 71, 30);
+        }
+
+        90% {
+            background-color: rgb(172, 169, 27);
+        }
+
+        100% {
+            background-color: rgb(50, 12, 100);
+        }
+    }
+</style>
+<script>
+    var timer;
+    var dom;
+    addEventListener("load", () => {
+        timer = Date.now();
+        dom = document.getElementsByClassName("title")[0];
+        setInterval(Updatetimer, 1);
+    })
+    function Updatetimer() {
+        dom.innerText = `时间戳:${Date.now() - timer}ms`
+    }
+</script>
+
+</html>

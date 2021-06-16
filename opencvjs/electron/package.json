@@ -1,0 +1,23 @@
+{
+  "name": "jifukui",
+  "version": "1.0.0",
+  "description": "jifukui,test,first",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron .",
+    "build": "electron-packager . sdvoe --win --out ./build --platform=win32 --arch=x64 --overwrite",
+    "ji_build": "electron-packager . sdvoe --all --out ./build --platform=win32 --arch=x64 --overwrite --icon=logo.ico",
+    "pi": "electron-packager . sdvoe  --out ./build --platform=linux --arch=armv7l --overwrite",
+    "win32": "electron-packager . sdvoe  --out ./build --platform=win32 --arch=ia32 --overwrite"
+  },
+  "keywords": [
+    "jifukui"
+  ],
+  "author": "jifukui",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^9.2.0",
+    "electron-packager": "^15.0.0"
+  }
+}

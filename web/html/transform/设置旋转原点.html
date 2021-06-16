@@ -1,0 +1,40 @@
+<!Doctype html>
+<html>
+<head>
+    <title>设置旋转原点</title>
+    <meta charset="utf-8">
+    <style>
+        div{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            /*transform-origin: right bottom;*/
+            width: 150px;
+            height: 150px;
+            border: 1px solid red;
+            /*transform: rotate(180deg);*/
+            overflow: hidden;
+        }
+        div::before{
+            content: "";
+            display: block;
+            background-image: url("7f1d5b54.bmp");
+            width: 150px;
+            height: 150px;
+            transform: rotate(180deg);
+            transform-origin: left bottom;
+            transition: all 1s;
+        }
+        div:hover::before{
+            transform: rotate(0deg);
+        }
+        /*img:before:hover{*/
+        /*    transform: rotate(0deg);*/
+        /*}*/
+    </style>
+</head>
+<body>
+<div>
+</div>
+</body>
+</html>

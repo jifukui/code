@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>简单的D3实验使用选择器</title>
+        <meta charset="utf-8">
+    </head>
+    <body onload="jifukui()">
+        <p>Dog</p>
+        <p>Cat</p>
+        <p>Dog</p>
+        <p>Cat</p>
+        <p>Dog</p>
+        <p>Cat</p>
+        <p>Dog</p>
+        <p>Cat</p>
+        <p>Dog</p>
+        <p>Cat</p>
+        <p>Dog</p>
+        <p>Cat</p>
+        <p>Dog</p>
+        <p>Cat</p>
+        <p>Dog</p>
+        <p>Cat</p>
+    </body>
+    <script src="./d3.js"></script>
+    <script>
+        var dom
+        function jifukui(){
+            dom = d3.select("body").selectAll("p").data([1,2,3,4,5]);
+            // console.log(dom.update);
+        }
+    </script>
+</html>

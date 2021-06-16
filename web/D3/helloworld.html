@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>简单的D3实验使用选择器</title>
+        <meta charset="utf-8">
+    </head>
+    <body onload="jifukui()">
+        <p>Dog</p>
+        <p>Cat</p>
+    </body>
+    <script src="./d3.js"></script>
+    <script>
+        var dom
+        function jifukui(){
+            dom = d3.select("body").selectAll("p").text("Helloworld");
+            console.log(dom.empty())
+            console.log(dom.node())
+            console.log(dom.size())
+        }
+    </script>
+</html>

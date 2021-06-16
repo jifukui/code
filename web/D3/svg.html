@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>简单的D3实验使用选择器绘制SVG</title>
+        <meta charset="utf-8">
+    </head>
+    <body onload="jifukui()">
+    </body>
+    <script src="./d3.js"></script>
+    <script>
+        function jifukui(){
+            let width = 300;
+            let height = 300;
+            let svg = d3.select("body")
+            .append("svg")
+            .attr("width",width)
+            .attr("height",height)
+            svg.append("circle")
+            .attr("cx",50)
+            .attr("cy",50)
+            .attr("r",50)
+            .attr("fill","red")
+        }
+    </script>
+</html>

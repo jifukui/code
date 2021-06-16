@@ -1,0 +1,49 @@
+<!Doctype html>
+<html>
+<head>
+    <title>动画的简单使用</title>
+    <meta charset="utf-8">
+    <style>
+        img{
+            position: absolute;
+            /*top:50%;*/
+            /*left: 50%;*/
+            /*transform: translate(-50%,-50%);*/
+            border-radius: 50%;
+            border-color: red;
+            border-width: 2px;
+            border-style: solid;
+            width: 150px;
+            height: 150px;
+            /*transition: all 2s;*/
+            animation-name: jifukui;
+            animation-duration: 10s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+        }
+        @keyframes jifukui {
+            25%{
+                transform: translate(1000px,0px);
+                border-color: blue;
+            }
+            50%{
+                transform: translate(1000px,400px);
+                border-color: yellow;
+            }
+            75%{
+                transform: translate(0px,400px);
+                border-color: darkmagenta;
+            }
+            100%{
+                transform: translate(0px,0px);
+                border-color: red;
+            }
+        }
+    </style>
+</head>
+<body>
+<div>
+    <img src="7f1d5b54.bmp" >
+</div>
+</body>
+</html>
