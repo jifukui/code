@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="cn">
+
+<head>
+    <title>深度拷贝</title>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <script>
+        var a1 = { name: 1, data: 1 }
+        var a2 = { name: 2, data: 2 }
+        var a = {}
+        var jifukui = [];
+        a.name = a1;
+        a.data = a2;
+        a.time = new Date();
+        a.reg = new RegExp("^a", 'imgsyu');
+        a.ss = a;
+        var b = deepcopy(a);
+        console.log(b)
+        function deepcopy(obj) {
+            var type = typeof obj;
+            if (type != "object" || obj === null) {
+                return obj;
+            } else {
+                type = Object.prototype.toString.call(obj).slice(8, -1);
+                // console.log(`the type is ${type}`);
+                let data = null;
+                switch (type) {
+                    case "Array": {
+                        if (!jifukui.includes(obj)) {
+                            jifukui.push(obj)
+                            data = [];
+                            let len = obj.length
+                            for (let i = 0; i < len; i++) {
+                                data[i] = deepcopy(obj[i]);
+                            }
+
+                        } else {
+                            data = obj;
+                        }
+                        break;
+                    }
+                    case "Date": {
+                        data = new Date(+obj)
+                        break;
+                    }
+                    case "RegExp": {
+                        let flag = '';
+                        flag += obj.global ? "g" : ""
+                        flag += obj.multiline ? 'm' : '';
+                        flag += obj.ignoreCase ? 'i' : '';
+                        flag += obj.dotAll ? "s" : "";
+                        flag += obj.sticky ? "y" : ""
+                        flag += obj.unicode ? "u" : ""
+                        data = new RegExp(obj.source, flag);
+                        break;
+                    }
+                    default: {
+                        if (!jifukui.includes(obj)) {
+                            jifukui.push(obj)
+                            data = {}
+                            for (pro in obj) {
+                                if (obj.hasOwnProperty(pro)) {
+                                    data[pro] = deepcopy(obj[pro])
+                                }
+                            }
+                        } else {
+                            data = obj
+                        }
+                    }
+
+                }
+                // console.dir(jifukui)
+                return data;
+            }
+        }
+    </script>
+</body>
+
+</html>

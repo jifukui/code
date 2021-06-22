@@ -3,3 +3,111 @@
 编译过程：gcc -S hello.i -o hello.s
 汇编过程：gcc -c hello.s -o hello.o
 连接过程：gcc  hello.o -o hello
+
+
+读取文件的elf头部信息
+readelf  hello -h
+ELF Header:
+  Magic:   7f 45 4c 46 01 01 01 00 00 00 00 00 00 00 00 00 
+  Class:                             ELF32
+  Data:                              2's complement, little endian
+  Version:                           1 (current)
+  OS/ABI:                            UNIX - System V
+  ABI Version:                       0
+  Type:                              EXEC (Executable file)
+  Machine:                           Intel 80386
+  Version:                           0x1
+  Entry point address:               0x8048310
+  Start of program headers:          52 (bytes into file)
+  Start of section headers:          5976 (bytes into file)
+  Flags:                             0x0
+  Size of this header:               52 (bytes)
+  Size of program headers:           32 (bytes)
+  Number of program headers:         9
+  Size of section headers:           40 (bytes)
+  Number of section headers:         31
+  Section header string table index: 30
+
+
+显示文件的符号表
+readelf  hello -s
+ABS表示此符号不应该被重定位
+UNDEF表示此符号未在此文件中被定义可能在其他文件中被定义
+COMMON表示此符号还没有被分配位置和初始化
+Ndx的意义
+Symbol table '.dynsym' contains 5 entries:
+   Num:    Value  Size Type    Bind   Vis      Ndx Name
+     0: 00000000     0 NOTYPE  LOCAL  DEFAULT  UND 
+     1: 00000000     0 FUNC    GLOBAL DEFAULT  UND printf@GLIBC_2.0 (2)
+     2: 00000000     0 NOTYPE  WEAK   DEFAULT  UND __gmon_start__
+     3: 00000000     0 FUNC    GLOBAL DEFAULT  UND __libc_start_main@GLIBC_2.0 (2)
+     4: 080484dc     4 OBJECT  GLOBAL DEFAULT   16 _IO_stdin_used
+
+Symbol table '.symtab' contains 66 entries:
+   Num:    Value  Size Type    Bind   Vis      Ndx Name
+     0: 00000000     0 NOTYPE  LOCAL  DEFAULT  UND 
+     1: 08048154     0 SECTION LOCAL  DEFAULT    1 
+     2: 08048168     0 SECTION LOCAL  DEFAULT    2 
+     3: 08048188     0 SECTION LOCAL  DEFAULT    3 
+     4: 080481ac     0 SECTION LOCAL  DEFAULT    4 
+     5: 080481cc     0 SECTION LOCAL  DEFAULT    5 
+     6: 0804821c     0 SECTION LOCAL  DEFAULT    6 
+     7: 08048268     0 SECTION LOCAL  DEFAULT    7 
+     8: 08048274     0 SECTION LOCAL  DEFAULT    8 
+     9: 08048294     0 SECTION LOCAL  DEFAULT    9 
+    10: 0804829c     0 SECTION LOCAL  DEFAULT   10 
+    11: 080482ac     0 SECTION LOCAL  DEFAULT   11 
+    12: 080482d0     0 SECTION LOCAL  DEFAULT   12 
+    13: 08048300     0 SECTION LOCAL  DEFAULT   13 
+    14: 08048310     0 SECTION LOCAL  DEFAULT   14 
+    15: 080484c4     0 SECTION LOCAL  DEFAULT   15 
+    16: 080484d8     0 SECTION LOCAL  DEFAULT   16 
+    17: 080484f4     0 SECTION LOCAL  DEFAULT   17 
+    18: 08048520     0 SECTION LOCAL  DEFAULT   18 
+    19: 08049f08     0 SECTION LOCAL  DEFAULT   19 
+    20: 08049f0c     0 SECTION LOCAL  DEFAULT   20 
+    21: 08049f10     0 SECTION LOCAL  DEFAULT   21 
+    22: 08049f14     0 SECTION LOCAL  DEFAULT   22 
+    23: 08049ffc     0 SECTION LOCAL  DEFAULT   23 
+    24: 0804a000     0 SECTION LOCAL  DEFAULT   24 
+    25: 0804a014     0 SECTION LOCAL  DEFAULT   25 
+    26: 0804a018     0 SECTION LOCAL  DEFAULT   26 
+    27: 00000000     0 SECTION LOCAL  DEFAULT   27 
+    28: 00000000     0 FILE    LOCAL  DEFAULT  ABS crtstuff.c
+    29: 08049f10     0 OBJECT  LOCAL  DEFAULT   21 __JCR_LIST__
+    30: 08048350     0 FUNC    LOCAL  DEFAULT   14 deregister_tm_clones
+    31: 08048380     0 FUNC    LOCAL  DEFAULT   14 register_tm_clones
+    32: 080483c0     0 FUNC    LOCAL  DEFAULT   14 __do_global_dtors_aux
+    33: 0804a018     1 OBJECT  LOCAL  DEFAULT   26 completed.6294
+    34: 08049f0c     0 OBJECT  LOCAL  DEFAULT   20 __do_global_dtors_aux_fin
+    35: 080483e0     0 FUNC    LOCAL  DEFAULT   14 frame_dummy
+    36: 08049f08     0 OBJECT  LOCAL  DEFAULT   19 __frame_dummy_init_array_
+    37: 00000000     0 FILE    LOCAL  DEFAULT  ABS main.c
+    38: 00000000     0 FILE    LOCAL  DEFAULT  ABS crtstuff.c
+    39: 080485cc     0 OBJECT  LOCAL  DEFAULT   18 __FRAME_END__
+    40: 08049f10     0 OBJECT  LOCAL  DEFAULT   21 __JCR_END__
+    41: 00000000     0 FILE    LOCAL  DEFAULT  ABS 
+    42: 08049f0c     0 NOTYPE  LOCAL  DEFAULT   19 __init_array_end
+    43: 08049f14     0 OBJECT  LOCAL  DEFAULT   22 _DYNAMIC
+    44: 08049f08     0 NOTYPE  LOCAL  DEFAULT   19 __init_array_start
+    45: 080484f4     0 NOTYPE  LOCAL  DEFAULT   17 __GNU_EH_FRAME_HDR
+    46: 0804a000     0 OBJECT  LOCAL  DEFAULT   24 _GLOBAL_OFFSET_TABLE_
+    47: 080484c0     2 FUNC    GLOBAL DEFAULT   14 __libc_csu_fini
+    48: 08048340     4 FUNC    GLOBAL HIDDEN    14 __x86.get_pc_thunk.bx
+    49: 0804a014     0 NOTYPE  WEAK   DEFAULT   25 data_start
+    50: 00000000     0 FUNC    GLOBAL DEFAULT  UND printf@@GLIBC_2.0
+    51: 0804a018     0 NOTYPE  GLOBAL DEFAULT   25 _edata
+    52: 080484c4     0 FUNC    GLOBAL DEFAULT   15 _fini
+    53: 0804a014     0 NOTYPE  GLOBAL DEFAULT   25 __data_start
+    54: 00000000     0 NOTYPE  WEAK   DEFAULT  UND __gmon_start__
+    55: 080484e0     0 OBJECT  GLOBAL HIDDEN    16 __dso_handle
+    56: 080484dc     4 OBJECT  GLOBAL DEFAULT   16 _IO_stdin_used
+    57: 00000000     0 FUNC    GLOBAL DEFAULT  UND __libc_start_main@@GLIBC_
+    58: 08048450    97 FUNC    GLOBAL DEFAULT   14 __libc_csu_init
+    59: 0804a01c     0 NOTYPE  GLOBAL DEFAULT   26 _end
+    60: 08048310     0 FUNC    GLOBAL DEFAULT   14 _start
+    61: 080484d8     4 OBJECT  GLOBAL DEFAULT   16 _fp_hw
+    62: 0804a018     0 NOTYPE  GLOBAL DEFAULT   26 __bss_start
+    63: 0804840d    60 FUNC    GLOBAL DEFAULT   14 main
+    64: 0804a018     0 OBJECT  GLOBAL HIDDEN    25 __TMC_END__
+    65: 080482ac     0 FUNC    GLOBAL DEFAULT   11 _init

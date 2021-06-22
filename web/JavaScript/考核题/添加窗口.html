@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="cn">
+
+<head>
+    <title>窗口添加</title>
+    <meta charset="utf-8">
+    <style>
+        body:last-child {
+            color: aqua;
+        }
+
+        .root {
+            color: blue;
+            border: 1px solid pink;
+            width: 960px;
+            height: 540px;
+            position: relative;
+            user-select: none;
+        }
+
+        .root>div {
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            background-color: red;
+            top: 0px;
+            left: 0px;
+            font-size: 36px;
+            text-align: center;
+            line-height: 200px;
+            overflow: hidden;
+            resize: both;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <div>
+            <input type="button" value="添加" onclick="Add()">
+        </div>
+        <div>
+            <input type="button" value="删除" onclick="Del()">
+        </div>
+        <div class="root" onmousedown="ji()" onmousemove="jifukui()">
+            <!-- <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div> -->
+        </div>
+    </div>
+</body>
+<script>
+    let current = 4;
+    let flag;
+    var dom = document.getElementsByClassName("root")[0];
+    function Add() {
+        // var dom = document.getElementsByClassName("root")[0];
+        var a = document.createElement("div");
+        a.innerText = current + 1 + "";
+        dom.appendChild(a)
+    }
+    function Del() {
+        // var dom = document.getElementsByClassName("root")[0];
+        var dom1 = document.querySelectorAll(".root > div")
+        console.log(dom1)
+        dom.removeChild(dom1[0])
+    }
+    function jifukui() {
+        if (flag) {
+            var e = event || window.event;
+            endx = e.screenX;
+            endy = e.screenY;
+            let x = parseInt((endx - statx) / 1);
+            let y = parseInt((endy - staty) / 1);
+            statx = endx
+            staty = endy
+            Ji.Computer(flag, x, y);
+        }
+    }
+    function ji() {
+        var e = event || window.event;
+        statx = e.screenX;
+        staty = e.screenY;
+        flag = e.target.innerHTML;
+        flag = parseInt(flag);
+    }
+    class Position {
+        static Maxwidth = 960;
+        static Maxheight = 540;
+        static Minwidth = 64;
+        static Minheight = 64;
+        static width = 200;
+        static height = 200;
+        static init = [
+            {
+                top: 0,
+                left: 0,
+                width: Position.width,
+                height: Position.height,
+                index: 4
+            }, {
+                top: 0,
+                left: 200,
+                width: Position.width,
+                height: Position.height,
+                index: 3
+            }, {
+                top: 400,
+                left: 0,
+                width: Position.width,
+                height: Position.height,
+                index: 2
+            }, {
+                top: 600,
+                left: 0,
+                width: Position.width,
+                height: Position.height,
+                index: 1
+            }
+        ]
+        constructor(dom) {
+            this.rect = Position.init;
+            this.dom = dom;
+            this.pro = [4, 3, 2, 1];
+            this.scaler = 4;
+        }
+        Computer(flag, x, y) {
+            if (!Position.active) {
+                reutrn;
+            }
+            let id = parseInt(flag) - 1;
+            let level = this.pro[id];
+            if (Position.id !== id) {
+                for (let i = 0; i < this.dom.length; i++) {
+                    if (this.pro[i] > level) {
+                        this.pro[i] = this.pro[i] - 1;
+                        this.dom[i].style.zIndex = "" + this.pro[i]
+                    }
+                }
+                this.pro[id] = 4
+                Position.id = id
+            }
+            let dom = this.dom[id];
+            let rect = this.rect[id];
+            let change = false;
+            dom.style.zIndex = "99";
+
+            if (dom.style.width && dom.style.width !== `${rect.width}px`) {
+                let width = parseInt(dom.style.width);
+                if (width > Position.Maxwidth) {
+                    width = Position.Maxwidth
+                } else if (width < Position.Minwidth) {
+                    width = Position.Minwidth
+                }
+                rect.width = width;
+                change = true;
+            }
+            if (dom.style.height && dom.style.height !== `${rect.height}px`) {
+                let height = parseInt(dom.style.height)
+                if (height > Position.Maxheight) {
+                    height = Position.Maxheight
+                } else if (height < Position.Minwidth) {
+                    height = Position.Minheight;
+                }
+                rect.height = height
+                change = true
+            }
+            if (change) {
+                dom.style.width = rect.width > Position.width ? Position.width + 'px' : rect.width + "px";
+                dom.style.height = rect.height > Position.height ? Position.height + 'px' : rect.height + "px";
+                return
+            }
+            rect.top = (rect.top + y) < Position.Maxheight ? rect.top + y : Position.Maxheight;
+            rect.left = (rect.left + x) < Position.Maxwidth ? rect.left + x : Position.Maxwidth;
+            if (rect.top < 0) rect.top = 0;
+            if (rect.left < 0) rect.left = 0;
+            this.Render(id)
+        }
+        Render(flag) {
+            let dom = this.dom[flag];
+            dom.style.top = `${this.rect[flag].top}px`
+            dom.style.left = `${this.rect[flag].left}px`
+        }
+    }
+    var Ji = new Position(dom);
+</script>
+
+</html>
