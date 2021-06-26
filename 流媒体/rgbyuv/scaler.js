@@ -41,8 +41,6 @@ function NearestNeighbor() {
     console.log("over")
 }
 function BiLinear() {
-    // let wr = w / w1;
-    // let hr = h / h1;
     for (let i = 0; i < h1; i++) {
         let y = (i + 0.5) * h / h1 - 0.5;
         let y1 = y - Math.floor(y);
@@ -54,12 +52,10 @@ function BiLinear() {
             let x2 = 1 - x1;
             x = Math.floor(x);
             let point = [4];
-            // console.log(y, x)
             point[0] = (y * w + x) * 3;
             point[1] = (y * w + x + 1) * 3;
             point[2] = ((y + 1) * w + x) * 3;
             point[3] = ((y + 1) * w + x + 1) * 3;
-            // console.log(i, n, x, y, ...point)
             let val = Buffer.alloc(3);
             val[0] = srcdata[point[0]] * y2 * x2 +
                 srcdata[point[1]] * y2 * x1 +
@@ -73,7 +69,6 @@ function BiLinear() {
                 srcdata[point[1] + 2] * y2 * x1 +
                 srcdata[point[2] + 2] * y1 * x2 +
                 srcdata[point[3] + 2] * y1 * x1;
-            // process.exit(0)
             Fill2File(val);
         }
     }
