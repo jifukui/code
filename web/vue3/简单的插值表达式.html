@@ -1,0 +1,23 @@
+<!DOCTYPE>
+<html lang="cn">
+
+<head>
+    <script src="./vue3.js"></script>
+</head>
+
+<body>
+    <div id="app"></div>
+    <script>
+        var vm = Vue.createApp({
+            data() {
+                return {
+                    name: "jifukui"
+                }
+            },
+            template: "<div>{{name}}</div>"
+        });
+        var root = vm.mount("#app")
+    </script>
+</body>
+
+</html>

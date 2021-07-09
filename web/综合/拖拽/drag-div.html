@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>利国SDVOE拖拽实现</title>
+        <meta charset="utf-8">
+        <style>
+            .c1{
+                width: 200px;
+                height: 200px;
+            }
+            .c2{
+                margin-top: 3px;
+                width: 150px;
+                height: 150px;
+            }
+            td{
+                border-spacing: 0px;
+                text-align: center;
+                border:2px solid red;
+                cursor: pointer;
+            }
+            *{
+                margin:0px;
+                padding: 0px;
+            }
+            table{
+                border-collapse:collapse;
+            }
+        </style>
+    </head>
+    <body>
+        <table class="c1">
+            <tr>
+                <td><label>1</label><div>甲</div></td>
+                <td><label>2</label><div>已</div></td>
+            </tr>
+            <tr>
+                <td><label>3</label><div>丙</div></td>
+                <td><label>4</label><div>丁</div></td>
+            </tr>
+        </table>
+        <table class="c2">
+            <tr>
+                <td draggable="true">甲</td>
+                <td draggable="true">已</td>
+            </tr>
+            <tr>
+                <td draggable="true">丙</td>
+                <td draggable="true">丁</td>
+            </tr>
+        </table>
+    </body>
+    <script>
+        let drag=document.getElementsByTagName("table");
+        let tag=["label","div"];
+        function start(e){
+            e.dataTransfer.setData("text/plain", e.target.innerText);  
+        }
+        function end(e){
+        
+        }
+        function drop(e){
+            console.log("I have drag ");
+            let x=e.target;
+            if(e.target.localName!="td"){
+                if(tag.includes(x.localName)){
+                    x=x.parentElement;
+                }
+                else{
+                    return ;
+                }
+            }
+            x.style.background="white";
+            let data = e.dataTransfer.getData("text/plain");
+            x.children[1].innerText=data;
+        }
+        function over(e){
+            e.preventDefault();
+            let x=e.target;
+            if(x.localName!="td"){
+                if(tag.includes(x.localName)){
+                    x=x.parentElement;
+                }
+                else{
+                    return ;
+                }
+            }
+            x.style.background="green";
+            e.dataTransfer.dropEffect = "move";
+        }
+        function leave(e){
+            let x=e.target;
+            if(x.localName!="td"){
+                return;
+            }
+            x.style.background="white";
+        }
+        for(let i=0; i<drag.length;i++){
+            drag[i].addEventListener("dragstart",start,false);
+            drag[i].addEventListener("dragend",end,false);
+            if(i==0){
+                drag[i].addEventListener("dragover",over,true);
+                drag[i].addEventListener("drop",drop,true);
+                drag[i].addEventListener("dragleave",leave,true);
+            }
+        }
+    </script>
+</html>
