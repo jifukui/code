@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="cn">
+
+<head>
+    <title>点击a标签弹出当前是第一个标签</title>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <a>1</a>
+    <a>2</a>
+    <a>3</a>
+    <a>4</a>
+    <a>5</a>
+    <a>6</a>
+    <a>7</a>
+    <a>8</a>
+    <a>9</a>
+    <a>10</a>
+    <script>
+        function DisPlay(e) {
+            if (e.target.localName == "a") {
+                alert(e.target.innerText)
+            }
+        }
+        // document.body.addEventListener("click", DisPlay);
+        function Init() {
+            var a = 0;
+            for (a = 0; a < 10; a++) {
+                (function (a) {
+                    var dom = document.createElement("a");
+                    dom.innerText = a + 1;
+                    dom.addEventListener("click", function () {
+                        alert(a + 1);
+                    })
+                    document.body.appendChild(dom);
+                }(a))
+            }
+
+        }
+        Init();
+    </script>
+</body>
+
+</html>
