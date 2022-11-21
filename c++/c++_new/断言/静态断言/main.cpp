@@ -3,17 +3,12 @@
 using namespace std;
 // #define NDEBUG
 // 这个宏好像没有什么用的
-#define assert_Static(x) {\
-  do{\
-    1/(x);\
-  }while(0);\
-}
 int main(){
-  const int a = 9;
-  const int a1 = 9;
-  assert_Static(a>0);
+  const int a = 9 ;
+  const int a1 = 9 ;
+  static_assert(a>0,"first");
   cout<<"Hello this is first"<<endl;
-  assert_Static(a1>12);
+  static_assert(a1>10,"second");
   cout<<"Hello this is second"<<endl;
   return 0;
 }
